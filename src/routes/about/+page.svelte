@@ -1,8 +1,11 @@
 <div class="wrapper">
 	<header class="header">
-		<h1 class="heading">
+		<h1 class="heading heading--about">
 			<span>About me</span>
 		</h1>
+		<a href="/" class="header__icon">
+			<img src="/images/home.png" width="30" height="30" alt="Icono de casa" />
+		</a>
 	</header>
 	<section id="about" class="about">
 		<div class="about__head">
@@ -41,8 +44,13 @@
 	.header {
 		@apply text-center;
 	}
-	.about {
-		@apply my-16;
+
+	.heading--about {
+		@apply mb-12;
+	}
+
+	.header__icon {
+		@apply inline-block p-4 rounded-full border-2 border-black;
 	}
 
 	.about__head {
