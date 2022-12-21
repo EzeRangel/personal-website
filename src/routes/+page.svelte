@@ -15,7 +15,7 @@
       <p class="hero__copy">
         Bring a business mind to design, and transform your career and company, with this free book by Apple and Electronic Arts design veteran Ryan Rumsey. Inside, he shares the essential vocabulary frameworks that you can put right to work.
       </p>
-      <a href="#" class="hero__cta">
+      <a href="/about" class="hero__cta">
         About me
         <span>&rarr;</span>
       </a>

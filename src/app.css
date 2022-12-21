@@ -33,3 +33,16 @@ body {
 .header a {
 	@apply text-base font-semibold uppercase;
 }
+
+.heading {
+	@apply font-display font-normal text-5xl leading-[4rem];
+	@apply md:leading-[6rem] md:text-7xl;
+}
+
+.heading > span {
+	@apply border-b-[15px] border-featured;
+}
+
+.heading--sub {
+	@apply md:text-5xl;
+}
