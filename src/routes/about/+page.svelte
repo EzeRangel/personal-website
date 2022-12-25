@@ -14,28 +14,25 @@
 				<p class="about__sub">Frontend Engineer</p>
 			</div>
 			<div>
-				<a href="#" class="about__cta" download> Download Resume</a>
+				<a href="/cv.pdf" class="about__cta" download>Download Resume</a>
 			</div>
 		</div>
 		<p class="about__copy">
-			Phasellus non faucibus purus, a venenatis diam. In faucibus orci mauris, porttitor egestas
-			diam elementum non. Vestibulum non metus tempus, sagittis libero sed, euismod purus. Cras
-			dolor nulla, hendrerit vitae libero eu, finibus ultricies dolor.
+			I’m a software engineer oriented to development with frontend technologies, I love the web and
+			am really thankful to make a career with all these tools available.
 		</p>
 		<p class="about__copy">
-			Curabitur quis tortor sit amet ligula lobortis auctor. Class aptent taciti sociosqu ad litora
-			torquent per conubia nostra, per inceptos himenaeos. Integer ut turpis eget urna egestas
-			maximus.
+			I describe myself as a self-taught programmer with the lucky of being around the correct
+			people that led me grow as a professional and as a person.
 		</p>
 		<p class="about__copy">
-			Phasellus non faucibus purus, a venenatis diam. In faucibus orci mauris, porttitor egestas
-			diam elementum non. Vestibulum non metus tempus, sagittis libero sed, euismod purus. Cras
-			dolor nulla, hendrerit vitae libero eu, finibus ultricies dolor.
+			I have experience developing optimized websites and web applications with React under
+			Javascript and in recent years with Typescript. I have also been able to work on mobile apps
+			with React Native that are already in the app stores.
 		</p>
 		<p class="about__copy">
-			Curabitur quis tortor sit amet ligula lobortis auctor. Class aptent taciti sociosqu ad litora
-			torquent per conubia nostra, per inceptos himenaeos. Integer ut turpis eget urna egestas
-			maximus.
+			React has given me a lot and I want to return to the community as much as I can that’s why I
+			have a newsletter about this topic, you can subscribe it if you want.
 		</p>
 	</section>
 </div>
@@ -66,6 +63,6 @@
 		@apply rounded-3xl text-white uppercase py-4 px-5 text-center bg-emerald-400 inline-block w-full font-semibold;
 	}
 	.about__copy {
-		@apply text-xl mb-6;
+		@apply text-xl mb-6 leading-9;
 	}
 </style>

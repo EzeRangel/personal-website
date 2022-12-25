@@ -20,8 +20,8 @@
 				I am a Frontend Developer deeply interested in Javascript applications. I use the latest
 				technology available to deliver highly performant products that saves money and time.
 			</p>
-			<a href="#" class="hero__cta">
-				Let me prove it
+			<a href="/about" class="hero__cta">
+				About me
 				<span>&rarr;</span>
 			</a>
 		</div>
