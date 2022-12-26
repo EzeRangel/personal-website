@@ -4,6 +4,11 @@
 declare namespace App {
 	// interface Error {}
 	// interface Locals {}
-	// interface PageData {}
+	interface PageData {
+		seo: {
+			title: string;
+			description: string;
+		}
+	}
 	// interface Platform {}
 }

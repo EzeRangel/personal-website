@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--font_14: 0.875rem;
+	--font_16: 1rem;
+	--font_30: 1.875rem;
+	--font_36: 2.25rem;
+	--font_48: 3rem;
+	--color_featured: 166 243 231;
+	--color_featured_dark: 0 183 204;
+}
+
+html,
+body {
+	@apply font-body font-normal text-base text-black;
+}
+
+.wrapper {
+	@apply mx-auto my-0 w-full;
+	@apply py-0 px-6;
+	@apply md:max-w-[720px];
+	@apply lg:max-w-[960px];
+	@apply xl:max-w-6xl;
+}
+
+.header {
+	@apply py-14;
+	@apply md:pt-28 md:pb-10;
+}
+
+.header a {
+	@apply text-base font-semibold uppercase;
+}
+
+.heading {
+	@apply font-display font-normal text-4xl leading-[4rem];
+	@apply md:leading-[6rem] md:text-7xl;
+}
+
+.heading > span {
+	@apply border-b-[15px] border-featured;
+}
+
+.heading--sub {
+	@apply mb-4;
+	@apply md:text-5xl;
+}
