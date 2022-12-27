@@ -8,6 +8,7 @@ declare namespace App {
 		seo: {
 			title: string;
 			description: string;
+			url: string;
 		}
 	}
 	// interface Platform {}
