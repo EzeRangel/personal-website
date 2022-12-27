@@ -18,7 +18,7 @@
 			</h1>
 			<p class="hero__copy">
 				I am a Frontend Developer deeply interested in Javascript applications. I use the latest
-				technology available to deliver highly performant products that saves money and time.
+				technology available to deliver highly performant products which save money and time.
 			</p>
 			<a href="/about" class="hero__cta">
 				About me
@@ -29,7 +29,7 @@
 	<section id="social-proof" class="section">
 		<div class="section-head">
 			<h2 class="heading heading--sub">Work</h2>
-			<p>These are some companies I've collaborated with.</p>
+			<p>These are some companies I have collaborated with.</p>
 		</div>
 		<div class="social-proof-grid">
 			<span>
