@@ -71,8 +71,26 @@
 		@apply md:leading-[6rem] md:text-[4.3rem];
 	}
 
+	.hero__title > span:hover {
+		@apply border-none;
+	}
+
 	.hero__title > span {
 		@apply border-b-[15px] border-featured;
+	}
+
+	.hero__title a {
+		@apply relative;
+	}
+
+	.hero__title a::after {
+		content: '';
+		@apply w-0 h-[15px] bg-featured absolute -bottom-[15px] left-0;
+		@apply transition-all duration-300;
+	}
+
+	.hero__title > span:hover a::after {
+		@apply w-full;
 	}
 
 	.hero__copy {
