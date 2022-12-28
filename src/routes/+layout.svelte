@@ -1,15 +1,27 @@
 <script>
+	import '@fontsource/dm-serif-display';
+	import '@fontsource/inter';
+	import '@fontsource/inter/600.css';
+	import '@fontsource/inter/700.css';
 	import '../app.css';
 	import { page } from '$app/stores';
 
 	let currentYear = new Date().getFullYear();
+	const canonical = 'https://www.ezerangel.com';
+	const defaultTitle = $page.data?.seo?.title ?? 'Ezequiel Rangel';
+	const defaultDescription =
+		$page.data?.seo?.description ?? 'Have a project or question? Send me a message.';
 </script>
 
 <svelte:head>
 	<title>
-		{$page.data.seo.title}
+		{defaultTitle}
 	</title>
-	<meta name="description" content={$page.data.seo.description} />
+	<meta name="description" content={defaultDescription} />
+	<meta name="og:title" content={defaultTitle} />
+	<meta name="og:type" content="website" />
+	<meta name="og:url" content={$page.data?.seo?.url ?? canonical} />
+	<meta name="og:image" content={`https://www.ezerangel.com/og?title=${defaultTitle}`} />
 </svelte:head>
 
 <slot />

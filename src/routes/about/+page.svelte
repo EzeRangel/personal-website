@@ -18,21 +18,17 @@
 			</div>
 		</div>
 		<p class="about__copy">
-			I’m a software engineer oriented to development with frontend technologies, I love the web and
-			am really thankful to make a career with all these tools available.
+			I'm a software engineer who's all about frontend development. I love the web and I'm really
+			grateful to be able to make a career in this field.
 		</p>
 		<p class="about__copy">
-			I describe myself as a self-taught programmer with the lucky of being around the correct
-			people that led me grow as a professional and as a person.
+			I see myself as a self-taught programmer who's had the luck of being surrounded by the right
+			people, which has helped me grow both professionally and personally.
 		</p>
 		<p class="about__copy">
-			I have experience developing optimized websites and web applications with React under
-			Javascript and in recent years with Typescript. I have also been able to work on mobile apps
-			with React Native that are already in the app stores.
-		</p>
-		<p class="about__copy">
-			React has given me a lot and I want to return to the community as much as I can that’s why I
-			have a newsletter about this topic, you can subscribe it if you want.
+			I have experience building optimized websites with React and more recently with Typescript.
+			I've also had the chance to work on mobile apps with React Native that are now available in
+			app stores.
 		</p>
 	</section>
 </div>

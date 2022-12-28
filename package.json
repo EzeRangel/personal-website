@@ -31,6 +31,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@ethercorps/sveltekit-og": "^1.1.1",
+		"@fontsource/dm-serif-display": "^4.5.9",
+		"@fontsource/inter": "^4.5.14",
 		"autoprefixer": "^10.4.13",
 		"postcss": "^8.4.20",
 		"svelte-preprocess": "^5.0.0",

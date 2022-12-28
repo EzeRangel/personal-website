@@ -1,6 +1,6 @@
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = async () => {
+export const load: PageLoad = async ({ url }) => {
   return {
     seo: {
       title: "Building websites that makes PageSpeed happy • Ezequiel Rangel",
@@ -8,6 +8,7 @@ export const load: PageLoad = async () => {
       I am a Frontend Developer deeply interested in Javascript applications. I use the latest
       technology available to deliver highly performant products that saves money and time.
       `,
+      url: url.href
     }
   }
 };
