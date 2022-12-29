@@ -17,11 +17,18 @@
 	<title>
 		{defaultTitle}
 	</title>
+	<meta property="og:title" content={defaultTitle} />
 	<meta name="description" content={defaultDescription} />
-	<meta name="og:title" content={defaultTitle} />
-	<meta name="og:type" content="website" />
-	<meta name="og:url" content={$page.data?.seo?.url ?? canonical} />
-	<meta name="og:image" content={`https://www.ezerangel.com/og?title=${defaultTitle}`} />
+	<meta property="description" content={defaultDescription} />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={$page.data?.seo?.url ?? canonical} />
+	<meta property="og:image" content={`https://www.ezerangel.com/og?title=${defaultTitle}`} />
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="twitter:domain" content="ezerangel.com">
+  <meta property="twitter:url" content={$page.data?.seo?.url ?? canonical}>
+  <meta name="twitter:title" content={defaultTitle}>
+	<meta name="twitter:description" content={defaultDescription} />
+	<meta name="twitter:image" content={`https://www.ezerangel.com/og?title=${defaultTitle}`}>
 </svelte:head>
 
 <slot />
