@@ -13,21 +13,18 @@
 				<h2 class="heading heading--sub">Ezequiel Rangel</h2>
 				<p class="about__sub">Frontend Engineer</p>
 			</div>
-			<div>
-				<a href="/cv.pdf" class="about__cta" download>Download Resume</a>
-			</div>
 		</div>
 		<p class="about__copy">
 			I'm a software engineer who's all about frontend development. I love the web and I'm really
 			grateful to be able to make a career in this field.
 		</p>
 		<p class="about__copy">
-			I see myself as a self-taught programmer who's had the luck of being surrounded by the right
+			I see myself as a self-taught programmer who's lucky of being surrounded by the right
 			people, which has helped me grow both professionally and personally.
 		</p>
 		<p class="about__copy">
 			I have experience building optimized websites with React and more recently with Typescript.
-			I've also had the chance to work on mobile apps with React Native that are now available in
+			I've also had the chance to work on mobile apps using React Native that are now available in
 			app stores.
 		</p>
 	</section>

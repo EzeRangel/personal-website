@@ -18,7 +18,7 @@
 			</h1>
 			<p class="hero__copy">
 				I am a Frontend Developer deeply interested in Javascript applications. I use the latest
-				technology available to deliver highly performant products which save money and time.
+				technology available to deliver high performing products which save money and time.
 			</p>
 			<a href="/about" class="hero__cta">
 				About me
