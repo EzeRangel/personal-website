@@ -19,13 +19,25 @@
 			grateful to be able to make a career in this field.
 		</p>
 		<p class="about__copy">
-			I see myself as a self-taught programmer who's lucky of being surrounded by the right
-			people, which has helped me grow both professionally and personally.
+			I see myself as a self-taught programmer who's lucky of being surrounded by the right people,
+			which has helped me grow both professionally and personally.
 		</p>
 		<p class="about__copy">
 			I have experience building optimized websites with React and more recently with Typescript.
 			I've also had the chance to work on mobile apps using React Native that are now available in
 			app stores.
+		</p>
+		<p class="about__copy">
+			I have a newsletter (in spanish) about the latest news of the React ecosystem, so if you want
+			to get onboard you can find it on <a
+				href="https://reacttrends.substack.com"
+				target="_blank"
+				rel="noopener noreferrer">Substack</a
+			>
+			or get the
+			<a href="https://reacttrends.substack.com/feed" target="_blank" rel="noopener noreferrer"
+				>RSS feed here</a
+			>.
 		</p>
 	</section>
 </div>
@@ -57,5 +69,9 @@
 	}
 	.about__copy {
 		@apply text-xl mb-6 leading-9;
+	}
+
+	.about__copy a {
+		@apply underline;
 	}
 </style>
