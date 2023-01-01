@@ -25,6 +25,32 @@ body {
 	@apply xl:max-w-6xl;
 }
 
+.page-header{
+	@apply py-14 text-center mb-12 max-w-2xl mx-auto;
+	@apply md:pt-28 md:pb-10 md:mb-20;
+}
+
+.page-header-copy{
+	@apply text-lg;
+}
+
+.page-section {
+	@apply mb-12 md:mb-20;;
+}
+
+.page-link {
+	@apply font-semibold transition-colors;
+	@apply hover:text-featured-dark;
+}
+
+.page-link > span {
+	@apply transition-transform translate-x-0 inline-block;
+}
+
+.page-link:hover > span {
+	@apply translate-x-4;
+}
+
 .header {
 	@apply py-14;
 	@apply md:pt-28 md:pb-10;
@@ -41,6 +67,10 @@ body {
 
 .heading > span {
 	@apply border-b-[15px] border-featured;
+}
+
+.heading__page{
+	@apply mb-12;
 }
 
 .heading--sub {
