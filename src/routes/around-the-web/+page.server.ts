@@ -15,7 +15,7 @@ const DATABASE_ID = NOTION_DATABASE_ID;
 export const prerender = true;
 
 // This is like Nextjs' getServerSideProps, cool...
-export const load: PageServerLoad<PageProps> = async ({ url }) => {
+export const load: PageServerLoad<PageProps> = async () => {
   const database = await notion.databases.query({
     database_id: DATABASE_ID,
     sorts: [
@@ -39,7 +39,7 @@ export const load: PageServerLoad<PageProps> = async ({ url }) => {
     seo: {
       title: "Around the web • Ezequiel Rangel",
       description: "All the cool links I've found while navigating on the Internet",
-      url: `${url.href}`
+      url: "https://www.ezerangel.com/around-the-web"
     }
   }
 }
