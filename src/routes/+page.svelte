@@ -20,13 +20,13 @@
 				I am a Frontend Developer deeply interested in Javascript applications. I use the latest
 				technology available to deliver high performing products which save money and time.
 			</p>
-			<a href="/about" class="hero__cta">
+			<a href="/about" class="page-link">
 				About me
 				<span>&rarr;</span>
 			</a>
 		</div>
 	</section>
-	<section id="social-proof" class="section">
+	<section id="social-proof" class="page-section">
 		<div class="section-head">
 			<h2 class="heading heading--sub">Work</h2>
 			<p>These are some companies I have collaborated with.</p>
@@ -54,6 +54,14 @@
 				<img src="/images/viva-aerobus.webp" alt="Logo de VivaAerobus" width="300" />
 			</span>
 		</div>
+	</section>
+	<section id="around-the-web" class="page-section">
+		<h2 class="heading heading--sub">Around the web</h2>
+		<p class="mb-4">A list of sites that I liked or have taught me something</p>
+		<a href="/around-the-web" class="page-link">
+			See the links
+			<span>&rarr;</span>
+		</a>
 	</section>
 </div>
 
@@ -95,19 +103,6 @@
 
 	.hero__copy {
 		@apply leading-7 mb-8 max-w-xl;
-	}
-
-	.hero__cta {
-		@apply font-semibold transition-colors;
-		@apply hover:text-featured-dark;
-	}
-
-	.hero__cta > span {
-		@apply transition-transform translate-x-0 inline-block;
-	}
-
-	.hero__cta:hover > span {
-		@apply translate-x-4;
 	}
 
 	.social-proof-grid {
