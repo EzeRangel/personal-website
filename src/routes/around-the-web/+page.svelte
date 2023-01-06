@@ -28,6 +28,9 @@
 						<div class="link-head">
 							<h2 class="link-title">
 								<a href={link.properties.URL.url} target="_blank" rel="noopener noreferrer">
+									{#if link?.icon?.type === 'emoji'}
+										<span class="mr-1">{link.icon.emoji}</span>
+									{/if}
 									{link.properties.Name.title[0].plain_text}
 								</a>
 								<span>
