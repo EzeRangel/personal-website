@@ -11,9 +11,6 @@ interface PageProps {
 const notion = new Client({ auth: NOTION_INTEGRATION_KEY });
 const DATABASE_ID = NOTION_DATABASE_ID;
 
-// This is the Svelte's way for prerendering a page at build time.
-export const prerender = true;
-
 // This is like Nextjs' getServerSideProps, cool...
 export const load: PageServerLoad<PageProps> = async () => {
   const database = await notion.databases.query({
