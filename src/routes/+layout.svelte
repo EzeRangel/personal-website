@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '@fontsource/dm-serif-display';
 	import '@fontsource/inter';
 	import '@fontsource/inter/600.css';
@@ -7,7 +7,6 @@
 	import { page } from '$app/stores';
 
 	let currentYear = new Date().getFullYear();
-	const canonical = 'https://www.ezerangel.com';
 	const defaultTitle = $page.data?.seo?.title ?? 'Ezequiel Rangel';
 	const defaultDescription =
 		$page.data?.seo?.description ?? 'Have a project or question? Send me a message.';
@@ -21,14 +20,14 @@
 	<meta name="description" content={defaultDescription} />
 	<meta property="description" content={defaultDescription} />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={$page.data?.seo?.url ?? canonical} />
+	<meta property="og:url" content={$page.data?.seo?.url} />
 	<meta property="og:image" content={`https://www.ezerangel.com/og?title=${defaultTitle}`} />
-	<meta name="twitter:card" content="summary_large_image">
-	<meta property="twitter:domain" content="ezerangel.com">
-  <meta property="twitter:url" content={$page.data?.seo?.url ?? canonical}>
-  <meta name="twitter:title" content={defaultTitle}>
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="ezerangel.com" />
+	<meta property="twitter:url" content={$page.data?.seo?.url} />
+	<meta name="twitter:title" content={defaultTitle} />
 	<meta name="twitter:description" content={defaultDescription} />
-	<meta name="twitter:image" content={`https://www.ezerangel.com/og?title=${defaultTitle}`}>
+	<meta name="twitter:image" content={`https://www.ezerangel.com/og?title=${defaultTitle}`} />
 </svelte:head>
 
 <slot />
