@@ -16,6 +16,7 @@
 	<title>
 		{defaultTitle}
 	</title>
+	<link rel="canonical" href={$page.data.seo?.url} />
 	<meta property="og:title" content={defaultTitle} />
 	<meta name="description" content={defaultDescription} />
 	<meta property="description" content={defaultDescription} />
