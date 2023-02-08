@@ -7,27 +7,33 @@
 	import { page } from '$app/stores';
 
 	let currentYear = new Date().getFullYear();
-	const defaultTitle = $page.data?.seo?.title ?? 'Ezequiel Rangel';
-	const defaultDescription =
-		$page.data?.seo?.description ?? 'Have a project or question? Send me a message.';
+
+	const canonical = 'https://www.ezerangel.com';
+	const defaultTitle = 'Ezequiel Rangel';
+	const defaultDescription = 'Have a project or question? Send me a message.';
+
+	$: seoURL = $page.data?.seo?.url ?? canonical;
+	$: seoTitle = $page.data?.seo?.title ?? defaultTitle;
+	$: seoDescription = $page.data?.seo?.description ?? defaultDescription;
 </script>
 
 <svelte:head>
 	<title>
-		{defaultTitle}
+		{seoTitle}
 	</title>
-	<meta property="og:title" content={defaultTitle} />
-	<meta name="description" content={defaultDescription} />
-	<meta property="description" content={defaultDescription} />
+	<link rel="canonical" href={seoURL} />
+	<meta property="og:title" content={seoTitle} />
+	<meta name="description" content={seoDescription} />
+	<meta property="description" content={seoDescription} />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={$page.data?.seo?.url} />
-	<meta property="og:image" content={`https://www.ezerangel.com/og?title=${defaultTitle}`} />
+	<meta property="og:url" content={seoURL} />
+	<meta property="og:image" content={`https://www.ezerangel.com/og?title=${seoTitle}`} />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="twitter:domain" content="ezerangel.com" />
-	<meta property="twitter:url" content={$page.data?.seo?.url} />
-	<meta name="twitter:title" content={defaultTitle} />
-	<meta name="twitter:description" content={defaultDescription} />
-	<meta name="twitter:image" content={`https://www.ezerangel.com/og?title=${defaultTitle}`} />
+	<meta property="twitter:domain" content="www.ezerangel.com" />
+	<meta property="twitter:url" content={seoURL} />
+	<meta name="twitter:title" content={seoTitle} />
+	<meta name="twitter:description" content={seoDescription} />
+	<meta name="twitter:image" content={`https://www.ezerangel.com/og?title=${seoTitle}`} />
 </svelte:head>
 
 <slot />

@@ -23,7 +23,7 @@ const buildTemplate = (title: string, date?: string) => {
   `
 };
 
-const fontFile = await fetch("https://ezerangel.com/fonts/dm-serif-display-all-400-normal.woff");
+const fontFile = await fetch("https://www.ezerangel.com/fonts/dm-serif-display-all-400-normal.woff");
 const fontData = await fontFile.arrayBuffer();
 
 
