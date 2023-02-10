@@ -2,6 +2,7 @@ import { NOTION_DATABASE_ID, NOTION_INTEGRATION_KEY } from "$env/static/private"
 import { Client } from "@notionhq/client";
 import type { PageServerLoad } from "./$types";
 import type { NotionPageLinks } from "$lib/types";
+import type { Config } from "@sveltejs/adapter-vercel";
 
 // Not sure if this is the correct way of doing this...
 interface PageProps {
@@ -10,6 +11,22 @@ interface PageProps {
 
 const notion = new Client({ auth: NOTION_INTEGRATION_KEY });
 const DATABASE_ID = NOTION_DATABASE_ID;
+
+/**
+ * The Vercel adapter allows me to implement Incremental Static Regeneration
+ * per route (see: svelte.config.js) ...
+ */
+export const config: Config = {
+  isr: {
+    expiration: 3600
+  }
+}
+
+/**
+ * ... so I can prerender this page at build time
+ * and let Vercel do their ISR things.
+ */
+export const prerender = true;
 
 // This is like Nextjs' getServerSideProps, cool...
 export const load: PageServerLoad<PageProps> = async () => {

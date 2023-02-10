@@ -13,8 +13,8 @@
 			<span> Around the web </span>
 		</h1>
 		<p class="page-header-copy">
-			This is a list of websites that I liked, have inspired me or have taught me something. Is like
-			my timeline evolution as a developer.
+			This is a list of websites that I liked, have inspired me or have taught me something. It's
+			like my timeline evolution as a developer.
 		</p>
 	</div>
 </header>
