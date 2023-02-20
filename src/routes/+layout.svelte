@@ -1,16 +1,16 @@
 <script lang="ts">
-	import '@fontsource/dm-serif-display';
-	import '@fontsource/inter';
-	import '@fontsource/inter/600.css';
-	import '@fontsource/inter/700.css';
-	import '../app.css';
-	import { page } from '$app/stores';
+	import "@fontsource/dm-serif-display";
+	import "@fontsource/inter";
+	import "@fontsource/inter/600.css";
+	import "@fontsource/inter/700.css";
+	import "../app.css";
+	import { page } from "$app/stores";
 
 	let currentYear = new Date().getFullYear();
 
-	const canonical = 'https://www.ezerangel.com';
-	const defaultTitle = 'Ezequiel Rangel';
-	const defaultDescription = 'Have a project or question? Send me a message.';
+	const canonical = "https://www.ezerangel.com";
+	const defaultTitle = "Ezequiel Rangel";
+	const defaultDescription = "Have a project or question? Send me a message.";
 
 	$: seoURL = $page.data?.seo?.url ?? canonical;
 	$: seoTitle = $page.data?.seo?.title ?? defaultTitle;
@@ -74,7 +74,7 @@
 	</div>
 </footer>
 
-<style>
+<style lang="postcss">
 	.footer {
 		@apply py-8;
 	}
@@ -98,7 +98,7 @@
 	}
 
 	.social__email::after {
-		content: '';
+		content: "";
 		@apply absolute bottom-0 left-0 w-full h-3 bg-featured -z-10;
 	}
 

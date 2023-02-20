@@ -65,7 +65,7 @@
 	</section>
 </div>
 
-<style>
+<style lang="postcss">
 	.section {
 		@apply mb-20;
 	}
@@ -92,7 +92,7 @@
 	}
 
 	.hero__title a::after {
-		content: '';
+		content: "";
 		@apply w-0 h-[15px] bg-featured absolute -bottom-[15px] left-0;
 		@apply transition-all duration-300;
 	}

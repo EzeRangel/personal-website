@@ -25,17 +25,17 @@ body {
 	@apply xl:max-w-6xl;
 }
 
-.page-header{
+.page-header {
 	@apply py-14 text-center mb-12 max-w-2xl mx-auto;
 	@apply md:pt-28 md:pb-10 md:mb-20;
 }
 
-.page-header-copy{
+.page-header-copy {
 	@apply text-lg;
 }
 
 .page-section {
-	@apply mb-12 md:mb-20;;
+	@apply mb-12 md:mb-20;
 }
 
 .page-link {
@@ -69,7 +69,7 @@ body {
 	@apply border-b-[15px] border-featured;
 }
 
-.heading__page{
+.heading__page {
 	@apply mb-12;
 }
 

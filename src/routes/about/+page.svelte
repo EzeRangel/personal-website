@@ -42,7 +42,7 @@
 	</section>
 </div>
 
-<style>
+<style lang="postcss">
 	.header {
 		@apply text-center;
 	}
@@ -64,9 +64,6 @@
 		@apply font-bold text-xl my-2;
 	}
 
-	.about__cta {
-		@apply rounded-3xl text-white uppercase py-4 px-5 text-center bg-emerald-400 inline-block w-full font-semibold;
-	}
 	.about__copy {
 		@apply text-xl mb-6 leading-9;
 	}
