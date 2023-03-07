@@ -2,29 +2,27 @@
 	<header class="header">
 		<a href="/">Ezequiel Rangel</a>
 	</header>
-	<section id="intro" class="section">
-		<div class="hero">
-			<h1 class="hero__title">
-				<span>
-					I build websites
-					<br />
-					that makes Google
-					<br />
-					<a href="https://pagespeed.web.dev/" rel="noopener noreferrer" target="_blank">
-						PageSpeed
-					</a>
-					happy
-				</span>
-			</h1>
-			<p class="hero__copy">
-				I am a Frontend Developer deeply interested in Javascript applications. I use the latest
-				technology available to deliver high performing products which save money and time.
-			</p>
-			<a href="/about" class="page-link">
-				About me
-				<span>&rarr;</span>
-			</a>
-		</div>
+	<section id="intro" class="section hero">
+		<h1 class="hero__title">
+			<span>
+				I build websites
+				<br />
+				that makes Google
+				<br />
+				<a href="https://pagespeed.web.dev/" rel="noopener noreferrer" target="_blank">
+					PageSpeed
+				</a>
+				happy
+			</span>
+		</h1>
+		<p class="hero__copy">
+			I am a Frontend Developer deeply interested in Javascript applications. I use the latest
+			technology available to deliver high performing products which can save you money and time.
+		</p>
+		<a href="/about" class="page-link">
+			About me
+			<span>&rarr;</span>
+		</a>
 	</section>
 	<section id="social-proof" class="page-section">
 		<div class="section-head">
@@ -102,7 +100,7 @@
 	}
 
 	.hero__copy {
-		@apply leading-7 mb-8 max-w-xl;
+		@apply leading-9 text-xl mb-8 max-w-xl;
 	}
 
 	.social-proof-grid {

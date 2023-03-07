@@ -10,6 +10,7 @@
 	--font_48: 3rem;
 	--color_featured: 166 243 231;
 	--color_featured_dark: 0 183 204;
+	--color_phlox: 192 76 253;
 }
 
 html,
@@ -31,7 +32,7 @@ body {
 }
 
 .page-header-copy {
-	@apply text-lg;
+	@apply text-xl leading-9;
 }
 
 .page-section {

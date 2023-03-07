@@ -11,9 +11,22 @@ module.exports = {
 				featured: {
 					DEFAULT: "rgb(var(--color_featured) / <alpha-value>)",
 					dark: "rgb(var(--color_featured_dark) / <alpha-value>)"
+				},
+				phlox: {
+					DEFAULT: "rgb(var(--color_phlox) / <alpha-value>)"
 				}
-			}
+			},
+			typography: ({ theme }) => ({
+				DEFAULT: {
+					css: {
+						a: {
+							color: theme("colors.indigo.700"),
+							textDecoration: "none"
+						}
+					}
+				}
+			})
 		}
 	},
-	plugins: []
+	plugins: [require("@tailwindcss/typography")]
 };
