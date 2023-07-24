@@ -5,15 +5,18 @@
 </script>
 
 <figure class="cms-prose-figure">
-	<div>
+	<a class="img-link" href="/images/02-2023/filmstrip-icusa-image-experiment.png" target="_blank">
 		<img {src} {alt} loading="lazy" />
-	</div>
+	</a>
 	<figcaption class="caption">
 		{caption}
 	</figcaption>
 </figure>
 
 <style lang="postcss">
+	.img-link {
+		@apply hover:cursor-zoom-in;
+	}
 	.caption {
 		@apply text-xs text-[#ebb3a9] font-semibold;
 	}
