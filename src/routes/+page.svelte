@@ -19,10 +19,7 @@
 			I am a Frontend Developer deeply interested in Javascript applications. I use the latest
 			technology available to deliver high performing products which can save you money and time.
 		</p>
-		<a href="/about" class="page-link">
-			About me
-			<span>&rarr;</span>
-		</a>
+		<a href="/about" class="page-link"> About me </a>
 	</section>
 	<section id="blog-list" class="page-section">
 		<div class="section-head">
@@ -111,10 +108,7 @@
 	<section id="around-the-web" class="page-section">
 		<h2 class="heading heading--sub">Around the web</h2>
 		<p class="mb-4">A list of sites that I liked or have taught me something</p>
-		<a href="/around-the-web" class="page-link">
-			See the links
-			<span>&rarr;</span>
-		</a>
+		<a href="/around-the-web" class="page-link"> See the links </a>
 	</section>
 </div>
 

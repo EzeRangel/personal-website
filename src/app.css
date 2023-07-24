@@ -40,16 +40,8 @@ body {
 }
 
 .page-link {
-	@apply font-semibold transition-colors;
+	@apply font-semibold transition-colors underline;
 	@apply hover:text-featured-dark;
-}
-
-.page-link > span {
-	@apply transition-transform translate-x-0 inline-block;
-}
-
-.page-link:hover > span {
-	@apply translate-x-4;
 }
 
 .external-link {
