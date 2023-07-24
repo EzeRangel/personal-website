@@ -20,7 +20,7 @@
 		</div>
 	</header>
 	<div class="wrapper">
-		<div class="prose mx-auto prose-lg md:prose-xl">
+		<div class="prose prose-lg md:prose-xl">
 			<Content />
 		</div>
 	</div>

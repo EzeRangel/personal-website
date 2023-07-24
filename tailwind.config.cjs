@@ -20,8 +20,7 @@ module.exports = {
 				DEFAULT: {
 					css: {
 						a: {
-							color: theme("colors.indigo.700"),
-							textDecoration: "none"
+							color: theme("colors.indigo.700")
 						}
 					}
 				}
