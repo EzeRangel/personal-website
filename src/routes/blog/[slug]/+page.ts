@@ -1,6 +1,7 @@
 import type { MDXPost } from "$lib/types";
 import type { SvelteComponent } from "svelte";
 import type { PageLoad } from "./$types";
+import type { Config } from "@sveltejs/adapter-vercel";
 
 interface PageProps {
 	post: {
@@ -10,6 +11,12 @@ interface PageProps {
 		Content: SvelteComponent;
 	};
 }
+
+export const config: Config = {
+	isr: {
+		expiration: 60 * 60
+	}
+};
 
 export const load: PageLoad<PageProps> = async ({ params }) => {
 	const post: MDXPost = await import(`../../../lib/blog/${params.slug}.md`);
