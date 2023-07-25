@@ -22,12 +22,6 @@ export const config: Config = {
 	}
 };
 
-/**
- * ... so I can prerender this page at build time
- * and let Vercel do their ISR things.
- */
-export const prerender = true;
-
 // This is like Nextjs' getServerSideProps, cool...
 export const load: PageServerLoad<PageProps> = async () => {
 	const database = await notion.databases.query({
