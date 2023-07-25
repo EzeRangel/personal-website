@@ -44,11 +44,7 @@ body {
 	@apply hover:text-featured-dark;
 }
 
-.external-link {
-	@apply font-semibold underline;
-}
-
-.external-link > span {
+.page-link > span {
 	@apply inline-block;
 }
 
