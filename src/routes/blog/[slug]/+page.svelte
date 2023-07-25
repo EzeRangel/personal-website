@@ -10,9 +10,9 @@
 	<header class="header">
 		<div class="header-inner">
 			<div>
-				<p class="post-meta">
+				<time datetime={dayjs(published_at).format()} class="post-meta">
 					{dayjs(published_at).format("MMMM DD, YYYY")}
-				</p>
+				</time>
 				<h1 class="post-title">
 					{title}
 				</h1>
@@ -42,6 +42,6 @@
 	}
 
 	.post-meta {
-		@apply font-body mb-6 text-lg font-bold capitalize;
+		@apply font-body mb-6 text-lg font-bold capitalize block;
 	}
 </style>

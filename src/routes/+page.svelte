@@ -27,6 +27,11 @@
 		</div>
 		<ul class="space-y-4">
 			<li>
+				<a href="/blog/icusa-case-study" class="page-link">
+					ICUSA: Achieving a Faster and More Optimized Digital Presence
+				</a>
+			</li>
+			<li>
 				<a
 					href="https://typeshare.co/ezerangel/posts/-MnccuWBHwavQTd9gvWg"
 					class="external-link"

@@ -1,5 +1,6 @@
 ---
 title: "ICUSA: Achieving a Faster and More Optimized Digital Presence"
+description: "A complete reorientation of ICUSA's digital presence leading to an improved user experience."
 published_at: "2023-02-15"
 ---
 
