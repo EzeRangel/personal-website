@@ -10,6 +10,7 @@
 	--font_48: 3rem;
 	--color_featured: 166 243 231;
 	--color_featured_dark: 0 183 204;
+	--color_phlox: 192 76 253;
 }
 
 html,
@@ -25,30 +26,26 @@ body {
 	@apply xl:max-w-6xl;
 }
 
-.page-header{
+.page-header {
 	@apply py-14 text-center mb-12 max-w-2xl mx-auto;
 	@apply md:pt-28 md:pb-10 md:mb-20;
 }
 
-.page-header-copy{
-	@apply text-lg;
+.page-header-copy {
+	@apply text-xl leading-9;
 }
 
 .page-section {
-	@apply mb-12 md:mb-20;;
+	@apply mb-12 md:mb-20;
 }
 
 .page-link {
-	@apply font-semibold transition-colors;
+	@apply font-semibold transition-colors underline;
 	@apply hover:text-featured-dark;
 }
 
 .page-link > span {
-	@apply transition-transform translate-x-0 inline-block;
-}
-
-.page-link:hover > span {
-	@apply translate-x-4;
+	@apply inline-block;
 }
 
 .header {
@@ -69,7 +66,7 @@ body {
 	@apply border-b-[15px] border-featured;
 }
 
-.heading__page{
+.heading__page {
 	@apply mb-12;
 }
 
