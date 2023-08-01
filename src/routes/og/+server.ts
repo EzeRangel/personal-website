@@ -15,7 +15,7 @@ const buildTemplate = (title: string, date?: string) => {
       </div>
       <div tw="flex">
         <span tw="rounded-full overflow-hidden inline-block">
-          <img src="https://ezerangel.com/images/logo.png" width="60" />
+          <img src="https://www.ezerangel.com/images/logo.png" width="60" />
         </span>
       </div>
     </div>
