@@ -7,7 +7,7 @@
 			<span>
 				I build websites
 				<br />
-				that makes Google
+				that make Google
 				<br />
 				<a href="https://pagespeed.web.dev/" rel="noopener noreferrer" target="_blank">
 					PageSpeed
