@@ -74,25 +74,25 @@
 			<p>These are some companies I have collaborated with.</p>
 		</div>
 		<div class="social-proof-grid">
-			<span>
+			<span class="social-proof-img">
 				<img src="/images/topdoctors-logo.webp" alt="Logo de TopDoctors" width="300" />
 			</span>
-			<span>
+			<span class="social-proof-img">
 				<img src="/images/citicinemas-logo.webp" alt="Logo de Citicinemas" width="300" />
 			</span>
-			<span>
+			<span class="social-proof-img">
 				<img src="/images/maxilana-logo.webp" alt="Logo de Maxilana" width="300" />
 			</span>
-			<span>
+			<span class="social-proof-img">
 				<img src="/images/sweetleaf-logo.webp" alt="Logo de SweetLeaf" width="300" />
 			</span>
-			<span>
+			<span class="social-proof-img">
 				<img src="/images/icusa-logo.svg" alt="Logo de ICUSA" width="300" />
 			</span>
-			<span>
+			<span class="social-proof-img">
 				<img src="/images/logo-coppel.webp" alt="Logo de Coppel" width="300" />
 			</span>
-			<span>
+			<span class="social-proof-img">
 				<img src="/images/viva-aerobus.webp" alt="Logo de VivaAerobus" width="300" />
 			</span>
 		</div>
@@ -147,5 +147,10 @@
 	.social-proof-grid {
 		@apply grid grid-cols-4 gap-6 items-center max-w-2xl;
 		@apply md:gap-8;
+	}
+
+	.social-proof-img {
+		@apply grayscale transition-all;
+		@apply hover:grayscale-0;
 	}
 </style>
