@@ -7,7 +7,7 @@
 		<a href="/">Ezequiel Rangel</a>
 	</header>
 	<section id="intro" class="section hero">
-		<h1 class="hero__title">
+		<h1 class="heading hero__title">
 			<span>
 				I build websites
 				<br />
@@ -114,8 +114,7 @@
 	}
 
 	.hero__title {
-		@apply text-4xl leading-[4rem] font-display mb-12 font-normal;
-		@apply md:leading-[6rem] md:text-[4.3rem];
+		@apply leading-[4rem] mb-12 font-bold;
 	}
 
 	.hero__title > span:hover {

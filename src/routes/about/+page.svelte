@@ -52,7 +52,7 @@
 	}
 
 	.header__icon {
-		@apply inline-block p-4 rounded-full border-2 border-black;
+		@apply inline-block p-4 rounded-lg border-2 border-black;
 	}
 
 	.about__head {

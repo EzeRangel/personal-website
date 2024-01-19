@@ -2,20 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-	--font_14: 0.875rem;
-	--font_16: 1rem;
-	--font_30: 1.875rem;
-	--font_36: 2.25rem;
-	--font_48: 3rem;
-	--color_featured: 166 243 231;
-	--color_featured_dark: 0 183 204;
-	--color_phlox: 192 76 253;
-}
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 224 71.4% 4.1%;
+		--card: 0 0% 100%;
+		--card-foreground: 224 71.4% 4.1%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 224 71.4% 4.1%;
+		--primary: 220.9 39.3% 11%;
+		--primary-foreground: 210 20% 98%;
+		--secondary: 220 14.3% 95.9%;
+		--secondary-foreground: 220.9 39.3% 11%;
+		--muted: 220 14.3% 95.9%;
+		--muted-foreground: 220 8.9% 46.1%;
+		--accent: 220 14.3% 95.9%;
+		--accent-foreground: 220.9 39.3% 11%;
+		--destructive: 0 72.22% 50.59%;
+		--destructive-foreground: 210 20% 98%;
+		--border: 220 13% 91%;
+		--input: 220 13% 91%;
+		--ring: 224 71.4% 4.1%;
+		--radius: 0.5rem;
+		--featured: 166 243 231;
+		--featured-foreground: 0 183 204;
+		--phlox: 192 76 253;
+	}
+	.dark {
+		--background: 224 71.4% 4.1%;
+		--foreground: 210 20% 98%;
+		--card: 224 71.4% 4.1%;
+		--card-foreground: 210 20% 98%;
+		--popover: 224 71.4% 4.1%;
+		--popover-foreground: 210 20% 98%;
+		--primary: 210 20% 98%;
+		--primary-foreground: 220.9 39.3% 11%;
+		--secondary: 215 27.9% 16.9%;
+		--secondary-foreground: 210 20% 98%;
+		--muted: 215 27.9% 16.9%;
+		--muted-foreground: 217.9 10.6% 64.9%;
+		--accent: 215 27.9% 16.9%;
+		--accent-foreground: 210 20% 98%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 20% 98%;
+		--border: 215 27.9% 16.9%;
+		--input: 215 27.9% 16.9%;
+		--ring: 216 12.2% 83.9%;
+		/*--featured: 166 243 231;
+		--featured-foreground: 0 183 204;
+		--phlox: 192 76 253;*/
+	}
 
-html,
-body {
-	@apply font-body font-normal text-base text-black bg-white;
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+		font-feature-settings: "rlig" 1, "calt" 1;
+	}
 }
 
 .wrapper {
@@ -41,7 +86,7 @@ body {
 
 .page-link {
 	@apply font-semibold transition-colors underline;
-	@apply hover:text-featured-dark;
+	@apply hover:text-featured-foreground;
 }
 
 .page-link > span {
@@ -58,8 +103,8 @@ body {
 }
 
 .heading {
-	@apply font-display font-normal text-4xl leading-[4rem];
-	@apply md:leading-[6rem] md:text-7xl;
+	@apply font-extrabold text-4xl tracking-tight;
+	@apply lg:text-5xl;
 }
 
 .heading > span {

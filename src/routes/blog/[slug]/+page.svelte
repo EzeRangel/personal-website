@@ -13,7 +13,7 @@
 				<time datetime={dayjs(published_at).format()} class="post-meta">
 					{dayjs(published_at).format("MMMM DD, YYYY")}
 				</time>
-				<h1 class="post-title">
+				<h1 class="heading post-title">
 					{title}
 				</h1>
 			</div>
@@ -37,11 +37,11 @@
 	}
 
 	.post-title {
-		@apply text-5xl leading-[1] tracking-tighter font-display;
+		@apply text-5xl leading-[1] tracking-tighter;
 		@apply md:text-7xl;
 	}
 
 	.post-meta {
-		@apply font-body mb-6 text-lg font-bold capitalize block;
+		@apply mb-6 text-lg font-bold capitalize block;
 	}
 </style>
