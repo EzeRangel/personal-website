@@ -14,7 +14,8 @@ module.exports = {
 			}
 		},
 		fontFamily: {
-			sans: ["Inter", ...fontFamily.sans]
+			sans: ["Inter", ...fontFamily.sans],
+			mono: ["Geist Mono", ...fontFamily.mono]
 		},
 		borderRadius: {
 			lg: "var(--radius)",
