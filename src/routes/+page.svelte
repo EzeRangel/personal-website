@@ -1,6 +1,5 @@
 <script>
 	import { Github, Globe, Linkedin, Mail } from "lucide-svelte";
-	import Button from "$lib/components/ui/button/button.svelte";
 	import { cn } from "$lib/util/styles";
 	import { buttonVariants } from "$lib/components/ui/button";
 </script>
@@ -8,6 +7,9 @@
 <div class="container max-w-5xl">
 	<section id="intro" class="section hero">
 		<div class="hero-wrap">
+			<div>
+				<span class="hero-avatar" />
+			</div>
 			<div class="space-y-2 max-w-xl">
 				<h1 class="h2">Ezequiel Rangel</h1>
 				<p class="copy">
@@ -22,9 +24,6 @@
 					Sinaloa, Mexico, MST
 				</p>
 			</div>
-			<div>
-				<span class="hero-avatar" />
-			</div>
 		</div>
 		<div class="hero-footer">
 			<a
@@ -34,7 +33,7 @@
 				<Mail size={18} />
 			</a>
 			<a
-				href="www.linkedin.com/in/ezerangel"
+				href="https://linkedin.com/in/ezerangel"
 				rel="noopener noreferrer"
 				class={cn(buttonVariants({ variant: "outline", size: "icon" }))}
 			>
@@ -51,7 +50,7 @@
 	</section>
 	<section id="about" class="section">
 		<div class="space-y-2">
-			<h2 class="h2">About</h2>
+			<h1 class="h2">About</h1>
 			<div class="copy">
 				I'm a software engineer who's all about frontend development. I have experience building
 				optimized websites with React and more recently with Typescript. I have closely followed the
@@ -63,13 +62,13 @@
 	</section>
 	<section id="work-experience" class="section">
 		<div class="space-y-2">
-			<h2 class="h2 mb-4">Work Experience</h2>
+			<h1 class="h2 mb-4">Work Experience</h1>
 			<div class="work">
 				<div class="work-header">
-					<h3 class="h3">ADHOC TI</h3>
-					<time class="work-time">mar. 2017 - current</time>
+					<h2 class="h3">ADHOC TI</h2>
+					<span class="work-time">mar. 2017 - current</span>
 				</div>
-				<h4 class="work-position">Frontend & Mobile Engineer</h4>
+				<h3 class="work-position">Frontend & Mobile Engineer</h3>
 				<div class="work-description">
 					<p>
 						Software engineer oriented to development with Frontend technologies. I am in charge of
@@ -85,10 +84,10 @@
 			</div>
 			<div class="work">
 				<div class="work-header">
-					<h3 class="h3">ANCLA Studio</h3>
-					<time class="work-time">nov. 2011 - mar. 2017</time>
+					<h2 class="h3">ANCLA Studio</h2>
+					<span class="work-time">nov. 2011 - mar. 2017</span>
 				</div>
-				<h4 class="work-position">Web Developer</h4>
+				<h3 class="work-position">Web Developer</h3>
 				<div class="work-description">
 					<p>Frontend developer. With experience in Mobile-friendly and responsive development.</p>
 					<p>
@@ -101,10 +100,10 @@
 			</div>
 			<div class="work">
 				<div class="work-header">
-					<h3 class="h3">Inglés Sin Barreras</h3>
-					<time class="work-time">feb. 2011 - nov. 2011</time>
+					<h2 class="h3">Inglés Sin Barreras</h2>
+					<span class="work-time">feb. 2011 - nov. 2011</span>
 				</div>
-				<h4 class="work-position">Webmaster</h4>
+				<h3 class="work-position">Webmaster</h3>
 				<div class="work-description">
 					<p>
 						In charge of the sites managed by the company, creation and optimization of web pages,
@@ -129,8 +128,8 @@
 	}
 
 	.hero-wrap {
-		@apply flex flex-row items-center justify-between gap-3;
-		@apply mb-3;
+		@apply flex flex-col gap-5 mb-3;
+		@apply md:flex-row-reverse md:justify-between md:items-center md:gap-3;
 	}
 
 	.hero-avatar {
@@ -151,7 +150,8 @@
 	}
 
 	.work-header {
-		@apply flex flex-row items-center justify-between;
+		@apply flex flex-col;
+		@apply md:flex-row md:items-baseline md:justify-between;
 	}
 
 	.work-time {
