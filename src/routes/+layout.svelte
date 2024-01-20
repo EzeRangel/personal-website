@@ -2,6 +2,7 @@
 	import "@fontsource/geist-mono";
 	import "../app.css";
 	import { page } from "$app/stores";
+	import Navigation from "$lib/components/Navigation.svelte";
 
 	let currentYear = new Date().getFullYear();
 
@@ -33,4 +34,5 @@
 	<meta name="twitter:image" content={`https://www.ezerangel.com/og?title=${seoTitle}`} />
 </svelte:head>
 
+<Navigation />
 <slot />

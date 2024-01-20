@@ -7,7 +7,7 @@
 		"baseColor": "gray"
 	},
 	"aliases": {
-		"utils": "$lib/util",
-		"components": "$lib/components/ui"
+		"utils": "$lib/util/styles",
+		"components": "$lib/components"
 	}
 }
