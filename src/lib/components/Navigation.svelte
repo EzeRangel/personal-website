@@ -1,9 +1,27 @@
+<script lang="ts">
+	import { page } from "$app/stores";
+	import { cn } from "$lib/util/styles";
+
+	let items = [
+		{ label: "Home", path: "/" },
+		{ label: "Writing", path: "/writing" },
+		{ label: "Reading", path: "/reading" },
+		{ label: "Bookmarks", path: "/bookmarks" }
+	];
+</script>
+
 <header class="header">
 	<nav class="nav">
-		<a class="nav-item selected" href="/">Home</a>
-		<a class="nav-item" href="/writing">Writing</a>
-		<a class="nav-item" href="/reading">Reading</a>
-		<a class="nav-item" href="/bookmarks">Bookmarks</a>
+		{#each items as item}
+			<a
+				href={item.path}
+				class={cn("nav-item", {
+					["selected"]: $page.url.pathname === item.path
+				})}
+			>
+				{item.label}
+			</a>
+		{/each}
 	</nav>
 </header>
 
