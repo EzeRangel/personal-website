@@ -65,19 +65,26 @@
 
 @layer components {
 	.h1 {
-		@apply text-4xl font-extrabold tracking-tight lg:text-5xl;
+		@apply text-4xl tracking-tight lg:text-5xl;
 	}
 
 	.h2 {
-		@apply text-3xl font-semibold tracking-tight transition-colors;
+		@apply text-3xl tracking-tight transition-colors;
 	}
 
 	.h3 {
-		@apply text-2xl font-semibold tracking-tight;
+		@apply text-2xl tracking-tight;
 	}
 
 	.h4 {
-		@apply text-xl font-semibold tracking-tight;
+		@apply text-xl tracking-tight;
+	}
+
+	.h1,
+	.h2,
+	.h3,
+	.h4 {
+		@apply font-bold;
 	}
 }
 

@@ -65,16 +65,7 @@ module.exports = {
 					DEFAULT: "hsl(var(--card) / <alpha-value>)",
 					foreground: "hsl(var(--card-foreground) / <alpha-value>)"
 				}
-			},
-			typography: ({ theme }) => ({
-				DEFAULT: {
-					css: {
-						a: {
-							color: theme("colors.indigo.700")
-						}
-					}
-				}
-			})
+			}
 		}
 	},
 	plugins: [require("@tailwindcss/typography")]

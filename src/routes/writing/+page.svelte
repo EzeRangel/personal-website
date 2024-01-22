@@ -6,9 +6,9 @@
 	const { posts } = data;
 </script>
 
-<section class="container max-w-3xl mt-12">
+<section class="container max-w-5xl mt-12">
 	<div class="mb-16">
-		<h1 class="h1 mb-3">Writing</h1>
+		<h1 class="h2 mb-3">Writing</h1>
 		<div class="max-w-lg">
 			<p class="text-lg text-muted-foreground">
 				Brain dumps, explorations, and how-to guides. I write about different topics, such as design
@@ -48,6 +48,3 @@
 		{/each}
 	</div>
 </section>
-
-<style lang="postcss">
-</style>
