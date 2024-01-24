@@ -2,6 +2,7 @@ import type { MDXPost } from "$lib/types";
 import type { SvelteComponent } from "svelte";
 import type { PageLoad } from "./$types";
 import type { Config } from "@sveltejs/adapter-vercel";
+import { redirect } from "@sveltejs/kit";
 
 interface PageProps {
 	post: {
@@ -20,8 +21,12 @@ export const config: Config = {
 
 export const load: PageLoad<PageProps> = async ({ params }) => {
 	const post: MDXPost = await import(`../../../lib/blog/${params.slug}.md`);
-	const { title, description, published_at } = post.metadata;
+	const { title, description, published_at, external, link } = post.metadata;
 	const Content = post.default;
+
+	if (external && link) {
+		throw redirect(301, link);
+	}
 
 	return {
 		seo: {
