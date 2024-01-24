@@ -45,9 +45,9 @@ export const load: PageServerLoad<PageProps> = async () => {
 	return {
 		links: pages,
 		seo: {
-			title: "Around the web • Ezequiel Rangel",
+			title: "Bookmarks • Ezequiel Rangel",
 			description: "All the cool links I've found while navigating on the Internet",
-			url: "https://www.ezerangel.com/around-the-web"
+			url: "https://www.ezerangel.com/bookmarks"
 		}
 	};
 };
