@@ -1,5 +1,6 @@
 <script lang="ts">
 	import "@fontsource/geist-mono";
+	import "@fontsource-variable/inter";
 	import "../app.css";
 	import { page } from "$app/stores";
 	import Navigation from "$lib/components/Navigation.svelte";

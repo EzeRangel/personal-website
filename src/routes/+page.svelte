@@ -35,6 +35,7 @@
 			<a
 				href="https://linkedin.com/in/ezerangel"
 				rel="noopener noreferrer"
+				target="_blank"
 				class={cn(buttonVariants({ variant: "outline", size: "icon" }))}
 			>
 				<Linkedin size={18} />
@@ -42,6 +43,7 @@
 			<a
 				href="https://github.com/EzeRangel"
 				rel="noopener noreferrer"
+				target="_blank"
 				class={cn(buttonVariants({ variant: "outline", size: "icon" }))}
 			>
 				<Github size={18} />
@@ -53,10 +55,9 @@
 			<h1 class="h2">About</h1>
 			<div class="copy">
 				I'm a software engineer who's all about frontend development. I have experience building
-				optimized websites with React and more recently with Typescript. I have closely followed the
-				React ecosystem and adopting the changes they propose, this has allowed me to work with both
-				client-side and server-side rendered apps. I have also been able to work on mobile apps with
-				React Native that are already in the app stores.
+				digital products with React, Typescript and TailwindCSS; working in projects with
+				client-side and server-side rendered apps. I have also been able to work on mobile apps
+				using React Native that are already in the app stores.
 			</div>
 		</div>
 	</section>
@@ -100,14 +101,14 @@
 			</div>
 			<div class="work">
 				<div class="work-header">
-					<h2 class="h3">Inglés Sin Barreras</h2>
+					<h2 class="h3">Ingles Sin Barreras</h2>
 					<span class="work-time">feb. 2011 - nov. 2011</span>
 				</div>
 				<h3 class="work-position">Webmaster</h3>
 				<div class="work-description">
 					<p>
-						In charge of the sites managed by the company, creation and optimization of web pages,
-						development of internal applications.
+						I was in charge of the sites managed by the company, creation and optimization of web
+						pages, development of internal applications.
 					</p>
 				</div>
 			</div>
@@ -124,7 +125,7 @@
 		@apply font-mono text-muted-foreground leading-7;
 	}
 	.hero {
-		@apply mt-8;
+		@apply mt-12;
 	}
 
 	.hero-wrap {

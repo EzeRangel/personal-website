@@ -11,8 +11,8 @@
 		<h1 class="h2 mb-3">Writing</h1>
 		<div class="max-w-lg">
 			<p class="text-lg text-muted-foreground">
-				Brain dumps, explorations, and how-to guides. I write about different topics, such as design
-				system, accessibility, start ups and user/dev experience.
+				Brain dumps, explorations, and how-to guides. I write about productivity, programming,
+				user/dev experience and other topics.
 			</p>
 		</div>
 	</div>

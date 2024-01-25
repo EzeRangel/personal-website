@@ -14,13 +14,13 @@
 			</h1>
 		</header>
 		<aside class="col-span-10 md:col-start-8 md:col-span-3 md:row-start-2">
-			<div class="mb-4">
+			<div class="mb-4 text-muted-foreground">
 				<h4 class="font-medium">Date</h4>
 				<time datetime={dayjs(published_at).format()} class="text-sm">
 					{dayjs(published_at).format("MMMM DD, YYYY")}
 				</time>
 			</div>
-			<div>
+			<div class="text-muted-foreground">
 				<h4 class="font-medium">Meta</h4>
 				<p class="text-sm">
 					{data.post.description}
@@ -28,7 +28,7 @@
 			</div>
 		</aside>
 		<div class="col-span-10 md:col-start-1 md:col-span-7">
-			<div class="prose">
+			<div class="prose prose-gray">
 				<Content />
 			</div>
 		</div>

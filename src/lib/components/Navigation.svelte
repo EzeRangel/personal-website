@@ -5,7 +5,6 @@
 	let items = [
 		{ label: "Home", path: "/" },
 		{ label: "Writing", path: "/writing" },
-		{ label: "Reading", path: "/reading" },
 		{ label: "Bookmarks", path: "/bookmarks" }
 	];
 </script>
@@ -27,7 +26,7 @@
 
 <style lang="postcss">
 	.header {
-		@apply container;
+		@apply px-4;
 	}
 
 	.nav {
