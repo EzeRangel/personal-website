@@ -25,7 +25,7 @@ export const load: PageLoad<PageProps> = async ({ params }) => {
 	const Content = post.default;
 
 	if (external && link) {
-		throw redirect(301, link);
+		redirect(301, link);
 	}
 
 	return {
