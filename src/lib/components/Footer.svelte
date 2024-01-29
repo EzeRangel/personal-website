@@ -65,7 +65,7 @@
 				</a>
 			</div>
 			<div>
-				<span class="block text-muted-foreground text-7xl">
+				<span class="block text-muted-foreground text-nowrap text-6xl md:text-7xl">
 					{time}
 				</span>
 			</div>
@@ -83,7 +83,7 @@
 					class="text-muted-foreground/60 text-xs underline"
 				>
 					<Github size={14} class="inline-block" />
-					<span>{`EzeRangel/personal-website#${commitSha}`}</span>
+					<span>{`EzeRangel/personal-website#${commitSha.slice(0, 7)}`}</span>
 				</a>
 			</div>
 		</div>

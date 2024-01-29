@@ -27,7 +27,7 @@
 	</div>
 	<div class="grid grid-cols-12 gap-x-4 gap-y-6">
 		{#each links as link (link.id)}
-			<div class="col-span-4">
+			<div class="col-span-12 md:col-span-4">
 				<Card.Root>
 					<CardHeader>
 						<CardTitle>

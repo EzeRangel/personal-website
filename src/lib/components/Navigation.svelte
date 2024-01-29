@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import { cn } from "$lib/util/styles";
+	import Separator from "./ui/separator/separator.svelte";
 
 	let items = [
 		{ label: "Home", path: "/" },
@@ -10,27 +11,32 @@
 </script>
 
 <header class="header">
-	<nav class="nav">
-		{#each items as item}
-			<a
-				href={item.path}
-				class={cn("nav-item", {
-					["selected"]: $page.url.pathname === item.path
-				})}
-			>
-				{item.label}
-			</a>
-		{/each}
-	</nav>
+	<div class="flex flex-row items-center justify-between">
+		<a href="/">
+			<span class="font-bold text-3xl text-black"> ER </span>
+		</a>
+		<nav class="nav">
+			{#each items as item}
+				<a
+					href={item.path}
+					class={cn("nav-item", {
+						["selected"]: $page.url.pathname === item.path
+					})}
+				>
+					{item.label}
+				</a>
+			{/each}
+		</nav>
+	</div>
 </header>
 
 <style lang="postcss">
 	.header {
-		@apply px-4;
+		@apply container max-w-5xl;
 	}
 
 	.nav {
-		@apply w-full flex flex-row items-center gap-2 py-6;
+		@apply flex flex-row items-center gap-2 py-6;
 		@apply md:gap-4;
 	}
 
