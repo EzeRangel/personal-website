@@ -4,7 +4,6 @@
 	import Separator from "./ui/separator/separator.svelte";
 	import { onMount } from "svelte";
 	import { ArrowRight, Github } from "lucide-svelte";
-	import { PUBLIC_VITE_VERCEL_GIT_COMMIT_SHA } from "$env/static/public";
 	import Availability from "./Availability.svelte";
 
 	dayjs.extend(utc);
@@ -38,6 +37,11 @@
 			clearInterval(interval);
 		};
 	});
+
+	/**
+	 * @type {string}
+	 */
+	export let commitSha;
 </script>
 
 <footer class="mt-10 bg-muted">
@@ -79,7 +83,7 @@
 					class="text-muted-foreground/60 text-xs underline"
 				>
 					<Github size={14} class="inline-block" />
-					<span>{`EzeRangel/personal-website#${PUBLIC_VITE_VERCEL_GIT_COMMIT_SHA}`}</span>
+					<span>{`EzeRangel/personal-website#${commitSha}`}</span>
 				</a>
 			</div>
 		</div>

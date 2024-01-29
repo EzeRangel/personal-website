@@ -5,8 +5,7 @@
 	import { page } from "$app/stores";
 	import Navigation from "$lib/components/Navigation.svelte";
 	import Footer from "$lib/components/Footer.svelte";
-
-	let currentYear = new Date().getFullYear();
+	import type { LayoutServerData } from "./$types";
 
 	const canonical = "https://www.ezerangel.com";
 	const defaultTitle = "Ezequiel Rangel";
@@ -15,6 +14,8 @@
 	$: seoURL = $page.data?.seo?.url ?? canonical;
 	$: seoTitle = $page.data?.seo?.title ?? defaultTitle;
 	$: seoDescription = $page.data?.seo?.description ?? defaultDescription;
+
+	export let data: LayoutServerData;
 </script>
 
 <svelte:head>
@@ -38,4 +39,4 @@
 
 <Navigation />
 <slot />
-<Footer />
+<Footer commitSha={data.deploymentCommitSha} />
