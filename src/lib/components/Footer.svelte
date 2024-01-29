@@ -5,10 +5,27 @@
 	import { onMount } from "svelte";
 	import { ArrowRight, Github } from "lucide-svelte";
 	import { env } from "$env/dynamic/public";
+	import Availability from "./Availability.svelte";
 
 	dayjs.extend(utc);
 	const utcOffset = -420;
 	let localTime = dayjs.utc().utcOffset(utcOffset);
+
+	const STATUSES = [
+		{
+			value: "available",
+			label: "Available for new opportunities"
+		},
+		{
+			value: "busy",
+			label: "Working on a project"
+		},
+		{
+			value: "away",
+			label: "Taking time for myself"
+		}
+	];
+	const currentStatus = "available";
 
 	$: time = localTime.format("hh:mm A");
 
@@ -27,8 +44,13 @@
 	<div class="container max-w-5xl">
 		<div class="flex flex-col md:flex-row justify-between gap-y-4 py-8">
 			<div>
-				<p class="text-accent-foreground text-sm">Currently</p>
-				<p class="text-muted-foreground text-sm">Available for new opportunities</p>
+				<p class="text-accent-foreground text-sm">
+					<Availability status={currentStatus} />
+					Currently
+				</p>
+				<p class="text-muted-foreground text-sm">
+					{STATUSES.find((status) => status.value === currentStatus)?.label}
+				</p>
 				<a
 					href="mailto:hey@ezerangel.com"
 					class="text-muted-foreground text-sm hover:text-accent-foreground transition-colors"
