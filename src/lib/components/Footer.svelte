@@ -3,7 +3,8 @@
 	import utc from "dayjs/plugin/utc";
 	import Separator from "./ui/separator/separator.svelte";
 	import { onMount } from "svelte";
-	import { ArrowRight } from "lucide-svelte";
+	import { ArrowRight, Github } from "lucide-svelte";
+	import { env } from "$env/dynamic/public";
 
 	dayjs.extend(utc);
 	const utcOffset = -420;
@@ -45,9 +46,20 @@
 		</div>
 		<Separator />
 		<div class="py-6">
-			<p class="text-center text-muted-foreground text-xs">
-				&copy; {new Date().getFullYear()} - Made with ❤️ in 🇲🇽
-			</p>
+			<div class="flex flex-col md:flex-row justify-between items-center gap-y-2">
+				<p class="text-muted-foreground/60 text-xs">
+					{new Date().getFullYear()} - Made with ❤️ in 🇲🇽
+				</p>
+				<a
+					target="_blank"
+					href="https://github.com/EzeRangel/personal-website"
+					rel="noopener noreferrer"
+					class="text-muted-foreground/60 text-xs underline"
+				>
+					<Github size={14} class="inline-block" />
+					<span>{`EzeRangel/personal-website#${env.PUBLIC_VITE_VERCEL_GIT_COMMIT_SHA}`}</span>
+				</a>
+			</div>
 		</div>
 	</div>
 </footer>
