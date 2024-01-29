@@ -4,6 +4,7 @@
 	import "../app.css";
 	import { page } from "$app/stores";
 	import Navigation from "$lib/components/Navigation.svelte";
+	import Footer from "$lib/components/Footer.svelte";
 
 	let currentYear = new Date().getFullYear();
 
@@ -37,3 +38,4 @@
 
 <Navigation />
 <slot />
+<Footer />
