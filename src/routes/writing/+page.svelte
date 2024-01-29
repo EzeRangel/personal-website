@@ -16,10 +16,19 @@
 			</p>
 		</div>
 	</div>
-	<div class="grid grid-cols-8 gap-x-3 gap-y-8">
+	<div class="space-y-4 divide-y">
 		{#each posts as post}
-			<article class="col-span-8 grid grid-cols-subgrid">
-				<div class="col-span-8 md:col-span-6">
+			<article class="py-6 md:px-6 flex flex-col md:flex-row items-start justify-between">
+				<div class="flex-1">
+					<time datetime="2023-10-22" class="block text-sm text-muted-foreground">
+						{new Date(post.meta.published_at).toLocaleDateString("en", {
+							year: "numeric",
+							day: "2-digit",
+							month: "long"
+						})}
+					</time>
+				</div>
+				<div class="flex-1">
 					<h2 class="h4 mb-1 transition-colors hover:text-phlox">
 						<a
 							href={post.meta?.link ?? `${post.path}`}
@@ -31,18 +40,9 @@
 							{/if}
 						</a>
 					</h2>
-					<p class="text-muted-foreground">
+					<p class="text-muted-foreground text-sm">
 						{post.meta.description}
 					</p>
-				</div>
-				<div class="hidden md:block md:col-span-2">
-					<time datetime="2023-10-22" class="block text-right text-sm text-muted-foreground">
-						{new Date(post.meta.published_at).toLocaleDateString("en", {
-							year: "numeric",
-							day: "2-digit",
-							month: "long"
-						})}
-					</time>
 				</div>
 			</article>
 		{/each}
