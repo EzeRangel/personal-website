@@ -19,8 +19,8 @@
 		</span>
 	{:else if status === "away"}
 		<span class="relative inline-flex">
-			<span class="animate-ping inline-flex h-full w-full text-blue-400">z</span>
-			<span class="animate-ping text-blue-500">
+			<span class="animate-quick-ping inline-flex h-full w-full text-blue-400">z</span>
+			<span class="animate-quick-ping text-blue-500">
 				<sup>z<sup>z</sup></sup>
 			</span>
 		</span>

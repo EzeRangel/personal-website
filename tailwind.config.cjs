@@ -65,6 +65,9 @@ module.exports = {
 					DEFAULT: "hsl(var(--card) / <alpha-value>)",
 					foreground: "hsl(var(--card-foreground) / <alpha-value>)"
 				}
+			},
+			animation: {
+				"quick-ping": "ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite"
 			}
 		}
 	},
