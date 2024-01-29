@@ -4,7 +4,7 @@
 	import Separator from "./ui/separator/separator.svelte";
 	import { onMount } from "svelte";
 	import { ArrowRight, Github } from "lucide-svelte";
-	import { env } from "$env/dynamic/public";
+	import { PUBLIC_VITE_VERCEL_GIT_COMMIT_SHA } from "$env/static/public";
 	import Availability from "./Availability.svelte";
 
 	dayjs.extend(utc);
@@ -79,7 +79,7 @@
 					class="text-muted-foreground/60 text-xs underline"
 				>
 					<Github size={14} class="inline-block" />
-					<span>{`EzeRangel/personal-website#${env.PUBLIC_VITE_VERCEL_GIT_COMMIT_SHA}`}</span>
+					<span>{`EzeRangel/personal-website#${PUBLIC_VITE_VERCEL_GIT_COMMIT_SHA}`}</span>
 				</a>
 			</div>
 		</div>
