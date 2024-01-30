@@ -13,3 +13,6 @@ vite.config.ts.timestamp-*
 /.husky
 .vercel
 .env*.local
+
+yarn.lock
+package-lock.json
