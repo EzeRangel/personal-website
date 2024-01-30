@@ -24,8 +24,8 @@
 	</title>
 	<link rel="canonical" href={seoURL} />
 	<meta property="og:title" content={seoTitle} />
-	<meta name="description" content={seoDescription} />
 	<meta property="description" content={seoDescription} />
+	<meta property="og:description" content={seoDescription} />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={seoURL} />
 	<meta property="og:image" content={`https://www.ezerangel.com/og?title=${seoTitle}`} />
@@ -33,7 +33,7 @@
 	<meta property="twitter:domain" content="www.ezerangel.com" />
 	<meta property="twitter:url" content={seoURL} />
 	<meta name="twitter:title" content={seoTitle} />
-	<meta name="twitter:description" content={seoDescription} />
+	<meta property="twitter:description" content={seoDescription} />
 	<meta name="twitter:image" content={`https://www.ezerangel.com/og?title=${seoTitle}`} />
 </svelte:head>
 

@@ -31,7 +31,7 @@ export const load: PageLoad<PageProps> = async () => {
 			title: `Writing • Ezequiel Rangel`,
 			description:
 				"Brain dumps, explorations, and how-to guides. " +
-				"I write about different topics, such as design system, accessibility, start ups and user/dev experience.",
+				"I write about productivity, programming, user/dev experience and other topics.",
 			url: `https://www.ezerangel.com/writing`
 		}
 	};

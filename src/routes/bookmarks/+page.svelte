@@ -20,8 +20,7 @@
 		<h1 class="h2 mb-3">Bookmarks</h1>
 		<div class="max-w-lg">
 			<p class="text-lg text-muted-foreground">
-				A list of websites that I liked, have inspired me or have taught me something. It's like my
-				timeline evolution as a developer.
+				A list of websites that I liked, have inspired me or have taught me something.
 			</p>
 		</div>
 	</div>
