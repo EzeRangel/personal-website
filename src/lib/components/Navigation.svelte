@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import { cn } from "$lib/util/styles";
-	import Separator from "./ui/separator/separator.svelte";
 
 	let items = [
 		{ label: "Home", path: "/" },

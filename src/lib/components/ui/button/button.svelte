@@ -4,7 +4,6 @@
 	import { buttonVariants, type Props, type Events } from ".";
 
 	type $$Props = Props;
-	type $$Events = Events;
 
 	let className: $$Props["class"] = undefined;
 	export let variant: $$Props["variant"] = "default";
