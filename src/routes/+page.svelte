@@ -7,9 +7,6 @@
 <div class="container max-w-5xl">
 	<section id="intro" class="section hero">
 		<div class="hero-wrap">
-			<div>
-				<span class="hero-avatar" />
-			</div>
 			<div class="space-y-2 max-w-xl">
 				<h1 class="h2">Ezequiel Rangel</h1>
 				<p class="copy">
@@ -129,12 +126,11 @@
 	}
 
 	.hero-wrap {
-		@apply flex flex-col gap-5 mb-3;
-		@apply md:flex-row-reverse md:justify-between md:items-center md:gap-3;
+		@apply mb-3;
 	}
 
 	.hero-avatar {
-		@apply block w-28 aspect-square rounded-lg bg-muted-foreground;
+		@apply block w-28 aspect-square rounded-lg bg-white;
 	}
 
 	.hero-location {
