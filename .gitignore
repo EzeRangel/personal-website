@@ -11,3 +11,10 @@ vite.config.ts.timestamp-*
 
 /.vercel
 /.husky
+.vercel
+.env*.local
+
+yarn.lock
+package-lock.json
+
+/src/routes/local-test/*

@@ -7,7 +7,7 @@ export default async function fetchPosts() {
 	const allPosts = await Promise.all(
 		iterableFiles.map(async ([path, promise]) => {
 			const post = await promise();
-			const postPath = path.slice(8, -3);
+			const postPath = path.slice(8, -3).replace("blog", "writing");
 
 			return {
 				path: postPath,
