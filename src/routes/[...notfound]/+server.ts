@@ -1,6 +1,7 @@
 import { error, redirect, type RequestHandler } from "@sveltejs/kit";
 
 const REDIRECTS: Record<string, string> = {
+	"/about": "/",
 	"/blog": "/writing",
 	"/around-the-web": "/bookmarks"
 };
