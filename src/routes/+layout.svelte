@@ -6,6 +6,14 @@
 	import Navigation from "$lib/components/Navigation.svelte";
 	import Footer from "$lib/components/Footer.svelte";
 	import type { LayoutServerData } from "./$types";
+	import { browser } from "$app/environment";
+	import { afterNavigate, beforeNavigate } from "$app/navigation";
+	import posthog from "posthog-js";
+
+	if (browser) {
+		beforeNavigate(() => posthog.capture("$pageleave"));
+		afterNavigate(() => posthog.capture("$pageview"));
+	}
 
 	const canonical = "https://www.ezerangel.com";
 	const defaultTitle = "Ezequiel Rangel";
