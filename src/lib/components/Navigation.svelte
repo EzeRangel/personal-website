@@ -3,8 +3,8 @@
 	import { cn } from "$lib/util/styles";
 
 	let items = [
-		{ label: "Home", path: "/" },
 		{ label: "Writing", path: "/writing" },
+		{ label: "Reading", path: "/reading" },
 		{ label: "Bookmarks", path: "/bookmarks" }
 	];
 </script>
