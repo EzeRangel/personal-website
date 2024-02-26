@@ -1,38 +1,24 @@
-# create-svelte
+# My website
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Hi all this is my personal website, it's built with [Svelte](https://kit.svelte.dev/) and uses a Notion integration for some parts of the content.
+I used [shadcn-ui for Svelte](https://www.shadcn-svelte.com/), feel free to look around, fork it or make whatever you want.
 
-## Creating a project
+# Run it
 
-If you're seeing this, you've probably already done this step. Congrats!
+| Command                 | Action                                             |
+| :---------------------- | :------------------------------------------------- |
+| `npm install`           | Installs dependencies                              |
+| `npm run dev`           | Start a development server                         |
+| `npm run dev -- --open` | Start the server and open the app in a browser tab |
+| `npm run build`         | Create a production version                        |
+| `npm run preview`       | Preview the production build                       |
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+You may need some env variables to make it work:
 
-# create a new project in my-app
-npm create svelte@latest my-app
+```
+NOTION_INTEGRATION_KEY=
+NOTION_DATABASE_ID=
+NOTION_READING_LIST_DATABASE_ID=
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+To deploy the app you need to install an [adapter](https://kit.svelte.dev/docs/adapters) I use the [Vercel Adapter](https://kit.svelte.dev/docs/adapter-vercel)
