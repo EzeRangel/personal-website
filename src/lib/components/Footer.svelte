@@ -24,7 +24,7 @@
 			label: "Taking time for myself"
 		}
 	];
-	const currentStatus = "available";
+	const currentStatus = "busy";
 
 	$: time = localTime.format("hh:mm A");
 
@@ -83,7 +83,7 @@
 					class="text-muted-foreground/60 text-xs underline"
 				>
 					<Github size={14} class="inline-block" />
-					<span>{`EzeRangel/personal-website#${commitSha.slice(0, 7)}`}</span>
+					<span>{`EzeRangel/personal-website#${commitSha?.slice(0, 7) ?? ""}`}</span>
 				</a>
 			</div>
 		</div>
