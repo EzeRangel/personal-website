@@ -4,11 +4,12 @@ import type { RequestHandler } from "@sveltejs/kit";
 const buildTemplate = (title: string) => {
 	return `
   <section tw="w-full h-full">
-    <div tw="w-full h-full flex flex-col justify-end py-20 px-16" style="background-image: url(https://ezerangel.com/images/og-background.png)">
-      <div tw="flex flex-col gap-8">
+		<img src="https://ezerangel.com/images/og-background.png" tw="absolute" />
+    <div tw="w-full h-full flex flex-col justify-end py-20 px-16">
+      <div tw="flex flex-col">
 				<div tw="flex">
 					<span
-						tw="font-medium text-sm text-white rounded-full bg-fuchsia-900/20 py-2 px-4 inline-block"
+						tw="font-medium text-sm text-white rounded-full bg-fuchsia-900/20 py-2 px-4"
 					>
 						https://ezerangel.com
 					</span>
