@@ -9,7 +9,12 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [
 		mdsvex({
-			extensions: [".md"]
+			extensions: [".md"],
+			highlight: {
+				alias: {
+					ts: "typescript"
+				}
+			}
 		}),
 		vitePreprocess(),
 		preprocess({
