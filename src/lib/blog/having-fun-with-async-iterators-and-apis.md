@@ -2,6 +2,7 @@
 title: "Having fun with async iterators and paginated APIs"
 description: "Making more sense of loops and Promises in JavaScript."
 published_at: "2024-06-11"
+updated_at: "2024-07-03"
 ---
 
 <script lang="ts">
