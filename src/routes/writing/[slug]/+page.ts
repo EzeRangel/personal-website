@@ -8,7 +8,8 @@ interface PageProps {
 	post: {
 		title: string;
 		description: string;
-		published_at: string;
+		publishedAt: string;
+		updatedAt?: string;
 		Content: SvelteComponent;
 	};
 }
@@ -21,7 +22,7 @@ export const config: Config = {
 
 export const load: PageLoad<PageProps> = async ({ params }) => {
 	const post: MDXPost = await import(`../../../lib/blog/${params.slug}.md`);
-	const { title, description, published_at, external, link } = post.metadata;
+	const { title, description, published_at, updated_at, external, link } = post.metadata;
 	const Content = post.default;
 
 	if (external && link) {
@@ -37,7 +38,8 @@ export const load: PageLoad<PageProps> = async ({ params }) => {
 		post: {
 			title,
 			description,
-			published_at,
+			publishedAt: published_at,
+			updatedAt: updated_at,
 			Content
 		}
 	};

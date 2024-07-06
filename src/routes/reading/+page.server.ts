@@ -41,6 +41,12 @@ export const load: PageServerLoad<PageProps> = async () => {
 							status: {
 								equals: "In Progress"
 							}
+						},
+						{
+							property: "Status",
+							status: {
+								equals: "Ditched"
+							}
 						}
 					]
 				}

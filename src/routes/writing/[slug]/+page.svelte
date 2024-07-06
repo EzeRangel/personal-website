@@ -3,7 +3,7 @@
 	import type { PageData } from "./$types";
 
 	export let data: PageData;
-	const { title, published_at, Content } = data.post;
+	const { title, publishedAt, updatedAt, Content } = data.post;
 </script>
 
 <article class="container max-w-5xl my-12">
@@ -15,11 +15,19 @@
 		</header>
 		<aside class="col-span-10 md:col-start-8 md:col-span-3 md:row-start-2">
 			<div class="mb-4 text-muted-foreground">
-				<h4 class="font-medium">Date</h4>
-				<time datetime={dayjs(published_at).format()} class="text-sm">
-					{dayjs(published_at).format("MMMM DD, YYYY")}
+				<h4 class="font-medium">Published on</h4>
+				<time datetime={dayjs(publishedAt).format()} class="text-sm">
+					{dayjs(publishedAt).format("MMMM DD, YYYY")}
 				</time>
 			</div>
+			{#if updatedAt}
+				<div class="mb-4 text-muted-foreground">
+					<h4 class="font-medium">Updated on</h4>
+					<time datetime={dayjs(updatedAt).format()} class="text-sm">
+						{dayjs(updatedAt).format("MMMM DD, YYYY")}
+					</time>
+				</div>
+			{/if}
 			<div class="text-muted-foreground">
 				<h4 class="font-medium">Meta</h4>
 				<p class="text-sm">

@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
+	import dayjs from "dayjs";
 	import Badge from "$lib/components/ui/badge/badge.svelte";
 	import { cn } from "$lib/util/styles";
-	import dayjs from "dayjs";
+	import type { PageData } from "./$types";
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	export let data: PageData;
 
 	const books = data.books;
 </script>
@@ -35,6 +35,8 @@
 					>
 						{#if book.properties.Status.status?.name === "In progress"}
 							In Progress
+						{:else if book.properties.Status.status?.name === "Ditched"}
+							Ditched
 						{:else}
 							<time datetime={book.properties.Completed.date?.start}>
 								{dayjs(book.properties.Completed.date?.start).format("MMM, YYYY")}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import dayjs from "dayjs";
 	import OutLinkIcon from "$lib/components/OutLinkIcon.svelte";
 	import type { PageData } from "./$types";
 
@@ -21,11 +22,7 @@
 			<article class="py-6 md:px-6 flex flex-col md:flex-row items-start justify-between">
 				<div class="flex-1">
 					<time datetime={post.meta.published_at} class="block text-sm text-muted-foreground">
-						{new Date(post.meta.published_at).toLocaleDateString("en", {
-							year: "numeric",
-							day: "2-digit",
-							month: "long"
-						})}
+						{dayjs(post.meta.published_at).format("MMMM DD, YYYY")}
 					</time>
 				</div>
 				<div class="flex-1">
