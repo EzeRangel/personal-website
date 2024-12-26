@@ -55,6 +55,7 @@ I needed to find an efficient way to load the large image for the first render o
 
 <Image
   src="/images/02-2023/filmstrip-icusa-image-experiment.png"
+  href="/images/02-2023/filmstrip-icusa-image-experiment.png"
   alt="An LCP timeline comparing images with different formats"
   caption="The results were clear: using a JPG image with the same background saved 300kbs compared to the PNG image with transparency"
 />
