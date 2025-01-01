@@ -66,7 +66,7 @@ export const load: PageServerLoad<PageProps> = async () => {
 		seo: {
 			title: "Reading",
 			description: "A brief timeline of selected books I have read.",
-			url: "https://www.ezerangel.com/reading"
+			url: "https://ezerangel.com/reading"
 		}
 	};
 };

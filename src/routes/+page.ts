@@ -10,7 +10,7 @@ export const load: PageLoad = async () => {
       I am a Frontend Developer deeply interested in Javascript applications. I use the latest
       technology available to deliver highly performant products that saves money and time.
       `,
-			url: "https://www.ezerangel.com/"
+			url: "https://ezerangel.com"
 		}
 	};
 };
