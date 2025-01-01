@@ -2,15 +2,15 @@
 	import "@fontsource/geist-mono";
 	import "@fontsource-variable/inter";
 	import "../app.css";
+	import posthog from "posthog-js";
 	import { page } from "$app/stores";
 	import Navigation from "$lib/components/Navigation.svelte";
 	import Footer from "$lib/components/Footer.svelte";
 	import type { LayoutServerData } from "./$types";
 	import { browser } from "$app/environment";
 	import { afterNavigate, beforeNavigate } from "$app/navigation";
-	import posthog from "posthog-js";
 
-	if (browser) {
+	if (browser && process.env.NODE_ENV === "production") {
 		beforeNavigate(() => posthog.capture("$pageleave"));
 		afterNavigate(() => posthog.capture("$pageview"));
 	}
