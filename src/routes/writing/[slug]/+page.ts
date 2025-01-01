@@ -31,7 +31,7 @@ export const load: PageLoad<PageProps> = async ({ params }) => {
 
 	return {
 		seo: {
-			title: `${title} • Ezequiel Rangel`,
+			title: `${title}`,
 			description: description,
 			url: `https://www.ezerangel.com/writing/${params.slug}`
 		},
