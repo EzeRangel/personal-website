@@ -2,6 +2,7 @@
 title: "Yes, CSS do :has a previous sibling selector"
 description: "How to use the `has` pseudo-class for making a previous sibling CSS selector"
 published_at: "2024-12-25"
+updated_at: "2025-01-03"
 ---
 
 <script lang="ts">
@@ -37,27 +38,27 @@ The HTML code has nothing out of the ordinary. For this example, I used [lucide.
 
 ```html
 <div class="rating-wrapper">
-	<span class="item interactive" role="button">
+	<span class="item" role="button">
 		<span class="icon">
 			<i data-lucide="star"></i>
 		</span>
 	</span>
-	<span class="item interactive" role="button">
+	<span class="item" role="button">
 		<span class="icon">
 			<i data-lucide="star"></i>
 		</span>
 	</span>
-	<span class="item interactive" role="button">
+	<span class="item" role="button">
 		<span class="icon">
 			<i data-lucide="star"></i>
 		</span>
 	</span>
-	<span class="item interactive" role="button">
+	<span class="item" role="button">
 		<span class="icon">
 			<i data-lucide="star"></i>
 		</span>
 	</span>
-	<span class="item interactive" role="button">
+	<span class="item" role="button">
 		<span class="icon">
 			<i data-lucide="star"></i>
 		</span>
