@@ -15,18 +15,20 @@
 	}
 </script>
 
-<div class="rating-wrapper">
-	{#each stars as _, index}
-		<span
-			class={cn("item", { ["active"]: index < rating })}
-			role={readOnly ? "presentation" : "button"}
-			on:click={() => handleClick(index)}
-		>
-			<span class="icon">
-				<Star size={40} fill="#eab308" />
+<div class="component-wrapper">
+	<div class="rating-wrapper">
+		{#each stars as _, index}
+			<span
+				class={cn("item", { ["active"]: index < rating })}
+				role={readOnly ? "presentation" : "button"}
+				on:click={() => handleClick(index)}
+			>
+				<span class="icon">
+					<Star size={40} fill="#eab308" />
+				</span>
 			</span>
-		</span>
-	{/each}
+		{/each}
+	</div>
 	{#if !readOnly && rating > 0}
 		<Button size="sm" variant="secondary" class="ml-3 px-4" on:click={() => (rating = 0)}
 			>Reset</Button
@@ -35,6 +37,10 @@
 </div>
 
 <style lang="postcss">
+	.component-wrapper {
+		@apply flex flex-col md:flex-row items-center gap-4;
+	}
+
 	.rating-wrapper {
 		@apply flex flex-row items-center gap-3;
 	}
