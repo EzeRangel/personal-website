@@ -137,3 +137,54 @@
 	@apply mb-4;
 	@apply md:text-5xl;
 }
+
+.aiBorderField {
+	position: relative;
+	isolation: isolate;
+}
+
+.aiBorderField::before {
+	content: "";
+	position: absolute;
+	inset: -2px;
+	background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+	background-size: 200% 100%;
+	border-radius: inherit;
+	z-index: -2;
+}
+
+.aiBorderField::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: white;
+	border-radius: inherit;
+	z-index: -1;
+}
+
+.aiBorder {
+	position: absolute;
+	inset: -2px;
+	border-radius: inherit;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.aiBorderField:hover::before,
+.aiBorderField:hover .aiBorder {
+	animation: borderFlow 2s linear infinite;
+}
+
+.aiBorderField:hover .aiBorder {
+	opacity: 1;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+@keyframes borderFlow {
+	0% {
+		background-position: 0% 0;
+	}
+	100% {
+		background-position: 200% 0;
+	}
+}
