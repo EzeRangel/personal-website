@@ -2,18 +2,22 @@ import { env } from "$env/dynamic/private";
 import { createGroq } from "@ai-sdk/groq";
 import { type RequestHandler } from "@sveltejs/kit";
 import { generateText } from "ai";
-import { v4 as uuidv4 } from "uuid";
-import { serialize } from "cookie";
+import {
+	generateExamplesPrompt,
+	generateExplanationResponse
+} from "$lib/ai/blog-prompt-tool/generatePrompt";
 
 const groq = createGroq({
 	apiKey: env.GROQ_API_KEY
 });
 
-const SYSTEM_PROMPT = `You are an interactive helper system designed to enrich the reader experience on a technical blog. Your task is to generate dynamic responses based on the reader's interaction with specific content in a post. The full context of the post and its relevant sections are available, but will only be provided during initial setup. In subsequent interactions, you will receive partial information about the user's request and must generate relevant responses using the associated context.
+const SYSTEM_PROMPT = `
+You are an interactive helper system designed to enrich the reader experience on a technical blog. Your task is to generate dynamic responses based on the reader's interaction with specific content in a post. The full context of the post and its relevant sections are available, but will only be provided during initial setup. In subsequent interactions, you will receive partial information about the user's request and must generate relevant responses using the associated context.
+
 Guidelines:
 
 1. Initial Setup:
-The full context will include a general summary of the post and a list of sections with brief descriptions. This context will be used as a basis for all subsequent interactions.
+The full context will include a general summary of the post. This context will be used as a basis for all subsequent interactions.
 
 2. Subsequent Interactions:
 - You will receive partial information including:
@@ -35,40 +39,27 @@ Model Input:
 - In subsequent interactions: The selected section and the specific option requested by the user.
 
 Expected Output:
-- A clear and helpful response based on the user's request and known context.
-	`;
+- A clear and helpful response based on the user's request and known context formatted as Markdown
+`;
 
-const CONTEXT = `Technical blog post explaining how to create a previous sibling selector in CSS using the :has() pseudo-class, demonstrated through a star rating component implementation. The post shows how to overcome traditional CSS forward-only selection limitations without JavaScript. It explains the relationship between :has() and the subsequent-sibling combinator () to achieve backwards selection of elements using the key selector '.item:has(~ .item:hover)'. The post includes practical code examples using TailwindCSS.`;
+export const POST: RequestHandler = async ({ request }) => {
+	const { paragraph, action } = await request.json();
 
-export const POST: RequestHandler = async ({ request, cookies }) => {
-	let sessionId = cookies.get("sessionId");
+	let prompt = "";
 
-	if (!sessionId) {
-		console.log("No session ID found, generating a new one...");
-		sessionId = uuidv4();
-
-		await generateText({
-			model: groq("llama-3.3-70b-versatile"),
-			system: SYSTEM_PROMPT,
-			prompt: CONTEXT
-		});
+	if (action === "EXPLAIN_MORE") {
+		prompt = generateExplanationResponse(paragraph);
+	} else if (action === "EXAMPLES") {
+		prompt = generateExamplesPrompt(paragraph);
 	}
-
-	const { prompt } = await request.json();
 
 	const { text } = await generateText({
 		model: groq("llama-3.3-70b-versatile"),
 		system: SYSTEM_PROMPT,
+		temperature: 1,
+		maxTokens: 1024,
 		prompt
 	});
 
-	return new Response(JSON.stringify({ message: text }), {
-		headers: {
-			"Set-Cookie": serialize("sessionId", sessionId, {
-				path: "/",
-				maxAge: 180 // 3 minutes
-			}),
-			"Content-Type": "application/json"
-		}
-	});
+	return new Response(JSON.stringify({ message: text }));
 };

@@ -9,15 +9,18 @@
 	const options = [
 		{
 			icon: ExpandIcon,
-			text: "Explain more"
+			text: "Explain more",
+			action: "EXPLAIN_MORE"
 		},
 		{
 			icon: LightbulbIcon,
-			text: "Give me examples"
+			text: "Give me examples",
+			action: "EXAMPLES"
 		},
 		{
 			icon: CompassIcon,
-			text: "Explore this concept further"
+			text: "Explore this concept further",
+			action: "EXPLORE_FURTHER"
 		}
 	];
 </script>
@@ -64,7 +67,8 @@
 									},
 									credentials: "include",
 									body: JSON.stringify({
-										prompt: `${option.text}: ${text}`
+										paragraph: `${text}`,
+										action: option.action
 									})
 								});
 							}}
