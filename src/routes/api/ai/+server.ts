@@ -1,10 +1,13 @@
 import { env } from "$env/dynamic/private";
+import { v4 as uuidv4 } from "uuid";
 import { createGroq } from "@ai-sdk/groq";
 import { type RequestHandler } from "@sveltejs/kit";
 import { generateText } from "ai";
 import {
 	generateExamplesPrompt,
-	generateExplanationResponse
+	generateExplanationResponse,
+	generateRelatedResources,
+	generateSimplifyPrompt
 } from "$lib/ai/blog-prompt-tool/generatePrompt";
 
 const groq = createGroq({
@@ -27,9 +30,10 @@ The full context will include a general summary of the post. This context will b
 
 3. Default Options:
 - Provide specific responses based on the option chosen:
-	- Explain more: Provide a more detailed explanation of the selected section.
+	- Explore more about this concept: Expand on the concept with additional information or relate the section to other concepts or blog posts.
 	- Give me examples: Provide practical examples related to the selected section.
-	- Explore this concept further: Expand on the concept with additional information or relate the section to other concepts or blog posts.
+	- Explain this in simpler terms: Provide a simplified explanation of the selected section.
+	- Provide related resources: Offer links to other blog posts, articles, or resources that are relevant to the selected section.
 
 4. Custom Response:
 - Adjust the level of detail and focus of the response to align with the user's needs, as indicated in their request.
@@ -47,10 +51,14 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	let prompt = "";
 
-	if (action === "EXPLAIN_MORE") {
+	if (action === "EXPLORE_MORE") {
 		prompt = generateExplanationResponse(paragraph);
 	} else if (action === "EXAMPLES") {
 		prompt = generateExamplesPrompt(paragraph);
+	} else if (action === "SIMPLIFY") {
+		prompt = generateSimplifyPrompt(paragraph);
+	} else if (action === "RESOURCES") {
+		prompt = generateRelatedResources(paragraph);
 	}
 
 	const { text } = await generateText({
@@ -61,5 +69,15 @@ export const POST: RequestHandler = async ({ request }) => {
 		prompt
 	});
 
-	return new Response(JSON.stringify({ message: text }));
+	const id = uuidv4();
+
+	const { text: title } = await generateText({
+		model: groq("llama-3.3-70b-versatile"),
+		system: SYSTEM_PROMPT,
+		temperature: 1,
+		maxTokens: 1024,
+		prompt: `Generate a concise and descriptive title for the following response in plain text: ${text}`
+	});
+
+	return Response.json({ id, title, text, status: "COMPLETED" });
 };

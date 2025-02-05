@@ -1,7 +1,15 @@
 <script lang="ts">
 	import { Button } from "../ui/button";
-	import { CompassIcon, ExpandIcon, LightbulbIcon, MoreHorizontal, XIcon } from "lucide-svelte";
+	import {
+		CompassIcon,
+		ExpandIcon,
+		LightbulbIcon,
+		ListCollapse,
+		MoreHorizontal,
+		XIcon
+	} from "lucide-svelte";
 	import { Card, CardContent } from "../ui/card";
+	import { aiResponse } from "../../../store";
 
 	let isExpanded = false;
 	export let text: string;
@@ -9,8 +17,8 @@
 	const options = [
 		{
 			icon: ExpandIcon,
-			text: "Explain more",
-			action: "EXPLAIN_MORE"
+			text: "Explore this concept further",
+			action: "EXPLORE_MORE"
 		},
 		{
 			icon: LightbulbIcon,
@@ -19,10 +27,42 @@
 		},
 		{
 			icon: CompassIcon,
-			text: "Explore this concept further",
-			action: "EXPLORE_FURTHER"
+			text: "Provide related resources",
+			action: "RESOURCES"
+		},
+		{
+			icon: ListCollapse,
+			text: "Explain in simpler terms",
+			action: "SIMPLIFY"
 		}
 	];
+
+	async function fetchResponse(action: string, paragraph: string) {
+		try {
+			const res = await fetch("/api/ai", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({
+					paragraph: `${paragraph}`,
+					action: action
+				})
+			});
+
+			if (!res.ok || !res.body) throw new Error("Error while calling the API");
+
+			const completion = await res.json();
+			aiResponse.update((completions) => {
+				completions.push(completion);
+
+				return completions;
+			});
+		} catch (error) {
+			console.error("Error al llamar al API:", error);
+			aiResponse.set([{ title: "Error", status: "ERROR" }]);
+		}
+	}
 </script>
 
 <Card class="bg-opacity-80 backdrop-blur-sm shadow-lg inline-flex absolute top-0 right-0">
@@ -53,31 +93,23 @@
 		</div>
 		{#if isExpanded}
 			<div class="flex flex-col gap-1 mt-2">
-				{#each options as option}
-					<div class="relative group">
-						<Button
-							variant="ghost"
-							size="sm"
-							class="w-full justify-start text-left"
-							on:click={async () => {
-								await fetch("/api/ai", {
-									method: "POST",
-									headers: {
-										"Content-Type": "application/json"
-									},
-									credentials: "include",
-									body: JSON.stringify({
-										paragraph: `${text}`,
-										action: option.action
-									})
-								});
-							}}
-						>
-							<svelte:component this={option.icon} class="w-4 h-4" />
-							<span class="ml-2 text-xs">{option.text}</span>
-						</Button>
-					</div>
-				{/each}
+				<form method="POST">
+					{#each options as option}
+						<div class="relative group">
+							<input type="hidden" name="action" value={option.action} />
+							<Button
+								type="submit"
+								variant="ghost"
+								size="sm"
+								class="w-full justify-start text-left"
+								on:click={() => fetchResponse(option.action, text)}
+							>
+								<svelte:component this={option.icon} class="w-4 h-4" />
+								<span class="ml-2 text-xs">{option.text}</span>
+							</Button>
+						</div>
+					{/each}
+				</form>
 			</div>
 		{/if}
 	</CardContent>
