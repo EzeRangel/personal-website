@@ -38,6 +38,13 @@
 	];
 
 	async function fetchResponse(action: string, paragraph: string) {
+		aiResponse.update((store) => {
+			return {
+				...store,
+				status: "GENERATING"
+			};
+		});
+
 		try {
 			const res = await fetch("/api/ai", {
 				method: "POST",
@@ -53,14 +60,16 @@
 			if (!res.ok || !res.body) throw new Error("Error while calling the API");
 
 			const completion = await res.json();
-			aiResponse.update((completions) => {
-				completions.push(completion);
-
-				return completions;
+			aiResponse.update((store) => {
+				return {
+					...store,
+					status: "IDLE",
+					completions: [...store.completions, completion]
+				};
 			});
 		} catch (error) {
 			console.error("Error al llamar al API:", error);
-			aiResponse.set([{ title: "Error", status: "ERROR" }]);
+			aiResponse.set({ status: "ERROR", completions: [] });
 		}
 	}
 </script>

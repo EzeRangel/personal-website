@@ -1,5 +1,13 @@
 <script lang="ts">
-	import { ArrowLeftIcon, ChevronRightIcon, CompassIcon, XIcon } from "lucide-svelte";
+	import {
+		ArrowLeftIcon,
+		ChevronRightIcon,
+		CompassIcon,
+		ExpandIcon,
+		LightbulbIcon,
+		ListCollapseIcon,
+		XIcon
+	} from "lucide-svelte";
 	import { Button } from "./ui/button";
 	import { cn } from "$lib/util/styles";
 	import { aiResponse } from "../../store";
@@ -48,7 +56,7 @@
 	{/if}
 	{#if isCollapsed}
 		<div class="flex flex-col gap-2">
-			{#each $aiResponse as item}
+			{#each $aiResponse.completions as item}
 				<Button
 					size="lg"
 					variant="outline"
@@ -59,7 +67,15 @@
 					class="px-4"
 				>
 					<div class="flex-1 flex items-center truncate">
-						<CompassIcon size={18} class="mr-2 shrink-0" />
+						{#if item.action === "EXAMPLES"}
+							<LightbulbIcon size={18} class="mr-2 shrink-0" />
+						{:else if item.action === "RESOURCES"}
+							<CompassIcon size={18} class="mr-2 shrink-0" />
+						{:else if item.action === "EXPLORE_MORE"}
+							<ExpandIcon size={18} class="mr-2 shrink-0" />
+						{:else}
+							<ListCollapseIcon size={18} class="mr-2 shrink-0" />
+						{/if}
 						<span class="overflow-ellipsis">
 							{item.title}
 						</span>
@@ -77,11 +93,6 @@
 		</div>
 	{:else}
 		<article class="px-12">
-			<!-- <Card class="pt-6">
-				<CardContent class="font-mono text-muted-foreground text-sm">
-					{currentCompletion?.text}
-				</CardContent>
-			</Card> -->
 			<div class="prose prose-sm">
 				{#if currentCompletion?.text}
 					<Markdown source={currentCompletion.text} />

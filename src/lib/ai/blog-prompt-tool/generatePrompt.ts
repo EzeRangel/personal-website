@@ -36,6 +36,6 @@ export function generateRelatedResources(paragraph: string) {
 
     Paragraph: ${paragraph}
 
-    Action: uggest 2-3 high-quality resources (e.g., articles, books, videos) that provide additional information on the concept mentioned in the paragraph. Include a brief description of each resource and explain how it relates to the paragraph. Use bullet points for clarity.
+    Action: Suggest 2-3 high-quality resources (e.g., articles, books, videos) that provide additional information on the concept mentioned in the paragraph. Include a brief description of each resource and explain how it relates to the paragraph. Use bullet points for clarity.
   `;
 }

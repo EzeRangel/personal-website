@@ -1,4 +1,9 @@
-import type { Completion } from "$lib/types/AI";
+import type { AIResponse } from "$lib/types/AI";
 import { writable } from "svelte/store";
 
-export const aiResponse = writable<Completion[]>([]);
+const INITIAL_STATE: AIResponse = {
+	status: "IDLE",
+	completions: []
+};
+
+export const aiResponse = writable<AIResponse>(INITIAL_STATE);

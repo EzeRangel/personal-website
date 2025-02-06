@@ -9,6 +9,7 @@ import {
 	generateRelatedResources,
 	generateSimplifyPrompt
 } from "$lib/ai/blog-prompt-tool/generatePrompt";
+import type { Actions } from "$lib/types/AI";
 
 const groq = createGroq({
 	apiKey: env.GROQ_API_KEY
@@ -47,7 +48,7 @@ Expected Output:
 `;
 
 export const POST: RequestHandler = async ({ request }) => {
-	const { paragraph, action } = await request.json();
+	const { paragraph, action }: { paragraph: string; action: Actions } = await request.json();
 
 	let prompt = "";
 
@@ -79,5 +80,5 @@ export const POST: RequestHandler = async ({ request }) => {
 		prompt: `Generate a concise and descriptive title for the following response in plain text: ${text}`
 	});
 
-	return Response.json({ id, title, text, status: "COMPLETED" });
+	return Response.json({ id, title, text, status: "COMPLETED", action });
 };
