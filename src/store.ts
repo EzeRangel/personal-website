@@ -6,4 +6,7 @@ const INITIAL_STATE: AIResponse = {
 	completions: []
 };
 
+// Prompt Mode is turned off by default
+export const promptMode = writable(false);
+
 export const aiResponse = writable<AIResponse>(INITIAL_STATE);

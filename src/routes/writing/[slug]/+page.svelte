@@ -2,6 +2,10 @@
 	import dayjs from "dayjs";
 	import type { PageData } from "./$types";
 	import FloatingSidebar from "$lib/components/FloatingSidebar.svelte";
+	import { Button } from "$lib/components/ui/button";
+	import { promptMode } from "../../../store";
+	import { cn } from "$lib/util/styles";
+	import { Sparkles } from "lucide-svelte";
 
 	export let data: PageData;
 	const { title, publishedAt, updatedAt, Content } = data.post;
@@ -36,6 +40,21 @@
 						{data.post.description}
 					</p>
 				</div>
+				<div class="mt-4">
+					<Button
+						variant={$promptMode ? "secondary" : "default"}
+						on:click={() => {
+							promptMode.set(!$promptMode);
+						}}
+					>
+						{#if $promptMode}
+							Turn Off Prompt Mode
+						{:else}
+							Turn On Prompt Mode
+						{/if}
+						<Sparkles class="ml-2" size={16} />
+					</Button>
+				</div>
 			</aside>
 			<div class="col-span-10 md:col-start-1 md:col-span-7">
 				<div class="prose prose-gray">
@@ -44,5 +63,9 @@
 			</div>
 		</div>
 	</article>
-	<FloatingSidebar />
+	{#if $promptMode}
+		<div>
+			<FloatingSidebar isActive={$promptMode} />
+		</div>
+	{/if}
 </section>

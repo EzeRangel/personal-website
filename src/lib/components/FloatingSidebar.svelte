@@ -13,28 +13,33 @@
 	import { aiResponse } from "../../store";
 	import type { Completion } from "$lib/types/AI";
 	import Markdown from "./Markdown.svelte";
+	import { Badge } from "./ui/badge";
 
 	let isCollapsed = true;
 	let currentCompletion: Completion | null = null;
+	export let isActive = false;
 </script>
 
 <aside
 	class={cn(
-		"p-2 rounded-lg border mx-4 mt-12 bg-card border-muted shadow-lg",
+		"rounded-lg border mx-4 mt-12 border-muted shadow-lg transform bg-sidebar-accent",
 		"transition-all duration-300 ease-in-out",
+		"sticky top-10",
 		{ ["w-[620px]"]: !isCollapsed },
-		{ ["w-[320px]"]: isCollapsed }
+		{ ["w-[320px]"]: isCollapsed },
+		{ ["translate-x-full"]: !isActive },
+		{ ["translate-x-0"]: isActive }
 	)}
 >
 	{#if isCollapsed}
-		<header class="flex flex-row items-center justify-between mb-3">
+		<header class="flex flex-row items-center justify-between py-3 px-4 border-b">
 			<h1 class="text-lg font-semibold">AI Insights</h1>
 			<Button size="icon" variant="ghost">
 				<XIcon size={18} />
 			</Button>
 		</header>
 	{:else}
-		<header class="flex flex-row items-center gap-3 mb-3">
+		<header class="flex flex-row items-center gap-3 py-3 px-4 border-b">
 			<Button
 				size="icon"
 				variant="ghost"
@@ -55,7 +60,7 @@
 		</header>
 	{/if}
 	{#if isCollapsed}
-		<div class="flex flex-col gap-2">
+		<div class="flex flex-col gap-2 py-3 px-4">
 			{#each $aiResponse.completions as item}
 				<Button
 					size="lg"
@@ -64,26 +69,25 @@
 						currentCompletion = item;
 						isCollapsed = false;
 					}}
-					class="px-4"
+					class="h-auto p-3 flex flex-col gap-2 whitespace-normal items-start"
 				>
-					<div class="flex-1 flex items-center truncate">
+					<Badge variant="outline">
 						{#if item.action === "EXAMPLES"}
-							<LightbulbIcon size={18} class="mr-2 shrink-0" />
+							<LightbulbIcon size={18} />
 						{:else if item.action === "RESOURCES"}
-							<CompassIcon size={18} class="mr-2 shrink-0" />
+							<CompassIcon size={18} />
 						{:else if item.action === "EXPLORE_MORE"}
-							<ExpandIcon size={18} class="mr-2 shrink-0" />
+							<ExpandIcon size={18} />
 						{:else}
-							<ListCollapseIcon size={18} class="mr-2 shrink-0" />
+							<ListCollapseIcon size={18} />
 						{/if}
-						<span class="overflow-ellipsis">
-							{item.title}
-						</span>
-					</div>
-					<ChevronRightIcon size={18} />
+					</Badge>
+					<span class="text-left text-sm">
+						{item.title}
+					</span>
 				</Button>
 			{:else}
-				<div class="p-4 border rounded-lg space-y-1 text-center">
+				<div class="p-4 border rounded-lg space-y-1 text-center bg-card">
 					<p class="font-semibold text-sm">No insights generated yet</p>
 					<p class="text-xs">
 						Hover over a paragraph on the post and select the action you want to ask the AI
@@ -92,7 +96,7 @@
 			{/each}
 		</div>
 	{:else}
-		<article class="px-12">
+		<article class="px-12 py-10 bg-card">
 			<div class="prose prose-sm">
 				{#if currentCompletion?.text}
 					<Markdown source={currentCompletion.text} />
