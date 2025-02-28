@@ -29,6 +29,7 @@
 		--featured: 166 243 231;
 		--featured-foreground: 0 183 204;
 		--phlox: 192 76 253;
+		--trail-animation-speed: 6s;
 	}
 	.dark {
 		--background: 224 71.4% 4.1%;
@@ -138,53 +139,30 @@
 	@apply md:text-5xl;
 }
 
-.aiBorderField {
-	position: relative;
-	isolation: isolate;
+.animated-border {
+	background: linear-gradient(#ffffff, #ffffff) padding-box transparent;
 }
 
-.aiBorderField::before {
-	content: "";
-	position: absolute;
-	inset: -2px;
-	background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
-	background-size: 200% 100%;
-	border-radius: inherit;
-	z-index: -2;
-}
-
-.aiBorderField::after {
-	content: "";
+.bg-animated-border {
 	position: absolute;
 	inset: 0;
-	background: white;
-	border-radius: inherit;
 	z-index: -1;
+	background: white;
+	border-radius: 20px;
 }
 
-.aiBorder {
+.trail-animated-border {
+	width: 200px;
+	aspect-ratio: 2 / 1;
 	position: absolute;
-	inset: -2px;
-	border-radius: inherit;
-	opacity: 0;
-	transition: opacity 0.3s;
+	background: radial-gradient(100% 100% at right, #3b82f6, transparent 50%);
+	offset-path: border-box;
+	offset-anchor: 100% 50%;
+	animation: journey var(--trail-animation-speed, 6s) infinite linear;
 }
 
-.aiBorderField:hover::before,
-.aiBorderField:hover .aiBorder {
-	animation: borderFlow 2s linear infinite;
-}
-
-.aiBorderField:hover .aiBorder {
-	opacity: 1;
-	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-}
-
-@keyframes borderFlow {
-	0% {
-		background-position: 0% 0;
-	}
-	100% {
-		background-position: 200% 0;
+@keyframes journey {
+	to {
+		offset-distance: 100%;
 	}
 }
