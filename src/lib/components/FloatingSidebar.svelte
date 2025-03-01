@@ -17,7 +17,7 @@
 
 	let isCollapsed = true;
 	let currentCompletion: Completion | null = null;
-	export let isActive = false;
+	export let onClose = () => {};
 </script>
 
 <aside
@@ -26,15 +26,13 @@
 		"transition-all duration-300 ease-in-out",
 		"sticky top-10",
 		{ ["w-[620px]"]: !isCollapsed },
-		{ ["w-[320px]"]: isCollapsed },
-		{ ["translate-x-full"]: !isActive },
-		{ ["translate-x-0"]: isActive }
+		{ ["w-[320px]"]: isCollapsed }
 	)}
 >
 	{#if isCollapsed}
 		<header class="flex flex-row items-center justify-between py-3 px-4 border-b">
 			<h1 class="text-lg font-semibold">AI Insights</h1>
-			<Button size="icon" variant="ghost">
+			<Button size="icon" variant="ghost" on:click={onClose}>
 				<XIcon size={18} />
 			</Button>
 		</header>

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import dayjs from "dayjs";
 	import type { PageData } from "./$types";
+	import { slide } from "svelte/transition";
 	import FloatingSidebar from "$lib/components/FloatingSidebar.svelte";
 	import { Button } from "$lib/components/ui/button";
 	import { promptMode } from "../../../store";
-	import { cn } from "$lib/util/styles";
 	import { Sparkles } from "lucide-svelte";
 
 	export let data: PageData;
@@ -64,8 +64,12 @@
 		</div>
 	</article>
 	{#if $promptMode}
-		<div>
-			<FloatingSidebar isActive={$promptMode} />
+		<div transition:slide={{ axis: "x" }}>
+			<FloatingSidebar
+				onClose={() => {
+					promptMode.set(false);
+				}}
+			/>
 		</div>
 	{/if}
 </section>
