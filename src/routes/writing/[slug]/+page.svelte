@@ -8,7 +8,7 @@
 	import { Sparkles } from "lucide-svelte";
 
 	export let data: PageData;
-	const { title, publishedAt, updatedAt, Content } = data.post;
+	const { title, publishedAt, updatedAt, supportsPromptMode, Content } = data.post;
 </script>
 
 <section class="relative flex">
@@ -40,21 +40,23 @@
 						{data.post.description}
 					</p>
 				</div>
-				<div class="mt-4">
-					<Button
-						variant={$promptMode ? "secondary" : "default"}
-						on:click={() => {
-							promptMode.set(!$promptMode);
-						}}
-					>
-						{#if $promptMode}
-							Turn Off Prompt Mode
-						{:else}
-							Turn On Prompt Mode
-						{/if}
-						<Sparkles class="ml-2" size={16} />
-					</Button>
-				</div>
+				{#if supportsPromptMode}
+					<div class="mt-4">
+						<Button
+							variant={$promptMode ? "secondary" : "default"}
+							on:click={() => {
+								promptMode.set(!$promptMode);
+							}}
+						>
+							{#if $promptMode}
+								Turn Off Prompt Mode
+							{:else}
+								Turn On Prompt Mode
+							{/if}
+							<Sparkles class="ml-2" size={16} />
+						</Button>
+					</div>
+				{/if}
 			</aside>
 			<div class="col-span-10 md:col-start-1 md:col-span-7">
 				<div class="prose prose-gray">
