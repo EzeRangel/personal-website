@@ -1,13 +1,6 @@
 <script lang="ts">
 	import { Button } from "../ui/button";
-	import {
-		CompassIcon,
-		ExpandIcon,
-		LightbulbIcon,
-		ListCollapse,
-		MoreHorizontal,
-		XIcon
-	} from "lucide-svelte";
+	import { ExpandIcon, ListCollapse, MoreHorizontal, XIcon } from "lucide-svelte";
 	import { Card, CardContent } from "../ui/card";
 	import { aiResponse } from "../../../store";
 
@@ -19,16 +12,6 @@
 			icon: ExpandIcon,
 			text: "Explore this concept further",
 			action: "EXPLORE_MORE"
-		},
-		{
-			icon: LightbulbIcon,
-			text: "Give me examples",
-			action: "EXAMPLES"
-		},
-		{
-			icon: CompassIcon,
-			text: "Provide related resources",
-			action: "RESOURCES"
 		},
 		{
 			icon: ListCollapse,
