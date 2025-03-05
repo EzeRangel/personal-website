@@ -1,13 +1,18 @@
 <script lang="ts">
 	import LlmPromptTool from "./LLMPromptTool.svelte";
-	import { promptMode } from "../../../store";
+	import { promptMode, aiResponse } from "../../../store";
 
 	let isVisible = false;
 	export let text: string;
 </script>
 
 {#if $promptMode}
-	<div class="overflow-hidden z-20 relative rounded-lg">
+	<div
+		class="overflow-hidden z-20 relative rounded-lg"
+		style={$aiResponse.status === "GENERATING"
+			? "--trail-animation-speed: 4s"
+			: "--trail-animation-speed: 6s"}
+	>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div
 			role="button"

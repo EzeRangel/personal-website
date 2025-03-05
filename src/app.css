@@ -159,7 +159,7 @@
 	width: 200px;
 	aspect-ratio: 2 / 1;
 	position: absolute;
-	background: radial-gradient(100% 100% at right, #3b82f6, transparent 50%);
+	background: radial-gradient(100% 100% at right, #bf4cfd, transparent 50%);
 	offset-path: border-box;
 	offset-anchor: 100% 50%;
 	animation: journey var(--trail-animation-speed, 6s) infinite linear;
