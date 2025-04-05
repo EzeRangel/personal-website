@@ -22,9 +22,9 @@
 
 <aside
 	class={cn(
-		"rounded-lg border mx-4 mt-12 border-muted shadow-lg transform bg-sidebar-accent",
+		"rounded-lg border mx-4 mt-10 border-muted shadow-lg transform bg-sidebar-accent",
 		"transition-all duration-300 ease-in-out",
-		"sticky top-10",
+		"sticky top-10 bottom-10 max-h-[calc(100vh-100px)] overflow-y-auto overscroll-contain",
 		{ ["w-[620px]"]: !isCollapsed },
 		{ ["w-[320px]"]: isCollapsed }
 	)}
