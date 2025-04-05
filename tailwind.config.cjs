@@ -64,6 +64,14 @@ module.exports = {
 				card: {
 					DEFAULT: "hsl(var(--card) / <alpha-value>)",
 					foreground: "hsl(var(--card-foreground) / <alpha-value>)"
+				},
+				sidebar: {
+					DEFAULT: "hsl(var(--sidebar-background) / <alpha-value>)",
+					foreground: "hsl(var(--sidebar-foreground) / <alpha-value>)"
+				},
+				"sidebar-accent": {
+					DEFAULT: "hsl(var(--sidebar-accent-background) / <alpha-value>)",
+					foreground: "hsl(var(--sidebar-accent- foreground) / <alpha-value>)"
 				}
 			},
 			animation: {

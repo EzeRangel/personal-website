@@ -10,6 +10,7 @@ interface PageProps {
 		description: string;
 		publishedAt: string;
 		updatedAt?: string;
+		supportsPromptMode?: boolean;
 		Content: SvelteComponent;
 	};
 }
@@ -22,7 +23,8 @@ export const config: Config = {
 
 export const load: PageLoad<PageProps> = async ({ params }) => {
 	const post: MDXPost = await import(`../../../lib/blog/${params.slug}.md`);
-	const { title, description, published_at, updated_at, external, link } = post.metadata;
+	const { title, description, published_at, updated_at, external, link, supports_prompt_mode } =
+		post.metadata;
 	const Content = post.default;
 
 	if (external && link) {
@@ -40,6 +42,7 @@ export const load: PageLoad<PageProps> = async ({ params }) => {
 			description,
 			publishedAt: published_at,
 			updatedAt: updated_at,
+			supportsPromptMode: supports_prompt_mode,
 			Content
 		}
 	};
