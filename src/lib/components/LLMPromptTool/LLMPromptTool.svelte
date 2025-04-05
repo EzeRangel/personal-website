@@ -3,6 +3,7 @@
 	import { ExpandIcon, ListCollapse, MoreHorizontal, XIcon } from "lucide-svelte";
 	import { Card, CardContent } from "../ui/card";
 	import { aiResponse } from "../../../store";
+	import { page } from "$app/stores";
 
 	let isExpanded = false;
 	export let text: string;
@@ -29,6 +30,13 @@
 		});
 
 		try {
+			const paths = $page.url.pathname.split("/");
+			const slug = Array.isArray(paths) ? paths[2] : null;
+
+			if (!slug) {
+				throw new Error("The current page slug could not be found");
+			}
+
 			const res = await fetch("/api/ai", {
 				method: "POST",
 				headers: {
@@ -36,7 +44,8 @@
 				},
 				body: JSON.stringify({
 					paragraph: `${paragraph}`,
-					action: action
+					action: action,
+					slug: slug
 				})
 			});
 

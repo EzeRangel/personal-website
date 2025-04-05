@@ -9,6 +9,7 @@ import {
 	generateSimplifyPrompt
 } from "$lib/ai/blog-prompt-tool/generatePrompt";
 import type { Actions } from "$lib/types/AI";
+import fetchLLMContext from "$lib/util/fetchLLMContext";
 
 const groq = createGroq({
 	apiKey: env.GROQ_API_KEY
@@ -26,16 +27,19 @@ OUTPUT INSTRUCTIONS
 `;
 
 export const POST: RequestHandler = async ({ request }) => {
-	const { paragraph, action }: { paragraph: string; action: Actions } = await request.json();
+	const { paragraph, action, slug }: { paragraph: string; action: Actions; slug: string } =
+		await request.json();
+
+	const context = await fetchLLMContext(slug);
 
 	let prompt = "";
 
 	if (action === "EXPLORE_MORE") {
-		prompt = generateExplanationResponse(paragraph);
+		prompt = generateExplanationResponse(paragraph, context);
 	} else if (action === "EXAMPLES") {
-		prompt = generateExamplesPrompt(paragraph);
+		prompt = generateExamplesPrompt(paragraph, context);
 	} else if (action === "SIMPLIFY") {
-		prompt = generateSimplifyPrompt(paragraph);
+		prompt = generateSimplifyPrompt(paragraph, context);
 	}
 
 	const { text } = await generateText({

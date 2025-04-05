@@ -1,12 +1,10 @@
-const CONTEXT = `Technical blog post explaining how to create a previous sibling selector in CSS using the :has() pseudo-class, demonstrated through a star rating component implementation. The post shows how to overcome traditional CSS forward-only selection limitations without JavaScript. It explains the relationship between :has() and the subsequent-sibling combinator () to achieve backwards selection of elements using the key selector '.item:has(~ .item:hover)'. The post includes practical code examples using TailwindCSS.`;
-
-export function generateExplanationResponse(paragraph: string) {
+export function generateExplanationResponse(paragraph: string, context: string) {
 	return `
     Provide a concise and insightful explanation of the paragraph mentioned in the INPUT that is related to the CONTEXT. Expand on the idea with relevant examples or analogies, and ensure the response is easy to understand for a reader unfamiliar with the topic. You are interested in answering the whys, how, who and what questions that helps the reader understand better the topic.
     
     CONTEXT
 
-    "${CONTEXT}"
+    "${context}"
 
     INPUT
 
@@ -14,13 +12,13 @@ export function generateExplanationResponse(paragraph: string) {
   `;
 }
 
-export function generateExamplesPrompt(paragraph: string) {
+export function generateExamplesPrompt(paragraph: string, context: string) {
 	return `
     Provide 2-3 practical examples that illustrate the concept or idea mentioned in the paragraph. Ensure the examples are relevant and easy to understand. Use code snippets if necessary to demonstrate the implementation of the concept.
 
     CONTEXT
 
-    "${CONTEXT}"
+    "${context}"
 
     INPUT
 
@@ -28,13 +26,13 @@ export function generateExamplesPrompt(paragraph: string) {
   `;
 }
 
-export function generateSimplifyPrompt(paragraph: string) {
+export function generateSimplifyPrompt(paragraph: string, context: string) {
 	return `
     Rewrite the paragraph in simpler terms, using plain language and avoiding jargon. Ensure the explanation is clear and accessible to a reader with no prior knowledge of the topic. Limit the response to 2-3 sentences.
 
     CONTEXT
 
-    "${CONTEXT}"
+    "${context}"
 
     INPUT
 
@@ -42,9 +40,9 @@ export function generateSimplifyPrompt(paragraph: string) {
   `;
 }
 
-export function generateRelatedResources(paragraph: string) {
+export function generateRelatedResources(paragraph: string, context: string) {
 	return `
-    Context: ${CONTEXT}
+    Context: ${context}
 
     Paragraph: ${paragraph}
 
