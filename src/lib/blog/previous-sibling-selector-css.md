@@ -3,6 +3,7 @@ title: "Yes, CSS do :has a previous sibling selector"
 description: "How to use the `has` pseudo-class for making a previous sibling CSS selector"
 published_at: "2024-12-25"
 updated_at: "2025-01-03"
+supports_prompt_mode: true
 ---
 
 <script lang="ts">
@@ -12,11 +13,14 @@ updated_at: "2025-01-03"
 	import RatingVariant from "$lib/components/demos/RatingVariant.svelte";
 	import DemoWrapper from "$lib/components/DemoWrapper.svelte";
   import * as Alert from "$lib/components/ui/alert";
+	import LLMPromptField from "$lib/components/LLMPromptTool/LLMPromptField.svelte";
 </script>
 
+<LLMPromptField text="CSS is a powerful tool that allows us to create incredible things, although it also has its limitations. CSS selectors are essential for describing relationships between elements, but they have always worked in a forward direction: children, siblings, descendants, but not backwards. Well, not officially, but with some creativity, we can make CSS 'look backwards'.">
 CSS is a powerful tool that allows us to create incredible things, although it also has its limitations. CSS selectors are essential for describing relationships between elements, but they have always worked in a forward direction: children, siblings, descendants, but not backwards. Well, not officially, but with some creativity, we can make CSS 'look backwards'.
 
 In this post, we're going to play around with traditional CSS rules. Using a star rating component as an example, I'll show you a clever trick to select 'previous elements' and give them custom styles.
+</LLMPromptField>
 
 ## A Practical Example: A Star Rating Component
 
@@ -104,9 +108,11 @@ This is a graphical representation of what happens in the selector.
 
 ## The Importance of the Subsequent-sibling Combinator
 
+<LLMPromptField text="The previous sibling selector couldn't work without the `~` combinator. This special selector allows us to create a sibling relationship (not necessarily direct) by selecting all instances that share the same parent. In our case, we select all stars that are siblings of the element being hovered.">
 The previous sibling selector couldn't work without the `~` combinator. This special selector allows us to create a sibling relationship (not necessarily direct) by selecting all instances that share the same parent. In our case, we select all stars that are siblings of the element being hovered.
 
 This contrasts with the next-sibling combinator (`+`) which only allows us to select the direct sibling and not the previous ones.
+</LLMPromptField>
 
 In this example you can see what the result would be if we use the next-sibling combinator:
 

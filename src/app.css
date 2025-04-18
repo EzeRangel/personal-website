@@ -12,6 +12,10 @@
 		--card-foreground: 224 71.4% 4.1%;
 		--popover: 0 0% 100%;
 		--popover-foreground: 224 71.4% 4.1%;
+		--sidebar-background: 0 0% 98%;
+		--sidebar-foreground: 240 5.3% 26.1%;
+		--sidebar-accent-background: 240 4.8% 95.9%;
+		--sidebar-accent-foreground: 240 5.9% 10%;
 		--primary: 220.9 39.3% 11%;
 		--primary-foreground: 210 20% 98%;
 		--secondary: 220 14.3% 95.9%;
@@ -29,6 +33,7 @@
 		--featured: 166 243 231;
 		--featured-foreground: 0 183 204;
 		--phlox: 192 76 253;
+		--trail-animation-speed: 6s;
 	}
 	.dark {
 		--background: 224 71.4% 4.1%;
@@ -136,4 +141,32 @@
 .heading--sub {
 	@apply mb-4;
 	@apply md:text-5xl;
+}
+
+.animated-border {
+	background: linear-gradient(#ffffff, #ffffff) padding-box transparent;
+}
+
+.bg-animated-border {
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: white;
+	border-radius: 20px;
+}
+
+.trail-animated-border {
+	width: 200px;
+	aspect-ratio: 2 / 1;
+	position: absolute;
+	background: radial-gradient(100% 100% at right, #bf4cfd, transparent 50%);
+	offset-path: border-box;
+	offset-anchor: 100% 50%;
+	animation: journey var(--trail-animation-speed, 6s) infinite linear;
+}
+
+@keyframes journey {
+	to {
+		offset-distance: 100%;
+	}
 }
