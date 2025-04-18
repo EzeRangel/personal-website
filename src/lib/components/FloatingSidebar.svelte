@@ -1,11 +1,11 @@
 <script lang="ts">
 	import {
 		ArrowLeftIcon,
-		ChevronRightIcon,
 		CompassIcon,
 		ExpandIcon,
 		LightbulbIcon,
 		ListCollapseIcon,
+		MessageSquare,
 		XIcon
 	} from "lucide-svelte";
 	import { Button } from "./ui/button";
@@ -13,7 +13,6 @@
 	import { aiResponse } from "../../store";
 	import type { Completion } from "$lib/types/AI";
 	import Markdown from "./Markdown.svelte";
-	import { Badge } from "./ui/badge";
 
 	let isCollapsed = true;
 	let currentCompletion: Completion | null = null;
@@ -30,7 +29,7 @@
 	)}
 >
 	{#if isCollapsed}
-		<header class="flex flex-row items-center justify-between py-3 px-4 border-b">
+		<header class="flex flex-row items-center justify-between py-2 px-4 border-b">
 			<h1 class="text-lg font-semibold">AI Insights</h1>
 			<Button size="icon" variant="ghost" on:click={onClose}>
 				<XIcon size={18} />
@@ -69,27 +68,30 @@
 					}}
 					class="h-auto p-3 flex flex-col gap-2 whitespace-normal items-start"
 				>
-					<Badge variant="outline">
-						{#if item.action === "EXAMPLES"}
-							<LightbulbIcon size={18} />
-						{:else if item.action === "RESOURCES"}
-							<CompassIcon size={18} />
-						{:else if item.action === "EXPLORE_MORE"}
-							<ExpandIcon size={18} />
-						{:else}
-							<ListCollapseIcon size={18} />
-						{/if}
-					</Badge>
+					{#if item.action === "EXAMPLES"}
+						<LightbulbIcon size={18} />
+					{:else if item.action === "RESOURCES"}
+						<CompassIcon size={18} />
+					{:else if item.action === "EXPLORE_MORE"}
+						<ExpandIcon size={18} />
+					{:else}
+						<ListCollapseIcon size={18} />
+					{/if}
 					<span class="text-left text-sm">
 						{item.title}
 					</span>
 				</Button>
 			{:else}
 				<div class="p-4 border rounded-lg space-y-1 text-center bg-card">
-					<p class="font-semibold text-sm">No insights generated yet</p>
-					<p class="text-xs">
-						Hover over a paragraph on the post and select the action you want to ask the AI
-					</p>
+					<div class="flex flex-col items-center justify-center text-center">
+						<div class="flex items-center justify-center w-16 h-16 mb-6 bg-gray-100 rounded-full">
+							<MessageSquare class="w-8 h-8 text-gray-400" />
+						</div>
+						<h3 class="mb-2 text-lg font-medium">No insights generated yet</h3>
+						<p class="max-w-xs text-sm text-gray-500">
+							Hover over a paragraph on the post and select the action you want to ask the AI
+						</p>
+					</div>
 				</div>
 			{/each}
 		</div>
