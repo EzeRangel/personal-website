@@ -54,7 +54,6 @@
 							{:else}
 								Turn On Prompt Mode
 							{/if}
-							<Sparkles class="ml-2" size={16} />
 						</Button>
 					</div>
 				{/if}
