@@ -7,7 +7,6 @@
 	import { promptMode } from "../../../store";
 	import { Sparkles } from "lucide-svelte";
 	import MediaQuery from "$lib/components/MediaQuery.svelte";
-	import { cn } from "$lib/util/styles";
 
 	export let data: PageData;
 	const { title, publishedAt, updatedAt, supportsPromptMode, Content } = data.post;
@@ -42,29 +41,23 @@
 						{data.post.description}
 					</p>
 				</div>
-				<MediaQuery query="(min-width: 1024px)" let:matches>
-					{#if supportsPromptMode}
-						<div class="mt-4 space-y-3">
-							{#if !matches}
-								<p class="text-xs text-phlox">Prompt Mode is not yet supported on small screens</p>
+				{#if supportsPromptMode}
+					<div class="mt-4 space-y-3">
+						<Button
+							variant={$promptMode ? "secondary" : "default"}
+							on:click={() => {
+								promptMode.set(!$promptMode);
+							}}
+						>
+							{#if $promptMode}
+								Turn Off Prompt Mode
 							{:else}
-								<Button
-									variant={$promptMode ? "secondary" : "default"}
-									on:click={() => {
-										promptMode.set(!$promptMode);
-									}}
-								>
-									{#if $promptMode}
-										Turn Off Prompt Mode
-									{:else}
-										Turn On Prompt Mode
-									{/if}
-									<Sparkles class="ml-2" size={16} />
-								</Button>
+								Turn On Prompt Mode
 							{/if}
-						</div>
-					{/if}
-				</MediaQuery>
+							<Sparkles class="ml-2" size={16} />
+						</Button>
+					</div>
+				{/if}
 			</aside>
 			<div class="col-span-10 md:col-start-1 md:col-span-7">
 				<div class="prose prose-gray">
@@ -74,8 +67,11 @@
 		</div>
 	</article>
 	<MediaQuery query="(min-width: 1024px)" let:matches>
-		{#if $promptMode && matches}
-			<div transition:slide={{ axis: "x" }}>
+		{#if $promptMode}
+			<div
+				transition:slide={{ axis: matches ? "x" : "y" }}
+				class="fixed bottom-0 w-full z-50 lg:relative lg:w-auto"
+			>
 				<FloatingSidebar
 					onClose={() => {
 						promptMode.set(false);
