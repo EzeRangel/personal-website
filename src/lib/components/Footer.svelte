@@ -24,7 +24,7 @@
 			label: "Taking time for myself"
 		}
 	];
-	const currentStatus = "busy";
+	const currentStatus = "available";
 
 	$: time = localTime.format("hh:mm A");
 
