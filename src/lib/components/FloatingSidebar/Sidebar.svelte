@@ -1,7 +1,6 @@
 <script lang="ts">
 	import {
 		ArrowLeftIcon,
-		ChevronDown,
 		ChevronUpIcon,
 		CompassIcon,
 		ExpandIcon,
@@ -10,12 +9,12 @@
 		MessageSquare,
 		XIcon
 	} from "lucide-svelte";
-	import { Button } from "./ui/button";
+	import { Button } from "../ui/button";
 	import { cn } from "$lib/util/styles";
-	import { aiResponse } from "../../store";
+	import { aiResponse } from "../../../store";
 	import type { Completion } from "$lib/types/AI";
-	import Markdown from "./Markdown.svelte";
-	import MediaQuery from "./MediaQuery.svelte";
+	import Markdown from "../Markdown.svelte";
+	import MediaQuery from "../MediaQuery.svelte";
 
 	let isCollapsed = true;
 	let isMobileCollapsed = false;
@@ -36,7 +35,14 @@
 	>
 		{#if isCollapsed}
 			<header class="flex flex-row items-center justify-between py-2 px-4 border-b">
-				<h1 class="text-lg font-semibold">AI Insights</h1>
+				<h1
+					class={cn("text-lg font-semibold", {
+						["bg-gradient-to-r from-indigo-400 via-indigo-200 to-fuchsia-400 text-transparent bg-clip-text bg-[length:200%_auto] animated-text"]:
+							$aiResponse.status === "GENERATING"
+					})}
+				>
+					AI Insights
+				</h1>
 				<div class="flex flex-row gap-2">
 					{#if matches}
 						<Button
