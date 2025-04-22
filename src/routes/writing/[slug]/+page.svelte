@@ -2,7 +2,7 @@
 	import dayjs from "dayjs";
 	import type { PageData } from "./$types";
 	import { slide } from "svelte/transition";
-	import FloatingSidebar from "$lib/components/FloatingSidebar.svelte";
+	import FloatingSidebar from "$lib/components/FloatingSidebar/Sidebar.svelte";
 	import { Button } from "$lib/components/ui/button";
 	import { promptMode } from "../../../store";
 	import { Sparkles } from "lucide-svelte";

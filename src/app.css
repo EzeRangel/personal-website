@@ -170,3 +170,16 @@
 		offset-distance: 100%;
 	}
 }
+
+.animated-text {
+	animation: gradient-text 1.5s infinite alternate;
+}
+
+@keyframes gradient-text {
+	0% {
+		background-position: left center;
+	}
+	100% {
+		background-position: right center;
+	}
+}
