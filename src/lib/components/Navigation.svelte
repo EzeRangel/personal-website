@@ -1,6 +1,17 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import { cn } from "$lib/util/styles";
+	import { MenuIcon } from "lucide-svelte";
+	import { Button } from "./ui/button";
+	import {
+		DropdownMenu,
+		DropdownMenuContent,
+		DropdownMenuGroup,
+		DropdownMenuItem,
+		DropdownMenuLabel,
+		DropdownMenuSeparator,
+		DropdownMenuTrigger
+	} from "./ui/dropdown-menu";
 
 	let items = [
 		{ label: "Writing", path: "/writing" },
@@ -27,16 +38,40 @@
 				</a>
 			{/each}
 		</nav>
+		<DropdownMenu>
+			<DropdownMenuTrigger asChild let:builder>
+				<Button builders={[builder]} variant="outline" size="icon" class="inline-flex md:hidden">
+					<MenuIcon />
+				</Button>
+			</DropdownMenuTrigger>
+			<DropdownMenuContent class="w-56">
+				<DropdownMenuLabel>Navigation</DropdownMenuLabel>
+				<DropdownMenuSeparator />
+				<DropdownMenuGroup>
+					{#each items as item}
+						<DropdownMenuItem
+							on:click={(e) => {
+								e.stopPropagation();
+							}}
+						>
+							<a href={item.path}>
+								{item.label}
+							</a>
+						</DropdownMenuItem>
+					{/each}
+				</DropdownMenuGroup>
+			</DropdownMenuContent>
+		</DropdownMenu>
 	</div>
 </header>
 
 <style lang="postcss">
 	.header {
-		@apply container max-w-5xl;
+		@apply container max-w-5xl py-2;
 	}
 
 	.nav {
-		@apply flex flex-row items-center gap-2 py-6;
+		@apply hidden md:flex flex-row items-center gap-2 py-6;
 		@apply md:gap-4;
 	}
 
