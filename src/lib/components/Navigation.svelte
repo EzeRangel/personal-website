@@ -5,7 +5,8 @@
 	let items = [
 		{ label: "Writing", path: "/writing" },
 		{ label: "Reading", path: "/reading" },
-		{ label: "Bookmarks", path: "/bookmarks" }
+		{ label: "Bookmarks", path: "/bookmarks" },
+		{ label: "Building", path: "/building" }
 	];
 </script>
 
