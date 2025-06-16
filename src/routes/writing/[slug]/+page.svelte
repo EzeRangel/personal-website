@@ -7,6 +7,8 @@
 	import { promptMode } from "../../../store";
 	import { Sparkles } from "lucide-svelte";
 	import MediaQuery from "$lib/components/MediaQuery.svelte";
+	import { Card, CardDescription, CardHeader, CardTitle } from "$lib/components/ui/card";
+	import CardFooter from "$lib/components/ui/card/card-footer.svelte";
 
 	export let data: PageData;
 	const { title, publishedAt, updatedAt, supportsPromptMode, Content } = data.post;
@@ -20,7 +22,7 @@
 					{title}
 				</h1>
 			</header>
-			<aside class="col-span-10 md:col-start-8 md:col-span-3 md:row-start-2">
+			<aside class="col-span-10 md:col-start-8 md:col-span-3 md:row-start-2 space-y-4">
 				<div class="mb-4 text-muted-foreground">
 					<h4 class="font-medium">Published on</h4>
 					<time datetime={dayjs(publishedAt).format()} class="text-sm">
@@ -58,6 +60,18 @@
 						</Button>
 					</div>
 				{/if}
+				<Card class="bg-muted">
+					<CardHeader>
+						<CardTitle>Fix your UI bugs in 48hrs.</CardTitle>
+						<CardDescription>
+							A 48-hour turnaround pack to review your UI and fix 1-3 priority issues that impact
+							usability, responsiveness, or visual consistency.
+						</CardDescription>
+					</CardHeader>
+					<CardFooter>
+						<Button href="/" size="sm" variant="outline" class="text-xs">Start my UI Rescue</Button>
+					</CardFooter>
+				</Card>
 			</aside>
 			<div class="col-span-10 md:col-start-1 md:col-span-7">
 				<div class="prose prose-gray">
