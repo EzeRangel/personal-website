@@ -1,13 +1,15 @@
 <script>
-	import { Github, Globe, Linkedin, Mail } from "lucide-svelte";
+	import { CircleCheckIcon, Github, Globe, Linkedin, Mail } from "lucide-svelte";
 	import { cn } from "$lib/util/styles";
 	import { buttonVariants } from "$lib/components/ui/button";
+	import { Card, CardContent } from "$lib/components/ui/card";
+	import Button from "$lib/components/ui/button/button.svelte";
 </script>
 
 <div class="container max-w-5xl">
 	<section id="intro" class="section hero">
 		<div class="hero-wrap">
-			<div class="space-y-2 max-w-xl">
+			<div class="space-y-2">
 				<h1 class="h2">Ezequiel Rangel</h1>
 				<p class="copy">
 					Frontend developer with 10+ years of experience specializing in <em class="emphasis"
@@ -50,106 +52,50 @@
 			</a>
 		</div>
 	</section>
-	<section id="about" class="section">
-		<div class="space-y-2">
-			<h1 class="h2">About</h1>
-			<div class="copy">
-				I'm a software engineer with experience building digital products with <em class="emphasis"
-					>Next.js</em
-				>,
-				<em class="emphasis">React</em>,
-				<em class="emphasis">Typescript</em> and <em class="emphasis">TailwindCSS</em>; working in
-				projects with client-side and server-side rendered apps. I have also been able to work on
-				mobile apps using React Native that are already in the app stores.
-			</div>
-		</div>
-	</section>
-	<section id="work-experience" class="section">
-		<div class="space-y-2">
-			<h1 class="h2 mb-4">Work Experience</h1>
-			<div class="work">
-				<div class="work-header">
-					<h2 class="h3">ADHOC TI</h2>
-					<span class="work-time">mar. 2017 - current</span>
+	<section id="call-to-action" class="section">
+		<Card class="p-10 bg-muted border border-transparent hover:border-phlox/30">
+			<CardContent class="p-0">
+				<div class="flex flex-col gap-4 max-w-xl mx-auto">
+					<h2 class="text-4xl font-medium text-center">Fix Your UI Problems in 48 Hours</h2>
+					<p class="text-sm text-center text-muted-foreground text-balance">
+						Stop losing customers to broken interfaces. Get your biggest UI headaches solved by an
+						expert for under $150. No long contracts, no surprise costs, just fast &amp;
+						professional fixes that work.
+					</p>
+					<div class="flex flex-row justify-center mb-6">
+						<Button href="https://buy.stripe.com/test_cNibJ06lYdnLcO64ibcMM00">
+							Start my UI Fix - $75
+						</Button>
+					</div>
+					<p
+						class="text-center text-xs text-muted-foreground flex flex-row flex-wrap items-center gap-3 justify-center"
+					>
+						<span class="flex flex-row gap-1 items-center">
+							<CircleCheckIcon class="size-3" />
+							Before & after proof
+						</span>
+						<span class="flex flex-row gap-1 items-center">
+							<CircleCheckIcon class="size-3" />
+							Fixed price
+						</span>
+						<span class="flex flex-row gap-1 items-center">
+							<CircleCheckIcon class="size-3" />
+							Real code fixes
+						</span>
+						<span class="flex flex-row gap-1 items-center">
+							<CircleCheckIcon class="size-3" />
+							Delivered in 48 hours
+						</span>
+					</p>
 				</div>
-				<h3 class="work-position">Frontend Engineer</h3>
-				<div class="work-description">
-					<ul class="list-disc list-inside">
-						<li>
-							Led development of tens large scale mobile and web applications, improving page views
-							and user engagement by more than 50%.
-						</li>
-						<li>
-							Optimized performance on medium-scale websites, reducing load times by 70% through
-							<em class="emphasis">Lighthouse</em> auditing and <em class="emphasis">Pagespeed</em> metrics.
-						</li>
-						<li>
-							Developed and launched four cross-platform mobile applications using React Native that
-							are currently in production with more than 200k downloads.
-						</li>
-						<li>
-							Implemented modern CSS architecture using <em class="emphasis">BEM methodology</em>,
-							improving maintainability and reducing style conflicts.
-						</li>
-						<li>
-							Collaborated with <em class="emphasis">UX/UI</em> designers to implement intuitive interfaces
-							adhering to design systems
-						</li>
-						<li>
-							Mentored external teams of developers in frontend best practices and modern JavaScript
-							techniques.
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="work">
-				<div class="work-header">
-					<h2 class="h3">ANCLA Studio</h2>
-					<span class="work-time">nov. 2011 - mar. 2017</span>
-				</div>
-				<h3 class="work-position">Senior Web Developer</h3>
-				<div class="work-description">
-					<ul class="list-disc list-inside">
-						<li>
-							Developed responsive, mobile-friendly websites for national-level clients across
-							various industries
-						</li>
-						<li>
-							Created comprehensive sitemaps and <em class="emphasis">Information Architecture</em> documentation
-							for a variety of large-scale projects
-						</li>
-						<li>
-							Conducted technical analysis for new projects, providing recommendations to optimize
-							development processes and user experience.
-						</li>
-						<li>
-							Collaborated with cross-functional teams to deliver projects on time and within scope.
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="work">
-				<div class="work-header">
-					<h2 class="h3">Ingles Sin Barreras</h2>
-					<span class="work-time">feb. 2011 - nov. 2011</span>
-				</div>
-				<h3 class="work-position">Webmaster</h3>
-				<div class="work-description">
-					<ul class="list-disc list-inside">
-						<li>Developed internal web applications to streamline business processes.</li>
-						<li>
-							Optimized web pages for improved performance and <em class="emphasis">SEO</em> rankings.
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+			</CardContent>
+		</Card>
 	</section>
 </div>
 
 <style lang="postcss">
 	.section {
-		@apply mb-8;
+		@apply mb-10;
 	}
 
 	.emphasis {
@@ -157,7 +103,7 @@
 	}
 
 	.copy {
-		@apply font-mono text-muted-foreground leading-7;
+		@apply text-muted-foreground leading-7;
 	}
 	.hero {
 		@apply mt-12;
@@ -178,31 +124,5 @@
 
 	.hero-footer {
 		@apply flex flex-row gap-x-1 items-center;
-	}
-
-	.work {
-		@apply mb-4 space-y-2;
-	}
-
-	.work-header {
-		@apply flex flex-col;
-		@apply md:flex-row md:items-baseline md:justify-between;
-	}
-
-	.work-time {
-		@apply text-muted-foreground;
-	}
-
-	.work-position {
-		@apply font-mono text-primary;
-	}
-
-	.work-description {
-		@apply font-mono text-sm text-muted-foreground leading-7;
-	}
-
-	.social-proof-img {
-		@apply grayscale transition-all;
-		@apply hover:grayscale-0;
 	}
 </style>
