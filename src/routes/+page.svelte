@@ -12,12 +12,11 @@
 			<div class="space-y-2">
 				<h1 class="h2">Ezequiel Rangel</h1>
 				<p class="copy">
-					Frontend developer with 10+ years of experience specializing in <em class="emphasis"
-						>CSS Architecture</em
-					>, <em class="emphasis">JavaScript applications</em>, and mobile development. I enjoy
-					optimizing webapps performance and delivering cross-platform mobile applications using
-					<em class="emphasis">React Native</em>. Passionate about implementing scalable frontend
-					solutions for complex problems.
+					Frontend developer with 10+ years of experience fixing UI problems that kill conversions.
+					I specialize in <em class="emphasis">CSS Architecture</em>,
+					<em class="emphasis">JavaScript applications</em>, and
+					<em class="emphasis">mobile responsiveness</em> issues. I help small businesses stop losing
+					customers to broken interfaces by delivering fast, focused frontend fixes in record time.
 				</p>
 				<p class="hero-location">
 					<span class="mr-1">
@@ -53,10 +52,20 @@
 		</div>
 	</section>
 	<section id="call-to-action" class="section">
-		<Card class="p-10 bg-muted border border-transparent hover:border-phlox/30">
-			<CardContent class="p-0">
+		<Card class="p-0 relative overflow-hidden">
+			<div class="absolute inset-0">
+				<!-- svelte-ignore a11y-img-redundant-alt -->
+				<img
+					src="/images/homepage-cta.jpg"
+					alt="CTA Background image"
+					class="w-full h-full object-cover"
+				/>
+			</div>
+			<CardContent class="p-5 md:p-10 bg-card/80 relative">
 				<div class="flex flex-col gap-4 max-w-xl mx-auto">
-					<h2 class="text-4xl font-medium text-center">Fix Your UI Problems in 48 Hours</h2>
+					<h2 class="text-3xl md:text-4xl font-medium text-center">
+						Fix Your UI Problems in 48 Hours
+					</h2>
 					<p class="text-sm text-center text-muted-foreground text-balance">
 						Stop losing customers to broken interfaces. Get your biggest UI headaches solved by an
 						expert for under $150. No long contracts, no surprise costs, just fast &amp;
