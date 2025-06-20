@@ -4,6 +4,7 @@
 	import { buttonVariants } from "$lib/components/ui/button";
 	import { Card, CardContent } from "$lib/components/ui/card";
 	import Button from "$lib/components/ui/button/button.svelte";
+	import CaseStudies from "$lib/components/CaseStudies.svelte";
 </script>
 
 <div class="container max-w-5xl">
@@ -51,6 +52,7 @@
 			</a>
 		</div>
 	</section>
+	<CaseStudies />
 	<section id="call-to-action" class="section">
 		<Card class="p-0 relative overflow-hidden">
 			<div class="absolute inset-0">
