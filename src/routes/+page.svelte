@@ -28,7 +28,7 @@
 		</div>
 		<div class="hero-footer">
 			<Button
-				href="https://cal.com/ezerangel/llamada-rapida-rescate-web"
+				href="mailto:hey@ezerangel.com?subject=I need an improvement for my site"
 				target="_blank"
 				class="uppercase"
 				rel="noopener noreferrer">Request free site review</Button

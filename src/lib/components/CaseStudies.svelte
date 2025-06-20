@@ -7,9 +7,7 @@
 <section class="py-20">
 	<div>
 		<div class="flex flex-col gap-6 text-center">
-			<h2 class="text-4xl font-medium md:text-5xl">
-				Real results that transformed real businesses
-			</h2>
+			<h2 class="text-4xl font-bold text-balance">Real results that transformed real businesses</h2>
 			<h3 class="font-medium">
 				Stories from clients who boosted their online presence and accelerated growth
 			</h3>
