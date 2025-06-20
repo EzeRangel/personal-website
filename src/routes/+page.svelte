@@ -1,57 +1,40 @@
 <script>
-	import { CircleCheckIcon, Github, Globe, Linkedin, Mail } from "lucide-svelte";
-	import { cn } from "$lib/util/styles";
-	import { buttonVariants } from "$lib/components/ui/button";
+	import { CircleCheckIcon, Globe } from "lucide-svelte";
 	import { Card, CardContent } from "$lib/components/ui/card";
 	import Button from "$lib/components/ui/button/button.svelte";
 	import CaseStudies from "$lib/components/CaseStudies.svelte";
 </script>
 
 <div class="container max-w-5xl">
-	<section id="intro" class="section hero">
+	<header id="intro" class="section hero">
 		<div class="hero-wrap">
-			<div class="space-y-2">
-				<h1 class="h2">Ezequiel Rangel</h1>
-				<p class="copy">
-					Frontend developer with 10+ years of experience fixing UI problems that kill conversions.
-					I specialize in <em class="emphasis">CSS Architecture</em>,
-					<em class="emphasis">JavaScript applications</em>, and
-					<em class="emphasis">mobile responsiveness</em> issues. I help small businesses stop losing
-					customers to broken interfaces by delivering fast, focused frontend fixes in record time.
-				</p>
-				<p class="hero-location">
-					<span class="mr-1">
-						<Globe size={14} />
-					</span>
-					Mexico, MST
+			<div class="space-y-4">
+				<div class="space-y-2">
+					<h1 class="h1">Ezequiel Rangel</h1>
+					<p class="text-xl">Frontend Specialist</p>
+					<p class="hero-location">
+						<span class="mr-1">
+							<Globe size={14} />
+						</span>
+						Mexico, MST
+					</p>
+				</div>
+				<p class="text-lg/7">
+					I help businesses stop losing customers to poor web design. I fix UI bugs, slow load
+					times, and mobile issues that hurt trust and conversions. Fast, focused, and visible
+					improvements.
 				</p>
 			</div>
 		</div>
 		<div class="hero-footer">
-			<a
-				href="mailto:hey@ezerangel.com"
-				class={cn(buttonVariants({ variant: "outline", size: "icon" }))}
-			>
-				<Mail size={18} />
-			</a>
-			<a
-				href="https://linkedin.com/in/ezerangel"
-				rel="noopener noreferrer"
+			<Button
+				href="https://cal.com/ezerangel/llamada-rapida-rescate-web"
 				target="_blank"
-				class={cn(buttonVariants({ variant: "outline", size: "icon" }))}
+				class="uppercase"
+				rel="noopener noreferrer">Request free site review</Button
 			>
-				<Linkedin size={18} />
-			</a>
-			<a
-				href="https://github.com/EzeRangel"
-				rel="noopener noreferrer"
-				target="_blank"
-				class={cn(buttonVariants({ variant: "outline", size: "icon" }))}
-			>
-				<Github size={18} />
-			</a>
 		</div>
-	</section>
+	</header>
 	<CaseStudies />
 	<section id="call-to-action" class="section">
 		<Card class="p-0 relative overflow-hidden">
@@ -113,9 +96,6 @@
 		@apply not-italic text-phlox;
 	}
 
-	.copy {
-		@apply text-muted-foreground leading-7;
-	}
 	.hero {
 		@apply mt-12;
 	}
