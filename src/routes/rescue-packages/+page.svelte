@@ -127,14 +127,13 @@
 		<div class="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
 			<div class="flex gap-4 flex-col">
 				<h1 class="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center">
-					Modernize your Website & Grow Your Business
+					Your Website Can Start Converting This Week
 				</h1>
 				<p
 					class="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center"
 				>
-					Start converting visitors into customers. Our Rescue Packages combine essential website
-					fixes, SEO, and performance upgrades into one easy subscription plan for local businesses
-					and solopreneurs.
+					You don’t need to rebuild it. I fix the real problems: speed, SEO, mobile, and clarity
+					through a done-for-you subscription built for small business websites.
 				</p>
 			</div>
 			<div class="flex flex-row gap-3">
