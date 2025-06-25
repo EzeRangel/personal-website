@@ -37,7 +37,7 @@
 					id: 2,
 					label: "Why don't I have a CFDI invoice yet?",
 					description:
-						"CFDI invoicing is coming in Phase 2 of our system, I'll notify all clients when it's ready. Need a CFDI invoice immediately? Email [hey@ezerangel.com] and I'll prioritize your request."
+						"CFDI invoicing is coming in Phase 2 of our system, I'll notify all clients when it's ready."
 				}
 				// {
 				// 	id: 3,
@@ -124,7 +124,7 @@
 
 <main class="container max-w-5xl">
 	<header class="w-full">
-		<div class="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
+		<div class="flex gap-8 py-20 lg:py-60 items-center justify-center flex-col">
 			<div class="flex gap-4 flex-col">
 				<h1 class="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center">
 					Your Website Can Start Converting This Week
@@ -135,11 +135,6 @@
 					You don’t need to rebuild it. I fix the real problems: speed, SEO, mobile, and clarity
 					through a done-for-you subscription built for small business websites.
 				</p>
-			</div>
-			<div class="flex flex-row gap-3">
-				<Button size="lg" class="gap-4">
-					Sign up here <ArrowRightIcon class="w-4 h-4" />
-				</Button>
 			</div>
 		</div>
 	</header>
@@ -310,7 +305,9 @@
 							Best for: Local shops, restaurants, or service providers who just need a modern,
 							functional presence.
 						</p>
-						<Button size="sm" class="w-full">Get Started</Button>
+						<Button size="sm" href="https://buy.stripe.com/aFabJ08ot8iDbzmf9a5Ne01" class="w-full"
+							>Get Started</Button
+						>
 					</div>
 					<Separator />
 					<ul class="space-y-3 py-4">
@@ -344,7 +341,9 @@
 						<p class="text-muted-foreground text-sm">
 							Best for: Businesses trying to rank on Google and generate leads.
 						</p>
-						<Button size="sm" class="w-full">Get Started</Button>
+						<Button size="sm" class="w-full" href="https://buy.stripe.com/aFa14m7kpaqLcDqe565Ne02"
+							>Get Started</Button
+						>
 					</div>
 					<Separator />
 					<ul class="space-y-3 py-4">
@@ -383,7 +382,9 @@
 							Best for: Active businesses that rely heavily on their website or want ongoing
 							improvements without hiring a full-time dev.
 						</p>
-						<Button size="sm" class="w-full">Get Started</Button>
+						<Button size="sm" class="w-full" href="https://buy.stripe.com/cNi9AS349aqL7j65yA5Ne03"
+							>Get Started</Button
+						>
 					</div>
 					<Separator />
 					<ul class="space-y-3 py-4">
