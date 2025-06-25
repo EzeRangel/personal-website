@@ -6,11 +6,13 @@
 
 <section class="py-20">
 	<div>
-		<div class="flex flex-col gap-6 text-center">
-			<h2 class="text-4xl font-bold text-balance">Real results that transformed real businesses</h2>
-			<h3 class="font-medium">
+		<div class="space-y-2 text-center">
+			<h2 class="text-3xl md:text-5xl tracking-tighter">
+				Real results that transformed real businesses
+			</h2>
+			<p class="text-lg leading-relaxed tracking-tight text-muted-foreground">
 				Stories from clients who boosted their online presence and accelerated growth
-			</h3>
+			</p>
 		</div>
 		<div class="mt-20">
 			<div class="grid gap-16 lg:grid-cols-3 xl:gap-24">
@@ -44,7 +46,7 @@
 				<div class="flex gap-10 self-center lg:flex-col">
 					<div class="flex flex-col gap-2">
 						<p class="text-4xl font-medium text-primary sm:text-5xl">100%</p>
-						<p class="font-semibold text-primary">Performance Optimization</p>
+						<p class="font-medium text-primary">Performance Optimization</p>
 						<a
 							class="text-muted-foreground flex items-center gap-2"
 							href="https://pagespeed.web.dev/analysis/https-icusa-com-mx/pz085xtcrp?form_factor=desktop"
@@ -57,7 +59,7 @@
 					</div>
 					<div class="flex flex-col gap-2">
 						<p class="text-4xl font-medium text-primary sm:text-5xl">&lt;1s</p>
-						<p class="font-semibold text-primary">Loading Time</p>
+						<p class="font-medium text-primary">Loading Time</p>
 						<p class="text-muted-foreground">From 8s to 1s</p>
 					</div>
 				</div>
