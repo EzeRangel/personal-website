@@ -120,15 +120,16 @@
 	<header class="w-full">
 		<div class="flex gap-8 py-20 lg:py-60 items-center justify-center flex-col">
 			<div class="flex gap-4 flex-col">
-				<h1 class="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center">
-					Tu Sitio Web Puede Revivir Esta Misma Semana
+				<h1 class="text-5xl md:text-7xl max-w-5xl tracking-tighter text-center text-balance">
+					Tu sitio web no necesita un rediseño. Solo necesita ser <span class="italic"
+						>rescatado</span
+					>
 				</h1>
 				<p
-					class="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center"
+					class="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl mx-auto text-center"
 				>
-					No necesitas reconstruirlo. Soluciono los problemas reales: velocidad, SEO, móvil y
-					claridad a través de una suscripción todo incluido creada para sitios web de pequeñas
-					empresas.
+					Arreglo sitios lentos, invisibles o confusos. Mejora de velocidad, SEO, versión móvil y
+					claridad; todo incluido en una suscripción mensual para pequeñas empresas.
 				</p>
 			</div>
 		</div>
@@ -143,7 +144,8 @@
 			<blockquote
 				class="text-xl font-medium text-center text-balance leading-relaxed tracking-tight"
 			>
-				&quot;Capturaron perfectamente lo que necesitábamos. Mejoramos el diseño, la estructura y la
+				&quot;Nuestro sitio era lento, difícil de navegar en celular y visualmente anticuado.
+				Capturaron perfectamente lo que necesitábamos: mejoramos el diseño, la estructura y la
 				experiencia móvil. La gerencia quedó muy satisfecha con el resultado.&quot;
 			</blockquote>
 			<p class="text-lg font-medium text-primary">
@@ -161,14 +163,14 @@
 					</div>
 					<div class="flex gap-2 flex-col">
 						<h2 class="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular">
-							Los Sitios Desactualizados Te Cuestan Clientes
+							Un sitio lento o anticuado ahuyenta clientes y daña tu reputación.
 						</h2>
 						<p
 							class="text-lg max-w-xl lg:max-w-xl leading-relaxed tracking-tight text-muted-foreground"
 						>
-							Un sitio web torpe disuade a los clientes y hace que tu negocio parezca poco
-							profesional. Los visitantes móviles tienen dificultades con los malos diseños y los
-							motores de búsqueda no pueden clasificar tu sitio sin un SEO adecuado.
+							Un sitio difícil de usar o lento no solo se ve mal, hace que tu negocio parezca poco
+							confiable. Google lo ignora. Tus clientes se frustran. Y tú pierdes oportunidades
+							todos los días.
 						</p>
 					</div>
 					<div class="flex gap-10 pt-12 flex-col w-full">
@@ -176,28 +178,30 @@
 							<div class="flex flex-row gap-4 w-full items-start">
 								<XIcon class="w-4 h-4 mt-2 text-primary shrink-0" />
 								<div class="flex flex-col gap-1">
-									<h3 class="font-medium">Pérdida de clientes potenciales</h3>
+									<h3 class="font-medium">Pierdes clientes antes de que vean lo que ofreces</h3>
 									<p class="text-muted-foreground text-sm">
-										Los tiempos de carga lentos y el diseño confuso frustran a los visitantes.
+										Si tu sitio tarda en cargar o es confuso en celular, el 70% de los visitantes se
+										van sin ver nada. No vuelven.
 									</p>
 								</div>
 							</div>
 							<div class="flex flex-row gap-4 items-start">
 								<XIcon class="w-4 h-4 mt-2 text-primary shrink-0" />
 								<div class="flex flex-col gap-1">
-									<h3 class="font-medium">Poca visibilidad</h3>
+									<h3 class="font-medium">Google no te encuentra (ni tus clientes)</h3>
 									<p class="text-muted-foreground text-sm">
-										Un SEO desactualizado significa que tu sitio se esconde detrás de los
-										competidores en las búsquedas de Google.
+										Si no tienes SEO básico actualizado, tu sitio aparece después de la competencia.
+										Invisible = inservible.
 									</p>
 								</div>
 							</div>
 							<div class="flex flex-row gap-4 items-start">
 								<XIcon class="w-4 h-4 mt-2 text-primary shrink-0" />
 								<div class="flex flex-col gap-1">
-									<h3 class="font-medium">Señales de Confianza Perdidas</h3>
+									<h3 class="font-medium">Tu marca no inspira confianza</h3>
 									<p class="text-muted-foreground text-sm">
-										La falta de reseñas, certificaciones o una marca clara reduce la credibilidad.
+										Si faltan reseñas, imágenes claras o tu sitio parece “viejo”, la gente duda. Y
+										duda = no compra.
 									</p>
 								</div>
 							</div>
@@ -212,78 +216,92 @@
 			<div class="col-span-12 lg:col-span-4 space-y-4">
 				<Badge>La Solución</Badge>
 				<h2 class="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular">
-					Un Paquete para Rescatar Tu Sitio Web
+					Un paquete que rescata tu website y recupera tu confianza online
 				</h2>
 			</div>
 			<div class="col-span-12 lg:col-span-6 lg:col-start-6">
 				<p
 					class="text-lg max-w-xl lg:max-w-xl leading-relaxed tracking-tight text-muted-foreground"
 				>
-					Ofrecemos un servicio de suscripción de tres niveles para rescatar tu sitio web: una
-					revisión completa más mejoras continuas. Cada paquete comienza con una tarifa de
-					configuración única e incluye optimización mensual para mantener tu sitio actualizado.
+					Website Rescue Pack es un servicio por suscripción diseñado para dueños de pequeñas
+					empresas que no tienen tiempo para rehacer su sitio, pero saben que necesitan resultados.
+					Empezamos con una revisión completa de tu sitio y después aplicamos mejoras cada mes:
+					velocidad, visibilidad, confianza y diseño. Tú solo te enfocas en tu negocio.
 				</p>
 			</div>
 		</div>
 		<div class="grid grid-cols-12 gap-4">
 			<div class="col-span-12 md:col-span-4 lg:col-span-3 md:p-4 rounded-lg hover:bg-muted">
 				<h3 class="font-medium flex flex-row items-center gap-2">
-					<ProportionsIcon size={16} />
-					Problemas Móviles
+					<ProportionsIcon class="shrink-0" size={16} />
+					Optimización Móvil
 				</h3>
 				<p class="text-sm text-muted-foreground">
-					Soluciona problemas móviles y mejora la usabilidad
+					Tu sitio se verá y funcionará perfecto en celular. Evita que los clientes se vayan
+					frustrados.
 				</p>
 			</div>
 			<div class="col-span-12 md:col-span-4 lg:col-span-3 md:p-4 rounded-lg hover:bg-muted">
 				<h3 class="font-medium flex flex-row items-center gap-2">
-					<TrendingUpIcon size={16} />
-					Impulsa el SEO
-				</h3>
-				<p class="text-sm text-muted-foreground">Para que los clientes te encuentren en línea</p>
-			</div>
-			<div class="col-span-12 md:col-span-4 lg:col-span-3 md:p-4 rounded-lg hover:bg-muted">
-				<h3 class="font-medium flex flex-row items-center gap-2">
-					<PaintbrushIcon size={16} />
-					Diseño Renovado
-				</h3>
-				<p class="text-sm text-muted-foreground">Para un aspecto moderno y profesional</p>
-			</div>
-			<div class="col-span-12 md:col-span-4 lg:col-span-3 md:p-4 rounded-lg hover:bg-muted">
-				<h3 class="font-medium flex flex-row items-center gap-2">
-					<GaugeIcon size={16} />
-					Acelera tu sitio
+					<TrendingUpIcon class="shrink-0" size={16} />
+					Mejor SEO
 				</h3>
 				<p class="text-sm text-muted-foreground">
-					Tácticas para reducir el tiempo de carga y la tasa de rebote.
+					Te ayudamos a que te encuentren en Google sin pagar por anuncios.
 				</p>
 			</div>
 			<div class="col-span-12 md:col-span-4 lg:col-span-3 md:p-4 rounded-lg hover:bg-muted">
 				<h3 class="font-medium flex flex-row items-center gap-2">
-					Visitantes <ArrowRightIcon size={16} /> Clientes
+					<PaintbrushIcon class="shrink-0" size={16} />
+					Diseño Profesional y Moderno
 				</h3>
-				<p class="text-sm text-muted-foreground">Mejorando los CTA y las páginas de destino</p>
+				<p class="text-sm text-muted-foreground">
+					Tu marca se verá actualizada, confiable y lista para competir.
+				</p>
 			</div>
 			<div class="col-span-12 md:col-span-4 lg:col-span-3 md:p-4 rounded-lg hover:bg-muted">
 				<h3 class="font-medium flex flex-row items-center gap-2">
-					<MousePointerClickIcon size={16} />
-					ROI Real
+					<GaugeIcon class="shrink-0" size={16} />
+					Velocidad al Máximo
 				</h3>
-				<p class="text-sm text-muted-foreground">Configuración del seguimiento de conversiones</p>
+				<p class="text-sm text-muted-foreground">
+					Reducimos el tiempo de carga y mejoramos la experiencia en todas las páginas.
+				</p>
 			</div>
 			<div class="col-span-12 md:col-span-4 lg:col-span-3 md:p-4 rounded-lg hover:bg-muted">
 				<h3 class="font-medium flex flex-row items-center gap-2">
-					<DatabaseZapIcon size={16} />
-					Funcionalidad de Formularios
+					Visitantes <ArrowRightIcon class="shrink-0" size={16} /> Clientes
 				</h3>
-				<p class="text-sm text-muted-foreground">Revisa tus formularios de contacto y conversión</p>
+				<p class="text-sm text-muted-foreground">
+					Revisamos tus llamados a la acción (CTAs) y páginas clave para generar ventas o contactos.
+				</p>
 			</div>
 			<div class="col-span-12 md:col-span-4 lg:col-span-3 md:p-4 rounded-lg hover:bg-muted">
 				<h3 class="font-medium flex flex-row items-center gap-2">
-					<LayoutPanelTopIcon size={16} />
-					Revisar Sitemaps
+					<MousePointerClickIcon class="shrink-0" size={16} />
+					Seguimiento de resultados
 				</h3>
-				<p class="text-sm text-muted-foreground">Para informar a Google de tus cambios internos</p>
+				<p class="text-sm text-muted-foreground">
+					Instalamos seguimiento para que sepas cuántos clientes vienen de tu sitio.
+				</p>
+			</div>
+			<div class="col-span-12 md:col-span-4 lg:col-span-3 md:p-4 rounded-lg hover:bg-muted">
+				<h3 class="font-medium flex flex-row items-center gap-2">
+					<DatabaseZapIcon class="shrink-0" size={16} />
+					Formularios que funcionan
+				</h3>
+				<p class="text-sm text-muted-foreground">
+					Tus formularios de contacto estarán bien configurados y llegarán directo a tu correo.
+				</p>
+			</div>
+			<div class="col-span-12 md:col-span-4 lg:col-span-3 md:p-4 rounded-lg hover:bg-muted">
+				<h3 class="font-medium flex flex-row items-center gap-2">
+					<LayoutPanelTopIcon class="shrink-0" size={16} />
+					Sitemaps y estructuras para Google
+				</h3>
+				<p class="text-sm text-muted-foreground">
+					Nos aseguramos de que Google entienda tu sitio y lo indexe correctamente.
+				</p>
 			</div>
 		</div>
 	</section>
@@ -291,21 +309,27 @@
 		<div class="space-y-4 text-center mb-10">
 			<Badge>Paquetes y Precios</Badge>
 			<h2 class="text-3xl md:text-5xl tracking-tighter font-regular">
-				Precio Predecible para Empezar
+				Precios Claros. Resultados Reales. Sin Sorpresas.
 			</h2>
+			<p class="text-lg max-w-xl mx-auto leading-relaxed tracking-tight text-muted-foreground">
+				Elige el plan que mejor se adapta a tu negocio. Todos incluyen una auditoría inicial +
+				mejoras mensuales, sin contratos largos ni agencias costosas.
+			</p>
 		</div>
 		<div class="grid grid-cols-12 gap-4">
 			<div class="col-span-12 lg:col-span-4 rounded-[18px] border-2 border-border p-4 shadow-sm">
 				<div>
-					<h3 class="font-medium tracking-tighter">Rescate Inicial</h3>
+					<h3 class="font-medium tracking-tighter">Rescue Boost</h3>
 					<div class="my-5">
 						<span class="text-muted-foreground/80 text-6xl block"> $497 </span>
-						<span class="text-muted-foreground text-xs">Configuración. Luego $97/mes</span>
+						<span class="text-muted-foreground text-xs inline-block"
+							>Para negocios que solo necesitan un sitio funcional y presentable.</span
+						>
 					</div>
 					<div class="space-y-3 mb-5">
 						<p class="text-muted-foreground text-sm">
-							Ideal para: Tiendas locales, restaurantes o proveedores de servicios que solo
-							necesitan una presencia moderna y funcional.
+							Ideal para: restaurantes, tiendas locales, freelancers o servicios con poca presencia
+							digital.
 						</p>
 						<Button size="sm" href="https://buy.stripe.com/aFabJ08ot8iDbzmf9a5Ne01" class="w-full"
 							>Empezar</Button
@@ -315,34 +339,35 @@
 					<ul class="space-y-3 py-4">
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
-							Correcciones de responsividad móvil
+							Correcciones móviles y velocidad
 						</li>
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
-							Mejoras básicas de diseño
+							Optimización visual (diseño más limpio)
 						</li>
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
-							Optimización de velocidad (imágenes, carga diferida)
+							Revisión de formularios de contacto
 						</li>
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
-							Formulario de contacto mejorado
+							Mejoras básicas de SEO local
 						</li>
 					</ul>
 				</div>
 			</div>
 			<div class="col-span-12 lg:col-span-4 rounded-[18px] border-2 border-primary p-4 shadow-sm">
 				<div>
-					<h3 class="font-medium tracking-tighter">Rescate de Crecimiento</h3>
+					<h3 class="font-medium tracking-tighter">Rescue Growth</h3>
 					<div class="my-5">
 						<span class="text-muted-foreground/80 text-6xl block"> $997 </span>
-						<span class="text-muted-foreground text-xs">Configuración. Luego $197/mes</span>
+						<span class="text-muted-foreground text-xs inline-block"
+							>Para empresas que quieren aparecer en Google y convertir visitas en clientes.</span
+						>
 					</div>
 					<div class="space-y-3 mb-5">
 						<p class="text-muted-foreground text-sm">
-							Ideal para: Empresas que intentan posicionarse en Google y generar clientes
-							potenciales.
+							Ideal para: negocios en expansión, servicios profesionales, ecommerce inicial.
 						</p>
 						<Button size="sm" class="w-full" href="https://buy.stripe.com/aFa14m7kpaqLcDqe565Ne02"
 							>Empezar</Button
@@ -352,11 +377,11 @@
 					<ul class="space-y-3 py-4">
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
-							Todo en el paquete Inicial
+							Todo en el plan Boost
 						</li>
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
-							Optimización SEO
+							Optimización básica de SEO
 						</li>
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
@@ -375,15 +400,17 @@
 			</div>
 			<div class="col-span-12 lg:col-span-4 rounded-[18px] border-2 border-border p-4 shadow-sm">
 				<div>
-					<h3 class="font-medium tracking-tighter">Rescate Premium</h3>
+					<h3 class="font-medium tracking-tighter">Rescue Premium</h3>
 					<div class="my-5">
 						<span class="text-muted-foreground/80 text-6xl block"> $1,997 </span>
-						<span class="text-muted-foreground text-xs">Configuración. Luego $397/mes</span>
+						<span class="text-muted-foreground text-xs inline-block"
+							>Para empresas que dependen de su sitio web y necesitan soporte continuo.</span
+						>
 					</div>
 					<div class="space-y-3 mb-5">
 						<p class="text-muted-foreground text-sm">
-							Ideal para: Empresas activas que dependen en gran medida de su sitio web o desean
-							mejoras continuas sin contratar a un desarrollador a tiempo completo.
+							Ideal para: negocios con campañas activas, ecommerce establecidos, empresas sin
+							desarrollador interno.
 						</p>
 						<Button size="sm" class="w-full" href="https://buy.stripe.com/cNi9AS349aqL7j65yA5Ne03"
 							>Empezar</Button
@@ -393,23 +420,23 @@
 					<ul class="space-y-3 py-4">
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
-							Todo en el paquete de Crecimiento
+							Todo en el plan Growth
 						</li>
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
-							Auditoría técnica de SEO
+							Cambios y mejoras continuas cada mes
 						</li>
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
-							Panel de monitoreo de rendimiento
+							Auditorías recurrentes de rendimiento
 						</li>
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
 							<BadgeCheckIcon class="size-5" />
 							Actualizaciones mensuales de contenido
 						</li>
 						<li class="flex flex-row items-center gap-2 text-sm text-muted-foreground">
-							<BadgeCheckIcon class="size-5" />
-							Soporte prioritario
+							<BadgeCheckIcon class="size-5 shrink-0" />
+							Soporte estratégico sin necesidad de contratar a un equipo
 						</li>
 					</ul>
 				</div>
