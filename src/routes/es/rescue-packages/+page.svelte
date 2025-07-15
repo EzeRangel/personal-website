@@ -10,7 +10,7 @@
 	import { Card, CardContent, CardHeader } from "$lib/components/ui/card";
 	import { enhance } from "$app/forms";
 	import { CheckCircleIcon } from "lucide-svelte";
-	import type { ActionData } from './$types';
+	import type { ActionData } from "./$types";
 	export let form: ActionData;
 
 	import {
@@ -477,7 +477,8 @@
 						use:enhance
 					>
 						<div class="space-y-2">
-							<label for="url" class="block text-sm text-muted-foreground">Tu sitio web (URL)</label>
+							<label for="url" class="block text-sm text-muted-foreground">Tu sitio web (URL)</label
+							>
 							<input
 								id="url"
 								type="url"
