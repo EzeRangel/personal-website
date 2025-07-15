@@ -4,9 +4,12 @@
 
 ## SvelteKit Form Handling
 
-- Use SvelteKit Form Actions for handling form submissions. They are defined in the `+page.server.ts` file.
-- Form Actions should return a plain object (e.g., `{ success: true }`) rather than a JSON response.
-- In the `+page.svelte` component, use the `form` prop to access the data returned from the form action.
-- For typing in older SvelteKit versions, import `ActionData` from `./$types` and type the `form` prop as `export let form: ActionData;`.
-- If the page has a `load` function, also import `PageData` and type the `data` prop as `export let data: PageData;`.
-- Use the `enhance` action from `$app/forms` for progressive enhancement of forms, which avoids full-page reloads on submission.
+- For handling form submissions, the idiomatic SvelteKit approach is to use Form Actions defined in a `+page.server.ts` file.
+- Actions should return a plain object (e.g., `return { success: true }`), not a `json()` response. The framework handles the serialization.
+- In the corresponding `+page.svelte` component, use the `form` prop to access the data returned from the action. Use `export let form: ActionData;` to type it, importing `ActionData` from `./$types`.
+- If the page does not have a `load` function, do not include a `data` prop or import `PageData`. Keep the component's props minimal.
+- Use the `use:enhance` action from `$app/forms` for progressive enhancement. This provides a better user experience by avoiding full-page reloads on submission.
+
+## Project Tooling
+
+- Be mindful of pre-commit hooks (e.g., linters, formatters). If a commit fails due to a formatting error, check the tool's output. Often, the tool will automatically fix the files, and the only required action is to stage the changes again and re-commit.
