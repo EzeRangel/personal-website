@@ -15,6 +15,7 @@
 		DatabaseZapIcon,
 		GaugeIcon,
 		LayoutPanelTopIcon,
+		LockIcon,
 		MousePointerClickIcon,
 		PaintbrushIcon,
 		ProportionsIcon,
@@ -440,6 +441,50 @@
 						</li>
 					</ul>
 				</div>
+			</div>
+		</div>
+	</section>
+	<section class="my-40">
+		<div class="grid grid-cols-12 items-center gap-6 mb-10">
+			<div class="col-span-12 lg:col-span-6 space-y-4">
+				<h2 class="text-3xl md:text-5xl tracking-tighter">
+					¿Quieres saber qué está fallando en tu sitio web?
+				</h2>
+				<p class="text-lg leading-relaxed tracking-tight text-muted-foreground">
+					Déjame hacer una revisión rápida por ti. Te mandaré un video corto explicando cómo puedes
+					mejorar tu sitio en velocidad, SEO y diseño. Sin compromiso, sin presión.
+				</p>
+			</div>
+			<div class="col-span-12 lg:col-span-6">
+				<form action="" class="space-y-8 px-4 py-6 rounded-lg bg-muted">
+					<div class="space-y-2">
+						<label for="url" class="block text-sm text-muted-foreground">Tu sitio web (URL)</label>
+						<input
+							id="url"
+							type="url"
+							name="url"
+							class="w-full rounded-sm bg-card text-base p-2 border border-muted-foreground"
+						/>
+					</div>
+					<div class="space-y-2">
+						<label for="email" class="block text-sm text-muted-foreground"
+							>Tu correo electrónico</label
+						>
+						<input
+							id="email"
+							type="email"
+							name="email"
+							class="w-full rounded-sm bg-card text-base p-2 border border-muted-foreground"
+						/>
+					</div>
+					<div class="space-y-2">
+						<Button type="submit" class="w-full">Solicitar auditoría gratis</Button>
+						<p class="text-xs text-muted-foreground flex flex-row gap-2">
+							<LockIcon class="size-4" />
+							<span> No te enviaré spam ni usaré tus datos para venderte cosas raras. </span>
+						</p>
+					</div>
+				</form>
 			</div>
 		</div>
 	</section>
