@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script lang="ts">
 	import {
 		Accordion,
 		AccordionContent,
@@ -8,19 +8,25 @@
 	import { Badge } from "$lib/components/ui/badge";
 	import { Button } from "$lib/components/ui/button";
 	import { Card, CardContent, CardHeader } from "$lib/components/ui/card";
-	import Separator from "$lib/components/ui/separator/separator.svelte";
+	import { enhance } from "$app/forms";
+	import { CheckCircleIcon } from "lucide-svelte";
+	import type { ActionData } from "./$types";
+	export let form: ActionData;
+
 	import {
 		ArrowRightIcon,
 		BadgeCheckIcon,
 		DatabaseZapIcon,
 		GaugeIcon,
 		LayoutPanelTopIcon,
+		LockIcon,
 		MousePointerClickIcon,
 		PaintbrushIcon,
 		ProportionsIcon,
 		TrendingUpIcon,
 		XIcon
 	} from "lucide-svelte";
+	import { Separator } from "$lib/components/ui/separator";
 
 	const FAQS = [
 		{
@@ -440,6 +446,66 @@
 						</li>
 					</ul>
 				</div>
+			</div>
+		</div>
+	</section>
+	<section class="my-40">
+		<div class="grid grid-cols-12 items-center gap-6 mb-10">
+			<div class="col-span-12 lg:col-span-6 space-y-4">
+				<h2 class="text-3xl md:text-5xl tracking-tighter">
+					¿Quieres saber qué está fallando en tu sitio web?
+				</h2>
+				<p class="text-lg leading-relaxed tracking-tight text-muted-foreground">
+					Déjame hacer una revisión rápida por ti. Te mandaré un video corto explicando cómo puedes
+					mejorar tu sitio en velocidad, SEO y diseño. Sin compromiso, sin presión.
+				</p>
+			</div>
+			<div class="col-span-12 lg:col-span-6">
+				{#if form?.success}
+					<div class="flex flex-col items-center gap-4 p-8 bg-muted rounded-lg">
+						<CheckCircleIcon class="w-20 h-20 text-primary" />
+						<h2 class="text-2xl font-medium text-center">¡Gracias por tu interés!</h2>
+						<p class="text-center text-muted-foreground">
+							He recibido tu solicitud y te enviaré la auditoría a tu correo en los próximos días.
+						</p>
+					</div>
+				{:else}
+					<form
+						action="?/submit"
+						method="POST"
+						class="space-y-8 px-4 py-6 rounded-lg bg-muted"
+						use:enhance
+					>
+						<div class="space-y-2">
+							<label for="url" class="block text-sm text-muted-foreground">Tu sitio web (URL)</label
+							>
+							<input
+								id="url"
+								type="url"
+								name="url"
+								class="w-full rounded-sm bg-card text-base p-2 border border-muted-foreground"
+							/>
+						</div>
+						<div class="space-y-2">
+							<label for="email" class="block text-sm text-muted-foreground"
+								>Tu correo electrónico</label
+							>
+							<input
+								id="email"
+								type="email"
+								name="email"
+								class="w-full rounded-sm bg-card text-base p-2 border border-muted-foreground"
+							/>
+						</div>
+						<div class="space-y-2">
+							<Button type="submit" class="w-full">Solicitar auditoría gratis</Button>
+							<p class="text-xs text-muted-foreground flex flex-row gap-2">
+								<LockIcon class="size-4" />
+								<span> No te enviaré spam ni usaré tus datos para venderte cosas raras. </span>
+							</p>
+						</div>
+					</form>
+				{/if}
 			</div>
 		</div>
 	</section>
