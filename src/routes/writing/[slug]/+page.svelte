@@ -62,14 +62,16 @@
 				{/if}
 				<Card class="bg-muted">
 					<CardHeader>
-						<CardTitle>Fix your UI bugs in 48hrs.</CardTitle>
+						<CardTitle>Fix your website this week</CardTitle>
 						<CardDescription>
-							A 48-hour turnaround pack to review your UI and fix 1-3 priority issues that impact
-							usability, responsiveness, or visual consistency.
+							Get a Website Rescue Pack. A fast, affordable fix to make your site actually work for
+							your business. No jargon. No fluff. Just results.
 						</CardDescription>
 					</CardHeader>
 					<CardFooter>
-						<Button href="/" size="sm" variant="outline" class="text-xs">Start my UI Rescue</Button>
+						<Button href="/rescue-packages" size="sm" variant="outline" class="text-xs"
+							>Request a free audit</Button
+						>
 					</CardFooter>
 				</Card>
 			</aside>
