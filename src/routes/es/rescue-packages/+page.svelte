@@ -327,7 +327,9 @@
 				<div>
 					<h3 class="font-medium tracking-tighter">Rescue Boost</h3>
 					<div class="my-5">
-						<span class="text-muted-foreground/80 text-6xl block"> $497 </span>
+						<span class="text-muted-foreground/80 text-6xl block">
+							$497 <span class="text-sm">USD</span></span
+						>
 						<span class="text-muted-foreground text-xs inline-block"
 							>Para negocios que solo necesitan un sitio funcional y presentable.</span
 						>
@@ -366,7 +368,9 @@
 				<div>
 					<h3 class="font-medium tracking-tighter">Rescue Growth</h3>
 					<div class="my-5">
-						<span class="text-muted-foreground/80 text-6xl block"> $997 </span>
+						<span class="text-muted-foreground/80 text-6xl block">
+							$997 <span class="text-sm">USD</span>
+						</span>
 						<span class="text-muted-foreground text-xs inline-block"
 							>Para empresas que quieren aparecer en Google y convertir visitas en clientes.</span
 						>
@@ -408,7 +412,9 @@
 				<div>
 					<h3 class="font-medium tracking-tighter">Rescue Premium</h3>
 					<div class="my-5">
-						<span class="text-muted-foreground/80 text-6xl block"> $1,997 </span>
+						<span class="text-muted-foreground/80 text-6xl block">
+							$1,997 <span class="text-sm">USD</span>
+						</span>
 						<span class="text-muted-foreground text-xs inline-block"
 							>Para empresas que dependen de su sitio web y necesitan soporte continuo.</span
 						>
