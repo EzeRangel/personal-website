@@ -122,6 +122,10 @@
 	];
 </script>
 
+<svelte:head>
+	<meta http-equiv="content-language" content="es-mx" />
+</svelte:head>
+
 <main class="container max-w-5xl">
 	<header class="w-full">
 		<div class="flex gap-8 py-20 lg:py-60 items-center justify-center flex-col">
