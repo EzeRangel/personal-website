@@ -15,8 +15,6 @@ export const actions = {
 		const url = formData.get("url");
 		const email = formData.get("email");
 
-		console.log("Form submission:", { url, email });
-
 		base("Leads").create(
 			[
 				{
