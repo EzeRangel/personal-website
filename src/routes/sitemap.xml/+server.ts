@@ -1,3 +1,5 @@
+import fetchPosts from "$lib/util/fetchPosts";
+
 const site = "https://ezerangel.com";
 const pages: string[] = [
 	"writing",
@@ -5,17 +7,16 @@ const pages: string[] = [
 	"building",
 	"bookmarks",
 	"rescue-packages",
-	"es/rescue-packages",
-	"writing/icusa-case-study",
-	"writing/having-fun-with-async-iterators-and-apis",
-	"writing/previous-sibling-selector-css",
-	"writing/publishing-expo-apps",
-	"writing/upgrading-react-native-apps",
-	"writing/your-client-doesnt-mind-you-use-tailwindcss"
+	"es/rescue-packages"
 ];
 
 export async function GET({ url }) {
-	const body = sitemap(pages);
+	const posts = await fetchPosts();
+	const postsPaths = posts.map((item) => {
+		return item.path.slice(1);
+	});
+
+	const body = sitemap([...pages, ...postsPaths]);
 	const response = new Response(body);
 
 	response.headers.set("Cache-Control", "max-age=0, s-max-age=3600");
