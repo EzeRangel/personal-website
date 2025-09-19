@@ -79,7 +79,7 @@
 					id: 7,
 					label: "¿Cuánto tiempo hasta que mi sitio web esté arreglado?",
 					description:
-						"Inicial: 3-5 días hábiles después de recibir tu Lista de Verificación Previa\nCrecimiento: 5-7 días hábiles\nPremium: 7-10 días hábiles"
+						"Boost: 3-5 días hábiles después de recibir tu Checklist de Verificación. Growth: 5-7 días hábiles. Premium: 7-10 días hábiles"
 				},
 				{
 					id: 8,
@@ -103,13 +103,13 @@
 					id: 10,
 					label: "¿Qué pasa si mi sitio web se cae?",
 					description:
-						"El tiempo de respuesta a las caídas del sitio es de 2 horas para el nivel Premium y de 4 horas para los niveles Inicial y de Crecimiento. Esto incluye problemas de servidor, problemas de seguridad o problemas con el certificado SSL."
+						"El tiempo de respuesta a las caídas del sitio es de 2 horas para el nivel Premium y de 4 horas para los niveles Boost y Growth. Esto incluye problemas de servidor, problemas de seguridad o problemas con el certificado SSL."
 				},
 				{
 					id: 11,
 					label: "¿Cómo solicito cambios o actualizaciones?",
 					description:
-						"Envía un correo electrónico a [hey@ezerangel.com] con tu solicitud. Confirmaré si está dentro de tu asignación de tiempo mensual o si se aplica una facturación adicional. Tiempos de respuesta: 24 horas (Premium), 48 horas (Crecimiento/Inicial)."
+						"Envía un correo electrónico a [hey@ezerangel.com] con tu solicitud. Confirmaré si está dentro de tu asignación de tiempo mensual o si se aplica una facturación adicional. Tiempos de respuesta: 24 horas (Premium), 48 horas (Boost/Growth)."
 				},
 				{
 					id: 12,
@@ -121,6 +121,10 @@
 		}
 	];
 </script>
+
+<svelte:head>
+	<meta http-equiv="content-language" content="es-mx" />
+</svelte:head>
 
 <main class="container max-w-5xl">
 	<header class="w-full">
@@ -318,7 +322,7 @@
 				Precios Claros. Resultados Reales. Sin Sorpresas.
 			</h2>
 			<p class="text-lg max-w-xl mx-auto leading-relaxed tracking-tight text-muted-foreground">
-				Elige el plan que mejor se adapta a tu negocio. Todos incluyen una auditoría inicial +
+				Elige el plan que mejor se adapta a tu negocio. Todos incluyen una auditoría inicial más
 				mejoras mensuales, sin contratos largos ni agencias costosas.
 			</p>
 		</div>
@@ -489,6 +493,7 @@
 								id="url"
 								type="url"
 								name="url"
+								required
 								class="w-full rounded-sm bg-card text-base p-2 border border-muted-foreground"
 							/>
 						</div>
@@ -500,6 +505,7 @@
 								id="email"
 								type="email"
 								name="email"
+								required
 								class="w-full rounded-sm bg-card text-base p-2 border border-muted-foreground"
 							/>
 						</div>

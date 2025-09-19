@@ -295,7 +295,7 @@
 		<div class="grid grid-cols-12 gap-4">
 			<div class="col-span-12 lg:col-span-4 rounded-[18px] border-2 border-border p-4 shadow-sm">
 				<div>
-					<h3 class="font-medium tracking-tighter">Starter Rescue</h3>
+					<h3 class="font-medium tracking-tighter">Boost Rescue</h3>
 					<div class="my-5">
 						<span class="text-muted-foreground/80 text-6xl block"> $497 </span>
 						<span class="text-muted-foreground text-xs">Setup. Then $97/month</span>
