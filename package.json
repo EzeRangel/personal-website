@@ -43,7 +43,7 @@
 	"dependencies": {
 		"@ai-sdk/groq": "^1.0.9",
 		"@ai-sdk/svelte": "^1.0.7",
-		"@ethercorps/sveltekit-og": "^1.2.3",
+		"@ethercorps/sveltekit-og": "^3.0.0",
 		"@fontsource-variable/inter": "^5.0.16",
 		"@fontsource/geist-mono": "^5.0.1",
 		"@notionhq/client": "^2.2.3",
