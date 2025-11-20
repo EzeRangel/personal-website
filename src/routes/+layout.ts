@@ -6,9 +6,8 @@ import { PUBLIC_POSTHOG_API_KEY } from "$env/static/public";
 export const load: LayoutLoad = async ({ data }) => {
 	if (browser && process.env.NODE_ENV === "production") {
 		posthog.init(PUBLIC_POSTHOG_API_KEY, {
-			api_host: "https://app.posthog.com",
-			capture_pageview: false,
-			capture_pageleave: false,
+			api_host: "https://us.i.posthog.com",
+			defaults: "2025-05-24",
 			loaded: (ph) => {
 				if (location.pathname === "localhost" || location.hostname === "127.0.0.1") {
 					ph.opt_out_capturing();

@@ -57,7 +57,7 @@
 		"lucide-svelte": "^0.522.0",
 		"mdsvex": "^0.11.0",
 		"postcss": "^8.4.33",
-		"posthog-js": "^1.105.6",
+		"posthog-js": "^1.297.2",
 		"satori": "^0.10.13",
 		"svelte-markdown": "^0.4.1",
 		"svelte-preprocess": "^5.1.3",
