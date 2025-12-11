@@ -36,6 +36,7 @@
 	<meta property="og:description" content={seoDescription} />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={seoURL} />
+	<meta property="og:image" content={`https://ezerangel.com/og?title=${seoTitle}`} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="twitter:domain" content="www.ezerangel.com" />
 	<meta property="twitter:url" content={seoURL} />
