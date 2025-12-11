@@ -1,10 +1,16 @@
 import type { Actions } from "./$types";
 import Airtable from "airtable";
+import { PostHog } from "posthog-node";
 import { AIRTABLE_ACCESS_TOKEN, AIRTABLE_BASE_ID } from "$env/static/private";
+import { PUBLIC_POSTHOG_API_KEY } from "$env/static/public";
 
 Airtable.configure({
 	endpointUrl: "https://api.airtable.com",
 	apiKey: AIRTABLE_ACCESS_TOKEN
+});
+
+const client = new PostHog(PUBLIC_POSTHOG_API_KEY, {
+	host: "https://us.i.posthog.com"
 });
 
 const base = Airtable.base(AIRTABLE_BASE_ID);
@@ -31,6 +37,16 @@ export const actions = {
 				}
 			}
 		);
+
+		client.capture({
+			event: "user sent lead form",
+			properties: {
+				email,
+				website: url
+			}
+		});
+
+		client.shutdown();
 
 		return { success: true };
 	}
