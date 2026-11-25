@@ -1,4 +1,0 @@
-{
-	"*.+(ts|html|svelte)": ["eslint ."],
-	"*.{js,ts,html,css,scss}": ["prettier --plugin-search-dir . --write ."]
-}

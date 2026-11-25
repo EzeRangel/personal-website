@@ -1,24 +1,36 @@
-# My website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Hi all this is my personal website, it's built with [Svelte](https://kit.svelte.dev/) and uses a Notion integration for some parts of the content.
-I used [shadcn-ui for Svelte](https://www.shadcn-svelte.com/), feel free to look around, fork it or make whatever you want.
+## Getting Started
 
-# Run it
+First, run the development server:
 
-| Command                 | Action                                             |
-| :---------------------- | :------------------------------------------------- |
-| `npm install`           | Installs dependencies                              |
-| `npm run dev`           | Start a development server                         |
-| `npm run dev -- --open` | Start the server and open the app in a browser tab |
-| `npm run build`         | Create a production version                        |
-| `npm run preview`       | Preview the production build                       |
-
-You may need some env variables to make it work:
-
-```
-NOTION_INTEGRATION_KEY=
-NOTION_DATABASE_ID=
-NOTION_READING_LIST_DATABASE_ID=
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-To deploy the app you need to install an [adapter](https://kit.svelte.dev/docs/adapters) I use the [Vercel Adapter](https://kit.svelte.dev/docs/adapter-vercel)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
