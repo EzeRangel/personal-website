@@ -1,0 +1,55 @@
+/* Ezequiel Rangel — design tokens as CSS variables (generated from tokens.json). --font-serif, --font-sans and --font-mono are set by next/font/local in app/[locale]/layout.tsx. */
+:root, [data-theme="light"] {
+  --bg: #F3F1EC;
+  --surface: #FBFAF7;
+  --ink: #141414;
+  --muted: #5C5850;
+  --line: #D6D1C6;
+  --line-strong: #8C877C;
+  --accent: #2E2BE8;
+  --accent-hover: #2826CC;
+  --on-accent: #FFFFFF;
+  --on-accent-muted: #E0DFFC;
+  --on-accent-line: #716FEF;
+  --focus: var(--accent);
+}
+[data-theme="dark"] {
+  --bg: #0F0F11;
+  --surface: #18181B;
+  --ink: #ECEAE4;
+  --muted: #A19D94;
+  --line: #2C2C31;
+  --line-strong: #6B6862;
+  --accent: #8C8CFF;
+  --accent-hover: #9A9AFF;
+  --on-accent: #0F0F11;
+  --on-accent-muted: #222235;
+  --on-accent-line: #6464B3;
+  --focus: var(--accent);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-48: 192px;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-full: 999px;
+  --container-max: 1360px;
+  --measure: 68ch;
+  --gutter: 24px;
+  --page-margin: 48px;
+  --hit-target: 44px;
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --duration-blink: 500ms;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+}
