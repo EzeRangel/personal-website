@@ -7,9 +7,9 @@ import { LanguageSuggestion } from "@/components/layout/LanguageSuggestion";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { ThemeScript } from "@/components/layout/ThemeScript";
 import { fontVariables } from "@/lib/fonts";
 import { getMessages, isLocale, localePath, locales } from "@/lib/i18n";
-import { themeScript } from "@/lib/theme";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -45,7 +45,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
       suppressHydrationWarning
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <ThemeScript />
       </head>
       <body>
         <div className="pg-root">
