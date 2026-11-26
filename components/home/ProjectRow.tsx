@@ -5,7 +5,7 @@ import type { Project } from "@/lib/content";
 export function ProjectRow({ project, href, ariaLabel }: { project: Project; href: string; ariaLabel: string }) {
   return (
     <li>
-      <Link className="er-project" href={href} aria-label={ariaLabel} data-track="case_open" data-track-project={project.slug}>
+      <Link className="er-project" href={href} prefetch aria-label={ariaLabel} data-track="case_open" data-track-project={project.slug}>
         <span>
           <span className="er-project__name">{project.name}</span>
           <span className="er-project__line" style={{ display: "block" }}>

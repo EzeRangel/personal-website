@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { LanguageSwitch } from "@/components/layout/LanguageSwitch";
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { NavLinks } from "@/components/layout/NavLinks";
 import { ThemeSelect } from "@/components/layout/ThemeSelect";
 import { navItems } from "@/components/layout/nav";
 import { localePath, type Locale, type Messages } from "@/lib/i18n";
@@ -16,11 +16,7 @@ export function SiteHeader({ locale, messages }: { locale: Locale; messages: Mes
       <header className="er-header">
         <Logo href={home} />
         <nav className="er-nav" aria-label={global.navLabel}>
-          {items.map((item) => (
-            <Link key={item.key} href={item.href}>
-              {item.label}
-            </Link>
-          ))}
+          <NavLinks items={items} />
         </nav>
         <div className="er-tools">
           <LanguageSwitch

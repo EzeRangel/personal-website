@@ -100,6 +100,22 @@ export const en = {
       copiedAnnouncement: "Email copied to clipboard",
     },
   },
+  work: {
+    // Fixed texts of every case study (/work/[slug]). Source: "Arquitectura de los casos de estudio".
+    case: {
+      back: "← Work",
+      label: "CASE STUDY",
+      ogLabel: "CASE STUDY · EN",
+      facts: { role: "Role", year: "Year", status: "Status", platform: "Platform", builtWith: "Built with", links: "Links" },
+      // Must match caseSections.en in lib/content.ts: the h2s of every en.mdx.
+      sections: ["The problem", "The decision", "How it was built", "Where it stands"],
+      decision: { built: "Built first", left: "Left out" },
+      ai: { product: "AI in the product", workflow: "AI in my workflow" },
+      noResults: "No results to show yet.",
+      next: "Next project",
+      nextAriaLabel: "Next project: {name}",
+    },
+  },
   notFound: {
     text: "This page doesn't exist. This does:",
   },

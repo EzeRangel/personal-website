@@ -1,12 +1,78 @@
 ---
 name: Fiscalio
-line: App de escritorio local-first que organiza tus CFDI y te ayuda a declarar en RESICO.
-year: "[AÑO]"
-status: "[ESTADO]"      # formato "v0.1 · en validación"
-role: Fundador técnico
+slug: fiscalio
 order: 1
-links: []
-screenshots: []
+line: App de escritorio local-first que organiza tus CFDI y te ayuda a declarar en RESICO.
+lead: App de escritorio local-first que convierte tus CFDI en el borrador de tu declaración de RESICO en minutos.
+year: "2025–2026"
+status: V1.0.7 · BETA PRIVADA
+role: Fundador técnico
+platform: macOS (Apple silicon e Intel) · Windows
+builtWith: [Electron, React, Next.js, PGLite]
+links:
+  - { label: fiscalio.app, href: "https://www.fiscalio.app" }
+cover: { src: cover.jpg, alt: "Pantalla principal de Fiscalio" }
+screens:   # solo datos de ejemplo (pnpm demo:reset). Pendiente: pantalla de sugerencias de cuenta con datos de ejemplo.
+  - src: import.jpg
+    alt: "Pantalla de importación de Fiscalio: zona para cargar XML de CFDI y el resultado de tres archivos, uno marcado como UUID duplicado."
+    caption: Carga tus XML y léelos como facturas.
+  - src: draft.png
+    alt: "Borrador de la declaración de junio de 2026 con datos de ejemplo: ingresos del periodo, base gravable e ISR a pagar."
+    caption: Revisa el borrador de la declaración antes de presentarla.
+diagram:
+  src: diagram.es.svg
+  alt: Cómo Fiscalio convierte tus XML en el borrador de la declaración
+  description: Los XML que cargas pasan por el parser y se guardan en PGLite. El motor de patrones sugiere una cuenta por factura. Tú la aceptas o la corriges, lo que sube o baja la confianza del patrón. El resultado es el borrador de la declaración. Todo ocurre en tu computadora.
+schema: { applicationCategory: FinanceApplication, operatingSystem: "macOS, Windows" }
+seo:
+  title: "Fiscalio: borrador de declaración RESICO · Ezequiel Rangel"
+  description: Fiscalio, app de escritorio local-first que convierte tus CFDI en el borrador de tu declaración RESICO en minutos. Cómo la construí y qué dejé fuera.
+updated: 2026-11-26
 ---
 
-{/* El cuerpo del caso queda fuera del alcance del Home v1. */}
+## El problema
+
+Si estás en RESICO y facturas por tu cuenta, emites y recibes CFDI todo el mes. Al cerrar el mes, esos XML tienen que volverse una declaración: separar lo cobrado de lo facturado, cruzar complementos de pago, restar retenciones. A mí ese borrador me tomaba horas. Construí Fiscalio porque soy uno de esos contribuyentes.
+
+## La decisión
+
+Local por defecto. Tus XML se quedan en tu computadora y Fiscalio nunca pide tu contraseña del SAT ni tu e.firma. La privacidad no es una función que se activa: es la forma del producto.
+
+<DecisionLists
+  built={[
+    { what: "Leer y validar los CFDI.", why: "Todo empieza en el XML; si la lectura falla, lo demás no importa." },
+    { what: "Base de efectivo.", why: "En RESICO pagas sobre lo cobrado, no sobre lo facturado; una factura PPD espera su complemento de pago." },
+    { what: "Sugerencias de cuenta con revisión humana.", why: "La app hace lo repetitivo; la última palabra es tuya." },
+    { what: "El borrador de la declaración.", why: "Era el paso que me tomaba horas." },
+    { what: "Una base de datos local de verdad.", why: "Tus datos se quedan en tu computadora y la app funciona sin internet." },
+  ]}
+  left={[
+    { what: "Timbrar facturas.", why: "Ya lo resuelve tu PAC o el portal del SAT; Fiscalio lee lo que ya emitiste." },
+    { what: "Descarga desde el SAT.", why: "Pediría tu CIEC o tu e.firma, y Fiscalio no las pide." },
+    { what: "Conciliación bancaria.", why: "Necesita una planeación cuidadosa y probablemente una conexión. Queda para después." },
+  ]}
+/>
+
+## Cómo se construyó
+
+<BlueprintDiagram />
+
+Fiscalio es una app de Electron para macOS y Windows. Adentro corre una app de Next.js y React en tu propia computadora, sin servidor remoto. Cargas tus XML; la app los interpreta, los valida y te los muestra como facturas que puedes leer. Todo se guarda en PGLite, una base de datos Postgres que vive en un archivo de tu equipo, con respaldos automáticos diarios y mensuales.
+
+### IA en el producto
+
+No es un LLM ni un modelo entrenado en la nube. De cada factura que clasificas, el motor guarda una foto de sus rasgos: RFC, claves de producto del SAT, impuestos y moneda. Cuando un patrón se repite con la misma cuenta, gana confianza; con suficiente evidencia, se vuelve una regla. Si corriges una sugerencia, ese patrón pierde consistencia. Lo elegí así porque cada sugerencia se puede explicar y todo corre sin internet.
+
+### IA en mi proceso
+
+Usé agentes de IA para construir partes de la app a partir de specs y planes por fase que reviso en cada checkpoint, para escribir las pruebas end-to-end y para la primera campaña de venta.
+
+## Dónde está hoy
+
+Fiscalio va en la v1.0.7, en beta privada. Todavía no hay resultados que mostrar: en diciembre preparo el borrador con las primeras personas, con sus CFDI reales. Yo preparo mis declaraciones con Fiscalio desde diciembre de 2025: el borrador que me tomaba horas ahora toma minutos.
+
+En una app local-first, el respaldo es trabajo del producto. Lo aprendí cuando se descompuso mi computadora y perdí siete meses de datos; los respaldos automáticos llegaron en la 1.0.
+
+Lo que haría distinto: armar desde el primer día un set de XML de prueba con casos reales. Los complementos de pago, las notas de crédito y los CFDI relacionados son donde la integración se rompe.
+
+Lo que sigue: las cancelaciones y sustituciones, y cómo ajustan los impuestos de un mes que ya declaraste.

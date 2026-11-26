@@ -101,6 +101,21 @@ export const es: DeepString<Messages> = {
       copiedAnnouncement: "Correo copiado al portapapeles",
     },
   },
+  work: {
+    case: {
+      back: "← Trabajo",
+      label: "CASO DE ESTUDIO",
+      ogLabel: "CASO DE ESTUDIO · ES",
+      facts: { role: "Rol", year: "Año", status: "Estado", platform: "Plataforma", builtWith: "Hecho con", links: "Enlaces" },
+      // Igual que caseSections.es en lib/content.ts: los h2 de cada es.mdx.
+      sections: ["El problema", "La decisión", "Cómo se construyó", "Dónde está hoy"],
+      decision: { built: "Construido primero", left: "Fuera de la primera versión" },
+      ai: { product: "IA en el producto", workflow: "IA en mi proceso" },
+      noResults: "Todavía no hay resultados que mostrar.",
+      next: "Siguiente proyecto",
+      nextAriaLabel: "Siguiente proyecto: {name}",
+    },
+  },
   notFound: {
     text: "Esta página no existe. Esto sí:",
   },

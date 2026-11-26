@@ -21,7 +21,7 @@ export function proxy(request: NextRequest) {
 
   // English lives at the root, so /en URLs redirect there. Metadata images are generated under /en.
   if (path === "/en" || path.startsWith("/en/")) {
-    if (path.startsWith("/en/opengraph-image")) return NextResponse.next();
+    if (/\/opengraph-image(?:[-/]|$)/.test(path)) return NextResponse.next();
     const url = request.nextUrl.clone();
     url.pathname = path.slice(3) || "/";
     return NextResponse.redirect(url, 308);
