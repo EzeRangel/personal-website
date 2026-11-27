@@ -15,6 +15,7 @@ function entry(path: string, extra: Partial<MetadataRoute.Sitemap[number]>): Met
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...entry("/", { changeFrequency: "monthly", priority: 1 }),
+    ...entry("/work", { changeFrequency: "monthly", priority: 0.9 }),
     ...getPublishedCases("en").flatMap((study) =>
       entry(`/work/${study.slug}`, { lastModified: study.updated, changeFrequency: "monthly", priority: 0.8 }),
     ),

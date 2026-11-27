@@ -9,6 +9,8 @@ export type AnalyticsEvent =
   | "case_open"
   | "case_read"
   | "case_link_click"
+  | "client_link_click"
+  | "product_link_click"
   | "next_project_click"
   | "article_read";
 

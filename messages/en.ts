@@ -101,6 +101,36 @@ export const en = {
     },
   },
   work: {
+    // Work index (/work). Copy from the /work design draft (canvas "Work (borrador)"); pending Ezequiel's review.
+    index: {
+      seoTitle: "Work · Ezequiel Rangel",
+      description:
+        "Products I built end to end, like Fiscalio, Relay and JobSnap, and work I shipped for clients. First versions people can use, and how each was built.",
+      ogLabel: "WORK · EN",
+      ogTitle: "What I’ve built.",
+      kicker: "Work",
+      // The block cursor goes right after the period.
+      title: "What I’ve built.",
+      lead: "Products of my own, built end to end, and work I’ve shipped for clients.",
+      products: {
+        label: "Products",
+        title: "My own products.",
+        lead: "I start them, build them end to end and put them in front of real people.",
+        facts: { role: "Role", year: "Year", status: "Status", stack: "Stack" },
+        cta: "See how it was built",
+        shotPlaceholder: "[Screenshot · {name}]",
+      },
+      clients: {
+        label: "Client work",
+        title: "Built for clients.",
+        lead: "Work I shipped as a contractor. No case studies: what I built, my role and the year.",
+        caption: "Client work",
+        columns: { client: "Client", built: "What I built", role: "Role", year: "Year", link: "Link" },
+        confidential: "Confidential client",
+        underNda: "Under NDA",
+        noLink: "No public link",
+      },
+    },
     // Fixed texts of every case study (/work/[slug]). Source: "Arquitectura de los casos de estudio".
     case: {
       back: "← Work",

@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import type { Locale } from "@/lib/i18n";
+import { clients } from "@/content/clients";
 
 const root = path.join(process.cwd(), "content");
 
@@ -12,6 +13,15 @@ export type Project = {
   year: string;
   status: string;
   order: number;
+};
+
+// What the /work listing shows of each product. Lenient on purpose: drafts (no case body yet) show
+// their [PLACEHOLDERS] as they are.
+export type ProjectListing = Project & {
+  role: string;
+  builtWith: string[];
+  links: CaseLink[];
+  cover: CaseImage | null;
 };
 
 export type Article = {
@@ -65,6 +75,23 @@ export function getProjects(locale: Locale): Project[] {
     })
     .filter((project): project is Project => project !== null)
     .sort((a, b) => a.order - b.order);
+}
+
+export function getProjectListings(locale: Locale): ProjectListing[] {
+  return getProjects(locale).map((project) => {
+    const data = read("work", project.slug, locale)!.data as Record<string, unknown>;
+    const cover = image(data.cover);
+    return {
+      ...project,
+      role: String(data.role ?? "[ROLE]"),
+      builtWith: Array.isArray(data.builtWith) ? data.builtWith.map(String) : [],
+      links: (Array.isArray(data.links) ? data.links : [])
+        .map((link) => link as Record<string, unknown>)
+        .filter((link) => typeof link.href === "string" && typeof link.label === "string")
+        .map((link) => ({ label: String(link.label), href: String(link.href) })),
+      cover: cover && fs.existsSync(path.join(root, "work", project.slug, "screens", path.basename(cover.src))) ? cover : null,
+    };
+  });
 }
 
 export function getArticles(locale: Locale, limit?: number): Article[] {
@@ -239,6 +266,41 @@ export function getNextCase(slug: string, locale: Locale): CaseStudy | null {
   const index = cases.findIndex((item) => item.slug === slug);
   if (index === -1 || cases.length < 2) return null;
   return cases[(index + 1) % cases.length];
+}
+
+// ---------- Client work (/work) ----------
+
+export type ClientEntry = {
+  slug: string;
+  name: string;
+  year: string;
+  url: string | null;
+  confidential: boolean;
+  role: string;
+  line: string;
+};
+
+// Entries from content/clients.ts in file order. Production builds leave out entries that still
+// have a [PLACEHOLDER]; a malformed entry fails the build.
+export function getClientWork(locale: Locale): ClientEntry[] {
+  return clients
+    .map((item) => {
+      const where = `content/clients.ts (${item.slug})`;
+      if ((!item.confidential && !item.name.trim()) || !item.year.trim() || !item.role[locale].trim() || !item.line[locale].trim()) {
+        throw new Error(`${where}: name, year, role and line are required`);
+      }
+      if (item.url !== undefined && !/^https:\/\//.test(item.url)) throw new Error(`${where}: "url" must start with https://`);
+      return {
+        slug: item.slug,
+        name: item.name,
+        year: item.year,
+        url: item.url ?? null,
+        confidential: item.confidential === true,
+        role: item.role[locale],
+        line: item.line[locale],
+      } satisfies ClientEntry;
+    })
+    .filter((entry) => !(failOnPlaceholders && placeholderPattern.test(JSON.stringify(entry))));
 }
 
 // The blueprint diagram is inlined so its strokes follow the theme tokens.

@@ -102,6 +102,35 @@ export const es: DeepString<Messages> = {
     },
   },
   work: {
+    // Copy del borrador de diseño de /work (canvas "Work (borrador)"); pendiente de revisión de Ezequiel.
+    index: {
+      seoTitle: "Trabajo · Ezequiel Rangel",
+      description:
+        "Productos que construí de punta a punta, como Fiscalio, Relay y JobSnap, y trabajo que entregué para clientes. Primeras versiones que la gente usa.",
+      ogLabel: "TRABAJO · ES",
+      ogTitle: "Lo que he construido.",
+      kicker: "Trabajo",
+      title: "Lo que he construido.",
+      lead: "Productos propios, construidos de punta a punta, y trabajo que he entregado para clientes.",
+      products: {
+        label: "Productos",
+        title: "Mis productos.",
+        lead: "Los empiezo, los construyo de punta a punta y los pongo en manos de gente real.",
+        facts: { role: "Rol", year: "Año", status: "Estado", stack: "Stack" },
+        cta: "Mira cómo se construyó",
+        shotPlaceholder: "[Captura · {name}]",
+      },
+      clients: {
+        label: "Para clientes",
+        title: "Construido para clientes.",
+        lead: "Trabajo que entregué como contractor. Sin casos de estudio: qué construí, mi rol y el año.",
+        caption: "Trabajo para clientes",
+        columns: { client: "Cliente", built: "Qué construí", role: "Rol", year: "Año", link: "Enlace" },
+        confidential: "Cliente confidencial",
+        underNda: "Bajo NDA",
+        noLink: "Sin enlace público",
+      },
+    },
     case: {
       back: "← Trabajo",
       label: "CASO DE ESTUDIO",
