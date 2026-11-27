@@ -153,7 +153,7 @@ export const es: DeepString<Messages> = {
     index: {
       seoTitle: "Escritos: notas de lo que construyo · Ezequiel Rangel",
       description:
-        "Notas técnicas de un product engineer en México: las decisiones detrás de lo que construyo, código que funcionó y lo que no. Por ahora, en inglés.",
+        "Notas técnicas de un product engineer en México: las decisiones detrás de lo que construyo, código que funcionó y lo que no. En inglés y en español.",
       ogLabel: "ESCRITOS · ES",
       kicker: "Escritos",
       title: "Notas de lo que construyo.",

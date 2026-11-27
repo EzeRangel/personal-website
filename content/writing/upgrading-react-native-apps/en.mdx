@@ -1,0 +1,46 @@
+---
+title: "My thoughts on upgrading ten versions of React Native"
+date: 2023-10-22
+summary: "Some tips for making a React Native upgrade a little more bearable: the right tools, one platform at a time, and knowing when to take a break."
+---
+
+These are my thoughts after upgrading a React Native app across about ten versions.
+
+## Use the tools that already exist
+
+The right tools and guides cut down the problems a lot. Where can you find them? In the [React Native communities](https://reactnative.dev/community/communities).
+
+### React Native Upgrade Helper is a must-have
+
+The [Upgrade Helper](https://react-native-community.github.io/upgrade-helper/) shows which files change between two React Native versions, and it adds notes with more context.
+
+### Communities
+
+Ask about specific problems, find solutions and add context to questions other people already asked.
+
+## Focus on one platform, then the next one
+
+Your goal is to build the app for that one platform.
+
+**iOS**
+
+1. Update the native files.
+2. Don’t touch `project.pbxproj`.
+3. Update the pods.
+
+**Android**
+
+1. Focus on the `build.gradle` files.
+2. Update the other native files.
+
+## Rest, then try again
+
+Upgrading a React Native app can be hard. If you’re stuck and not making progress, take a break: go for a walk, take a short nap or talk with your friends.
+
+Then come back and try again. You’ll have the energy for another round.
+
+I hope this helps someone out there. You can do this.
+
+<Note>
+Originally published as a [thread on X](https://x.com/El_Semantico/status/1716158062657151462) on October 22, 2023.
+</Note>

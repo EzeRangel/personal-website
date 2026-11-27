@@ -234,6 +234,7 @@ La misma estructura existe en español bajo /es. Rescue Packages desaparece con 
 ### Escritos
 
 - Inglés como idioma original; traducción al español cuando exista.
+- Excepción: los posts de 2021 escritos en español (TailwindCSS, Expo) viven solo en /es. Sus URLs viejas (/writing/{slug}) redirigen con 301 a /es/writing/{slug}.
 - Temas: IA aplicada a construir producto, flujos con agentes, decisiones técnicas de mis proyectos.
 - Frecuencia baja y sin calendario. Por eso el inicio muestra solo 3 artículos, sin fechas destacadas en grande.
 - Cada artículo indica idioma disponible (EN / ES) y tiempo de lectura.

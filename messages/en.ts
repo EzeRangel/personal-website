@@ -156,7 +156,7 @@ export const en = {
     index: {
       seoTitle: "Writing: notes from building · Ezequiel Rangel",
       description:
-        "Technical notes from a product engineer in Mexico: the decisions behind what I build, code that worked and what didn’t. In English, for now.",
+        "Technical notes from a product engineer in Mexico: the decisions behind what I build, code that worked and what didn’t. Mostly written in English.",
       ogLabel: "WRITING · EN",
       kicker: "Writing",
       title: "Notes from building.",
