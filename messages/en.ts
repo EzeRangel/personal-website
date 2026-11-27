@@ -22,12 +22,14 @@ export const en = {
       suggestion: "This page is also in Spanish.",
       suggestionLink: "Read it in Spanish →",
     },
-    footer: { builtIn: "Built in Mazatlán, Mexico.", privacy: "Privacy", rss: "RSS" },
+    footer: { builtIn: "Built in Mazatlán, Mexico.", privacy: "Privacy", rss: "RSS", cookieSettings: "Cookie settings" },
     cookies: {
       text: "This site uses Google Analytics to see which pages get read. It only loads if you accept.",
       accept: "Accept",
       decline: "Decline",
       privacy: "Privacy",
+      // Reopened from "Cookie settings": the current choice is marked.
+      current: "current choice",
     },
   },
   home: {
@@ -101,31 +103,34 @@ export const en = {
     },
   },
   work: {
-    // Work index (/work). Copy from the /work design draft (canvas "Work (borrador)"); pending Ezequiel's review.
+    // Work index (/work). Source: "Arquitectura y copy de las páginas internas" (Nov 27).
     index: {
-      seoTitle: "Work · Ezequiel Rangel",
+      seoTitle: "Work: products I built end to end · Ezequiel Rangel",
       description:
-        "Products I built end to end, like Fiscalio, Relay and JobSnap, and work I shipped for clients. First versions people can use, and how each was built.",
+        "Fiscalio, Relay and JobSnap: products I built end to end, from the first version. Plus work I shipped for clients, with my role and a live link.",
       ogLabel: "WORK · EN",
       ogTitle: "What I’ve built.",
       kicker: "Work",
       // The block cursor goes right after the period.
       title: "What I’ve built.",
-      lead: "Products of my own, built end to end, and work I’ve shipped for clients.",
+      lead: "My own products come first: they show how I decide what to build. Below is work for clients, where someone else owned the idea.",
       products: {
         label: "Products",
         title: "My own products.",
         lead: "I start them, build them end to end and put them in front of real people.",
         facts: { role: "Role", year: "Year", status: "Status", stack: "Stack" },
         cta: "See how it was built",
-        shotPlaceholder: "[Screenshot · {name}]",
+        // A link whose label is a domain (fiscalio.app) reads "Visit fiscalio.app ↗".
+        visit: "Visit {label}",
       },
       clients: {
         label: "Client work",
         title: "Built for clients.",
-        lead: "Work I shipped as a contractor. No case studies: what I built, my role and the year.",
+        lead: "Work I shipped as a contractor. No case studies here: what I built, my role, the year and a link to see it live.",
         caption: "Client work",
         columns: { client: "Client", built: "What I built", role: "Role", year: "Year", link: "Link" },
+        visit: "Visit",
+        visitAriaLabel: "Visit {client}’s site (opens in a new tab)",
         confidential: "Confidential client",
         underNda: "Under NDA",
         noLink: "No public link",
@@ -146,8 +151,168 @@ export const en = {
       nextAriaLabel: "Next project: {name}",
     },
   },
+  writing: {
+    // Writing index (/writing). Source: "Arquitectura y copy de las páginas internas".
+    index: {
+      seoTitle: "Writing: notes from building · Ezequiel Rangel",
+      description:
+        "Technical notes from a product engineer in Mexico: the decisions behind what I build, code that worked and what did not. In English, some in Spanish.",
+      ogLabel: "WRITING · EN",
+      kicker: "Writing",
+      title: "Notes from building.",
+      lead: "Technical notes and the decisions behind what I build. Each one says which language it’s in.",
+      rss: "Subscribe via RSS",
+      label: "All writing",
+      yearCount: { one: "{count} post", other: "{count} posts" },
+      empty: "The first note is on its way.",
+      onlyInEnglish: "", // English is the original: nothing to say
+      readingTime: "{minutes} min read",
+    },
+    // Article template (/writing/[slug]).
+    article: {
+      back: "← Writing",
+      label: "Article",
+      ogLabel: "WRITING · EN",
+      facts: { published: "Published", updated: "Updated", language: "Language", reading: "Reading" },
+      readingTime: "{minutes} min read",
+      otherLanguage: "Also in Spanish →",
+      toc: "On this page",
+      note: "Note",
+      code: { copy: "Copy", copied: "Copied", ariaLabel: "Copy code", announcement: "Code copied to clipboard" },
+      aging: "Written in {year}. Some details may be out of date.",
+      published: "Published {date}",
+      edit: "Edit on GitHub",
+      more: { label: "More writing", title: "Keep reading", all: "All writing →" },
+      demo: { reset: "Reset", star: "{count} of 5 stars" },
+    },
+  },
+  about: {
+    // About (/about). Source: "Arquitectura y copy de las páginas internas".
+    seoTitle: "About · Ezequiel Rangel, product engineer",
+    description:
+      "I’m Ezequiel Rangel, a product engineer in Mazatlán, Mexico. More than 10 years building web and mobile products. How I work and what I’m looking for.",
+    ogLabel: "ABOUT · EN",
+    kicker: "About",
+    title: "I’ve been building product for more than ten years.",
+    // Brandbook short bio. "{products}" becomes the three product names, linked when they have a case.
+    bio: "I’m Ezequiel Rangel, a product engineer based in Mazatlán, Mexico. For more than a decade I’ve built web and mobile products. Now I build first versions: working prototypes people can use.",
+    products: { before: "My own products include ", and: " and ", after: "." },
+    facts: {
+      basedIn: { label: "Based in", value: "Mazatlán, Mexico" },
+      timeZone: { label: "Time zone", value: "UTC−7" },
+      languages: { label: "Languages", value: "English · Spanish" },
+      email: { label: "Email" },
+    },
+    path: {
+      label: "Path",
+      title: "Where I’ve built.",
+      now: "now",
+      allWork: "All work →",
+    },
+    how: {
+      label: "How I work",
+      title: "How I work.",
+      items: [
+        { title: "Remote, from Mazatlán.", text: "I work in UTC−7." },
+        { title: "In English or Spanish.", text: "I write, talk and ship in both. The work doesn’t change with the language." },
+        { title: "End to end.", text: "I design and build the whole first version, from the interface to the data." },
+        { title: "AI in a loop I control.", text: "Agents help me plan, build and review. I check every change before it ships." },
+      ],
+    },
+    seek: {
+      label: "What I’m looking for",
+      title: "What I’m looking for.",
+      teams: {
+        kicker: "For teams",
+        title: "A role on a product team.",
+        text: "Product Engineer or Forward Deployed Engineer roles, where I own a product from the idea to real use.",
+        link: "Tell me about the role →",
+        subject: "Role",
+      },
+      founders: {
+        kicker: "For founders",
+        title: "A first version to build.",
+        text: "You have a product idea and need it working in front of real people. I build that first version with you.",
+        link: "Tell me about your idea →",
+        subject: "Idea",
+      },
+    },
+  },
+  privacy: {
+    // Privacy notice (/privacy). DRAFT, not reviewed by a lawyer. Source: "Arquitectura y copy de las páginas internas".
+    seoTitle: "Privacy · Ezequiel Rangel",
+    description:
+      "What ezerangel.com collects and why: Google Analytics only if you give consent, and your email only to reply when you write to me. Nothing else.",
+    kicker: "Privacy",
+    title: "Privacy notice.",
+    lead: "What this site collects, why, and how to change your mind. Short on purpose.",
+    facts: {
+      updated: { label: "Updated", value: "[DATE]" },
+      appliesTo: { label: "Applies to", value: "ezerangel.com" },
+      contact: { label: "Contact" },
+    },
+    toc: "On this page",
+    sections: {
+      responsible: {
+        title: "Who is responsible",
+        text: [
+          "This site belongs to Ezequiel Rangel, product engineer in Mazatlán, Sinaloa, Mexico. Address for notices: [ADDRESS].",
+          "For anything about your data, write to {email}.",
+        ],
+      },
+      collect: {
+        title: "What I collect",
+        text: [
+          "Nothing, unless you accept analytics.",
+          "If you accept, Google Analytics 4 records which pages you visit, how you got here, your device and browser, and your approximate location. I use it to see which pages get read. I don’t sell this data.",
+          "If you write to me, I keep your email and message only to reply.",
+        ],
+      },
+      cookies: {
+        title: "Cookies",
+        intro: "These are the only cookies this site sets, and only after you accept.",
+        columns: { name: "Name", purpose: "Purpose", duration: "Duration" },
+        rows: [
+          { name: "_ga", purpose: "Tells visits apart (Google Analytics)", duration: "2 years" },
+          { name: "_ga_PRVB43G65X", purpose: "Keeps the session state (Google Analytics)", duration: "2 years" },
+        ],
+        outro: "Your choice, theme and language are saved in your browser and never sent to me.",
+      },
+      processors: {
+        title: "Who else processes it",
+        text: [
+          "Google processes the analytics data. Vercel hosts the site and processes technical data from each visit to serve the pages.",
+        ],
+      },
+      rights: {
+        title: "Your choice and your rights",
+        text: [
+          "You can change your cookie choice at any time. You can also ask to see, correct or delete your data, object to its use (ARCO rights) or withdraw your consent by writing to {email}.",
+        ],
+        change: "Change cookie choice",
+        google: "Google’s privacy policy",
+      },
+      changes: {
+        title: "Changes",
+        text: ["If this notice changes, the date at the top changes too."],
+      },
+    },
+  },
   notFound: {
+    seoTitle: "Page not found · Ezequiel Rangel",
+    label: "404 · Not found",
     text: "This page doesn't exist. This does:",
+    links: [
+      { path: "/", title: "Home", text: "I build first versions." },
+      { path: "/work", title: "Work", text: "Fiscalio, Relay and JobSnap: how each one was built." },
+      { path: "/writing", title: "Writing", text: "Notes from building." },
+    ],
+    mail: "Looking for something specific?",
+  },
+  retired: {
+    seoTitle: "Page retired · Ezequiel Rangel",
+    label: "410 · Retired",
+    text: "I retired this page. This is what I build now:",
   },
 } as const;
 

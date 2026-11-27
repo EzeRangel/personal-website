@@ -16,17 +16,16 @@ type ProductItemProps = {
 
 // Screenshot (7 columns) · number, name, line, facts and links (5 columns). Stacks below 1024 px.
 export function ProductItem({ product, index, cover, caseHref, copy }: ProductItemProps) {
+  // No real screenshot = no image at all (never a placeholder box); the body takes the wide column.
   const shot = cover ? (
     <span className="pg-shot__frame wk-shot__frame">
       <Image src={cover.data} alt="" preload={index === 0} sizes="(max-width: 1023px) 100vw, 740px" />
     </span>
-  ) : (
-    <span className="wk-shot__empty">{format(copy.shotPlaceholder, { name: product.name })}</span>
-  );
+  ) : null;
 
   return (
-    <li className="wk-item">
-      {caseHref ? (
+    <li className={shot ? "wk-item" : "wk-item wk-item--noshot"}>
+      {!shot ? null : caseHref ? (
         // Same destination as the name and the button: hidden from keyboard and screen readers.
         <Link className="wk-shot" href={caseHref} prefetch tabIndex={-1} aria-hidden="true">
           {shot}
@@ -94,7 +93,7 @@ export function ProductItem({ product, index, cover, caseHref, copy }: ProductIt
                 data-track-project={product.slug}
                 data-track-link={link.label}
               >
-                {link.label} ↗
+                {link.label.includes(".") ? format(copy.visit, { label: link.label }) : link.label} ↗
               </a>
             ))}
           </div>

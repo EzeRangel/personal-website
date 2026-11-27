@@ -1,5 +1,5 @@
 import type { ClientEntry } from "@/lib/content";
-import type { Messages } from "@/lib/i18n";
+import { format, type Messages } from "@/lib/i18n";
 
 type ClientTableProps = { clients: ClientEntry[]; copy: Messages["work"]["index"]["clients"] };
 
@@ -38,11 +38,13 @@ export function ClientTable({ clients, copy }: ClientTableProps) {
                   <a
                     className="er-link"
                     href={client.url}
+                    target="_blank"
                     rel="noopener"
+                    aria-label={format(copy.visitAriaLabel, { client: client.name })}
                     data-track="client_link_click"
                     data-track-client={client.slug}
                   >
-                    {new URL(client.url).host.replace(/^www\./, "")} ↗
+                    {copy.visit} ↗
                   </a>
                 ) : (
                   <span className="er-meta">

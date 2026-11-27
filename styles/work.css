@@ -102,3 +102,9 @@
   }
   .cl-table td:nth-child(2)::before { display: none; }
 }
+
+/* No real screenshot: no image, the body takes the wide column. */
+.wk-item--noshot .wk-body { grid-column: 1 / span 7; }
+@media (max-width: 1023px) {
+  .wk-item--noshot .wk-body { grid-column: 1 / -1; }
+}

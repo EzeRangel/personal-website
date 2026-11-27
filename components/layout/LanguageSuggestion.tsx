@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
-import { useLocaleHref } from "@/components/layout/useLocaleHref";
+import { hasTranslation, useLocaleHref } from "@/components/layout/useLocaleHref";
 import { otherLocale, type Locale } from "@/lib/i18n";
 
 const KEY = "er-language-hint";
@@ -42,7 +42,7 @@ function LiveLanguageSuggestion({ locale, text, linkLabel, closeLabel }: Languag
     } catch {}
     // Reads browser-only state after hydration; the static HTML never includes the hint.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (!dismissed && preferredLocale() === target) setVisible(true);
+    if (!dismissed && preferredLocale() === target && hasTranslation(target)) setVisible(true);
   }, [target]);
 
   if (!visible) return null;

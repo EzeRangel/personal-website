@@ -3,6 +3,7 @@ import { cacheLife } from "next/cache";
 import { site } from "@/config/site";
 import { socialLinks } from "@/lib/social";
 import { Cursor } from "@/components/ui/Cursor";
+import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
 import { navItems } from "@/components/layout/nav";
 import { localePath, type Locale, type Messages } from "@/lib/i18n";
 
@@ -51,9 +52,10 @@ export async function SiteFooter({ locale, messages }: { locale: Locale; message
             <Link className="pg-foot-link" href={localePath(locale, "/privacy")}>
               {footer.privacy}
             </Link>
-            <a className="pg-foot-link" href={"/rss.xml"}>
+            <a className="pg-foot-link" href={locale === "en" ? "/rss.xml" : `/${locale}/rss.xml`} type="application/rss+xml">
               {footer.rss}
             </a>
+            <CookieSettingsButton className="pg-foot-link pg-foot-button">{footer.cookieSettings}</CookieSettingsButton>
           </div>
         </div>
         <p className="er-small er-tabular pg-foot-copy">

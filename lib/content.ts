@@ -28,11 +28,14 @@ export type Article = {
   slug: string;
   title: string;
   date: Date;
+  updated: Date | null;
   summary: string;
   readingTime: number | null;
   // Locale the entry is shown in: the requested one, or "en" when there is no translation.
   locale: Locale;
   languages: Locale[];
+  // h2s of the body, in order, with the ids the article page gives them (see headingId).
+  headings: { id: string; text: string }[];
 };
 
 function slugs(kind: "work" | "writing"): string[] {
@@ -94,32 +97,62 @@ export function getProjectListings(locale: Locale): ProjectListing[] {
   });
 }
 
+const wordsPerMinute = 220;
+
+function articleIn(slug: string, locale: Locale): Article | null {
+  const languages = (["en", "es"] as const).filter((l) => fs.existsSync(path.join(root, "writing", slug, `${l}.mdx`)));
+  const shown: Locale | undefined = languages.includes(locale) ? locale : languages.includes("en") ? "en" : undefined;
+  if (!shown) return null;
+  const file = read("writing", slug, shown)!;
+  const data = file.data;
+  const words = wordCount(file.content.replace(/^import .*$/gm, ""));
+  const readingTime =
+    typeof data.readingTime === "number" ? data.readingTime : words > 0 ? Math.max(1, Math.round(words / wordsPerMinute)) : null;
+  return {
+    slug,
+    title: String(data.title),
+    date: new Date(data.date),
+    updated: data.updated ? new Date(data.updated) : null,
+    summary: String(data.summary ?? ""),
+    readingTime,
+    locale: shown,
+    languages: [...languages],
+    headings: headings(file.content).map((text) => ({ id: headingId(text), text: plainHeading(text) })),
+  };
+}
+
 export function getArticles(locale: Locale, limit?: number): Article[] {
   const articles = slugs("writing")
-    .map((slug) => {
-      const languages = (["en", "es"] as const).filter((l) =>
-        fs.existsSync(path.join(root, "writing", slug, `${l}.mdx`)),
-      );
-      const shown: Locale | undefined = languages.includes(locale) ? locale : languages.includes("en") ? "en" : undefined;
-      if (!shown) return null;
-      const file = read("writing", slug, shown)!;
-      const data = file.data;
-      const words = wordCount(file.content);
-      const readingTime =
-        typeof data.readingTime === "number" ? data.readingTime : words > 0 ? Math.max(1, Math.ceil(words / 200)) : null;
-      return {
-        slug,
-        title: String(data.title),
-        date: new Date(data.date),
-        summary: String(data.summary ?? ""),
-        readingTime,
-        locale: shown,
-        languages: [...languages],
-      } satisfies Article;
-    })
+    .map((slug) => articleIn(slug, locale))
     .filter((article): article is Article => article !== null)
     .sort((a, b) => b.date.getTime() - a.date.getTime());
   return limit === undefined ? articles : articles.slice(0, limit);
+}
+
+// The article in exactly this locale, or null when it isn't written in it.
+export function getArticle(slug: string, locale: Locale): Article | null {
+  if (!/^[a-z0-9-]+$/.test(slug)) return null;
+  const article = articleIn(slug, locale);
+  return article && article.locale === locale ? article : null;
+}
+
+export function articleSlugs(): string[] {
+  return slugs("writing");
+}
+
+// Markdown h2 text → plain text, and plain text → the id used for anchors and "On this page".
+// components/writing/articleMdx.tsx builds the same id from the rendered children.
+function plainHeading(text: string): string {
+  return text.replace(/[`*_]/g, "").trim();
+}
+
+export function headingId(text: string): string {
+  return plainHeading(text)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 // ---------- Case studies (/work/[slug]) ----------
