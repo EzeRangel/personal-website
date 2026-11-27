@@ -1,0 +1,52 @@
+/* Page layout for ezerangel.com mockups. Component styles come from the design system's bundle.css. */
+.pg-root { background: var(--bg); color: var(--ink); font-family: var(--font-sans); min-height: 100%; }
+.pg { max-width: var(--container-max); margin: 0 auto; padding-inline: var(--page-margin); box-sizing: border-box; }
+.pg-sec { padding-top: var(--space-32); }
+.pg-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: var(--space-8); }
+.pg-full { grid-column: 1 / -1; }
+.pg-hero { padding-top: var(--space-32); padding-bottom: var(--space-16); }
+.pg-hero .er-display { max-width: 12ch; }
+.pg-work { margin-top: var(--space-16); }
+.pg-work .er-work { padding-inline: 0; }
+.pg-more { display: flex; justify-content: flex-end; margin-top: var(--space-6); }
+.pg-footer { margin-top: var(--space-16); }
+@media (max-width: 1023px) {
+  .pg { padding-inline: 32px; }
+  .pg-sec { padding-top: var(--space-24); }
+}
+@media (max-width: 640px) {
+  .pg { padding-inline: 20px; }
+  .pg-grid { column-gap: 16px; }
+  .pg-sec { padding-top: var(--space-16); }
+  .pg-hero { padding-top: var(--space-16); padding-bottom: var(--space-8); }
+  .er-header { padding: var(--space-4) 0; }
+  .er-tools { gap: var(--space-2); }
+  .er-hero__ctas { flex-direction: column; align-items: flex-start; }
+  .er-work { padding-top: var(--space-8); }
+  .er-contact__mail { flex-direction: column; align-items: flex-start; }
+}
+
+/* --- Homepage copy v1 additions --- */
+.pg-skip { position: absolute; left: var(--space-4); top: -60px; z-index: 10; padding: 12px 16px; background: var(--accent); color: var(--on-accent); font: 500 15px/1 var(--font-sans); text-decoration: none; }
+.pg-skip:focus { top: var(--space-4); }
+.pg-ident { display: flex; flex-direction: column; gap: var(--space-1); }
+.pg-name { margin: 0; font: 500 18px/1.3 var(--font-sans); letter-spacing: -0.01em; }
+.pg-work-lead { margin: 0 0 var(--space-8); max-width: 46ch; font: 400 clamp(1.1875rem, 1.6vw, 1.375rem)/1.5 var(--font-sans); color: var(--on-accent-muted); }
+.pg-on-accent-link { color: var(--on-accent); font: 500 16px/1.4 var(--font-sans); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; display: inline-flex; min-height: 44px; align-items: center; }
+.pg-on-accent-link:hover { text-decoration-thickness: 2px; }
+.pg-note { color: var(--muted); max-width: 60ch; margin-top: var(--space-4); }
+.pg-foot { display: flex; flex-direction: column; gap: var(--space-8); padding: var(--space-8) 0 var(--space-6); border-top: 1px solid var(--line); }
+.pg-foot-top { display: flex; align-items: baseline; gap: var(--space-6); flex-wrap: wrap; }
+.pg-foot-lang { margin-left: auto; align-self: center; }
+@media (max-width: 640px) {
+  /* Own line on phones. The 44px hit targets center "EN"; pull it back so it lines up with the column. */
+  .pg-foot-lang { margin-left: -10px; flex-basis: 100%; }
+}
+.pg-foot-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); max-width: 720px; }
+.pg-foot-col { display: flex; flex-direction: column; }
+.pg-foot-link { font: 500 13px/1.4 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.pg-foot-link:hover { color: var(--accent); }
+.pg-foot-copy { margin: 0; }
+@media (max-width: 640px) {
+  .pg-foot-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

@@ -1,0 +1,31 @@
+---
+title: "Publicando en tiendas una app en Expo"
+date: 2021-09-21
+summary: "Cómo Expo me ayudó a publicar en App Store y Google Play una app en cuyo desarrollo no participé: desarrollo, build de producción y publicación."
+---
+
+Hace algunos días me encargaron publicar una app sencilla, hecha con React Native y Expo. Ya había publicado en App Store y Google Play, así que conocía el proceso, pero había un detalle: no había participado en el desarrollo, porque no era parte del equipo inicial. ¿Cómo iba a lanzar algo de cuyo desarrollo no sabía nada? ¿Podía Expo ayudarme con eso? ¿De qué formas?
+
+Para mi sorpresa, Expo te apoya en cada uno de los pasos para desplegar una app en las tiendas. Estos son los que seguí para hacer el despliegue que me encargaron.
+
+## Correr la app en desarrollo
+
+Lo primero era asegurarme de que la app funcionara bien en un simulador. Expo lo resuelve levantando un servidor de desarrollo e iniciando el bundler de React Native; después solo lees el código QR que genera y ves la app, literalmente en cinco minutos.
+
+## Generar un build de producción
+
+El siguiente paso era probar la app con un build de producción, de preferencia en un dispositivo real. Esto tiene algunas implicaciones que el ecosistema de Expo resuelve muy bien: el build es el proceso con el que Expo firma la app y genera un archivo que puedes publicar en las tiendas.
+
+Expo tiene comandos que te ayudan con esta tarea: genera y guarda tanto los certificados (iOS) como el keystore (Android) para firmar la app, un paso muy importante y también muy engorroso del despliegue. En el dashboard de tu equipo en Expo puedes ver los builds generados y obtener la configuración necesaria para firmar las apps. **Esto, literalmente, ahorra horas de trabajo.**
+
+## Publicar la app en las tiendas
+
+Con los builds listos, puedes descargarlos y subirlos a mano a cada tienda, pero Expo también te ayuda aquí. Si ya configuraste las tiendas, Expo publica de forma automática los builds que generaste.
+
+Ojo: el servicio de despliegue de Expo (EAS) requiere una suscripción de pago, así que vale la pena tomarlo en cuenta antes de lanzar una app.
+
+Expo ha evolucionado tanto en los últimos años que se convirtió en una plataforma que te acompaña en todo el desarrollo de una app. Con documentación de primer nivel y guías de implementación, explica a detalle cómo desarrollar una app con React Native desde cero.
+
+<Note>
+Publicado originalmente en [Typeshare](https://typeshare.co/ezerangel/posts/-MjjrL-96b7vsNXXdth_) el 21 de septiembre de 2021.
+</Note>

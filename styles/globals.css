@@ -1,0 +1,118 @@
+@layer ui-sdk;
+
+@import "./tokens.css";
+@import "./components.css";
+@import "./layout.css";
+@import "./case.css";
+@import "./work.css";
+@import "./pages.css";
+
+/* ---------- Additions for the production build (not in the static reference) ---------- */
+
+:root { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
+
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.er-on-accent :focus-visible { outline-color: var(--on-accent); }
+
+/* 44 × 44 px minimum hit targets */
+.er-header .er-logo { min-height: var(--hit-target); align-items: center; }
+.er-nav a { display: inline-flex; align-items: center; min-height: var(--hit-target); padding: 0; }
+.er-toggle a { display: inline-flex; align-items: center; justify-content: center; min-width: var(--hit-target); min-height: var(--hit-target); margin-inline: -8px; padding: 0; }
+.er-toggle { min-width: var(--hit-target); justify-content: center; }
+
+/* ---------- Theme select (ui-sdk Menu) ---------- */
+.er-theme__value { display: none; }
+:root:not([data-theme-choice]) .er-theme__value[data-value="system"],
+[data-theme-choice="system"] .er-theme__value[data-value="system"],
+[data-theme-choice="light"] .er-theme__value[data-value="light"],
+[data-theme-choice="dark"] .er-theme__value[data-value="dark"] { display: inline; }
+
+.er-theme-menu {
+  min-width: 160px;
+  margin: 0;
+  padding: var(--space-1) 0;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+}
+.er-theme-menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--hit-target);
+  padding: 0 var(--space-4);
+  font: 500 13px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  outline: none;
+  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+.er-theme-menu__item[data-highlighted] { background: var(--bg); color: var(--ink); }
+.er-theme-menu__item[data-checked] { color: var(--ink); }
+.er-theme-menu__item[data-highlighted]:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+.er-theme-menu__mark { width: 8px; height: 8px; flex: none; }
+.er-theme-menu__mark[data-checked] { background: var(--accent); }
+
+/* ---------- Mobile menu (ui-sdk Dialog) ---------- */
+.er-mobile-menu {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-y: auto;
+  transition: opacity var(--duration-slow) var(--ease-out);
+}
+.er-mobile-menu[data-starting-style], .er-mobile-menu[data-ending-style] { opacity: 0; }
+.er-mobile-menu::backdrop { background: var(--bg); }
+.er-mobile-menu__nav { display: flex; flex-direction: column; padding-top: var(--space-8); }
+.er-mobile-menu__nav a {
+  display: flex;
+  align-items: center;
+  min-height: var(--hit-target);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--line);
+  font: 400 clamp(2.125rem, 9vw, 3.5rem)/1.05 var(--font-serif);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.er-mobile-menu__nav a:hover { color: var(--accent); }
+
+/* ---------- Notice bars: cookie consent and language suggestion ---------- */
+.er-notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  font: 400 15px/1.5 var(--font-sans);
+}
+.er-notice p { margin: 0; color: var(--muted); }
+.er-notice__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); }
+.er-notice .er-btn { min-height: var(--hit-target); }
+.er-notice .er-link { display: inline-flex; align-items: center; min-height: var(--hit-target); font: 500 15px/1.4 var(--font-sans); }
+
+/* Fixed to the bottom so showing a notice after hydration never shifts the page. */
+.er-notices { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; flex-direction: column; }
+.er-lang-hint, .er-cookies { background: var(--surface); border-top: 1px solid var(--line-strong); }
+.er-lang-hint .er-notice, .er-cookies .er-notice { justify-content: space-between; padding-block: var(--space-3); }
+.er-cookies p { max-width: var(--measure); }
+
+/* ---------- 404 ---------- */
+.er-not-found { display: grid; gap: var(--space-6); padding: var(--space-32) 0 var(--space-16); }
+.er-not-found .er-logo { font-size: clamp(2.125rem, 4vw, 3.5rem); }
+
+@media (max-width: 640px) {
+  .er-not-found { padding-top: var(--space-16); }
+}
+.er-contact:focus { outline: none; }

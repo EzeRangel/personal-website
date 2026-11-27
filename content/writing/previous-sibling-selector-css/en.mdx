@@ -1,0 +1,111 @@
+---
+title: "Yes, CSS :has a previous sibling selector"
+date: 2024-12-25
+updated: 2025-01-03
+summary: "How to use the :has() pseudo-class as a previous sibling selector, with a star rating component as the example."
+---
+
+import illustration from "./images/rating-illustration.png";
+
+CSS is a powerful tool, but it has its limits. CSS selectors are essential for describing relationships between elements, but they have always worked in a forward direction: children, siblings, descendants, but not backwards. Well, not officially, but with some creativity, we can make CSS “look backwards”.
+
+In this post, we’re going to play around with traditional CSS rules. Using a star rating component as an example, I’ll show you a trick to select “previous elements” and give them custom styles.
+
+## A practical example: a star rating component
+
+Below you can use the component and choose a rating. Normally, you would need to use JavaScript to know which rating was chosen and dynamically color the previous stars. Well, now that’s no longer necessary.
+
+<Note>
+This example is better appreciated on desktop with a mouse, but if you’re reading from your mobile device, just tap on a star.
+</Note>
+
+<RatingDemo />
+
+The HTML code has nothing out of the ordinary. For this example, I used [lucide.dev](https://lucide.dev/) to display the star icon.
+
+```html
+<div class="rating-wrapper">
+  <span class="item" role="button">
+    <span class="icon">
+      <i data-lucide="star"></i>
+    </span>
+  </span>
+  <span class="item" role="button">
+    <span class="icon">
+      <i data-lucide="star"></i>
+    </span>
+  </span>
+  <span class="item" role="button">
+    <span class="icon">
+      <i data-lucide="star"></i>
+    </span>
+  </span>
+  <span class="item" role="button">
+    <span class="icon">
+      <i data-lucide="star"></i>
+    </span>
+  </span>
+  <span class="item" role="button">
+    <span class="icon">
+      <i data-lucide="star"></i>
+    </span>
+  </span>
+</div>
+```
+
+This is the CSS code where I used TailwindCSS with the `apply` directive to make writing styles easier, keeping the HTML free of classes. Once again, this code has nothing out of the ordinary, except for the last line which is what we’re interested in.
+
+```css
+.rating-wrapper {
+  @apply flex flex-row items-center gap-3;
+}
+
+.icon {
+  @apply inline-block transition-all duration-200 opacity-20 text-yellow-500;
+  @apply transform scale-100;
+}
+
+.item:hover > .icon {
+  @apply text-yellow-500 opacity-100 scale-110;
+}
+
+.item:has(~ .item:hover) > .icon {
+  @apply text-yellow-500 opacity-100;
+}
+```
+
+Why does this work? The main reason is that the `:has()` pseudo-class allows us to select an element based on the existence of another element related to it. Our CSS mental model tells us that the final element of a selector is the target, but `:has()` changes the rules of the game: now we can use it to select an element if it meets a condition based on its relationship with other elements.
+
+That’s why `:has()` opens the door for us to behave like a parent selector or even as a previous sibling selector, as in our example.
+
+<PullQuote>Select this element only if it has something specific inside or near it.</PullQuote>
+
+This is a graphical representation of what happens in the selector.
+
+<Figure
+  image={illustration}
+  caption="How the CSS :has() pseudo-class works as a previous sibling selector"
+  alt="Five stars in a row. Three are highlighted as the elements the selector picks, and the fourth is the star in :hover state. Arrows connect each part of the selector .item:has(~ .item:hover) > .icon to the stars it refers to."
+/>
+
+## The importance of the subsequent-sibling combinator
+
+The previous sibling selector couldn’t work without the `~` combinator. This special selector allows us to create a sibling relationship (not necessarily direct) by selecting all instances that share the same parent. In our case, we select all stars that are siblings of the element being hovered.
+
+This contrasts with the next-sibling combinator (`+`) which only allows us to select the direct sibling and not the previous ones.
+
+In this example you can see what the result would be if we use the next-sibling combinator:
+
+```css
+.item:has(+ .item:hover) > .icon {
+  @apply text-yellow-500 opacity-100;
+}
+```
+
+<RatingDemo combinator="next" />
+
+CSS rules are constantly evolving, and although we traditionally had certain limitations, pseudo-classes like `:has()` are allowing us to think differently about how we structure our selectors. This star rating component is just a small and practical example of what we can achieve.
+
+What other use cases can you think of? What other design patterns could you simplify using `:has()`?
+
+It is worth noting that `:has()` is relatively new, but support in modern browsers is quite good. So go ahead, play with the rules, experiment, and share what you discover.

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420">
+  <title>Cómo Fiscalio convierte tus XML en el borrador de la declaración</title>
+  <rect class="bp-frame" x="10" y="30" width="980" height="380"/>
+  <text class="bp-scope" x="26" y="62">TU COMPUTADORA · SIN SERVIDOR REMOTO</text>
+  <path class="bp-edge" d="M180 162H224"/>
+  <polygon class="bp-head" points="225,162 217,157.5 217,166.5"/>
+  <path class="bp-edge" d="M375 162H419"/>
+  <polygon class="bp-head" points="420,162 412,157.5 412,166.5"/>
+  <path class="bp-edge" d="M570 162H614"/>
+  <polygon class="bp-head" points="615,162 607,157.5 607,166.5"/>
+  <path class="bp-edge" d="M665 204V289"/>
+  <polygon class="bp-head" points="665,290 660.5,282 669.5,282"/>
+  <text class="bp-note" x="655" y="252" text-anchor="end">SUGERENCIA</text>
+  <path class="bp-edge" d="M715 290V205"/>
+  <polygon class="bp-head" points="715,204 710.5,212 719.5,212"/>
+  <text class="bp-note" x="725" y="252">CONFIANZA ±</text>
+  <path class="bp-edge" d="M765 332H885V205"/>
+  <polygon class="bp-head" points="885,204 880.5,212 889.5,212"/>
+  <rect class="bp-box" x="30" y="120" width="150" height="84"/>
+  <text class="bp-label" x="105.0" y="158" text-anchor="middle">ARCHIVOS XML</text>
+  <text class="bp-sub" x="105.0" y="180" text-anchor="middle">LOS CARGAS TÚ</text>
+  <rect class="bp-box" x="225" y="120" width="150" height="84"/>
+  <text class="bp-label" x="300.0" y="158" text-anchor="middle">PARSER</text>
+  <text class="bp-sub" x="300.0" y="180" text-anchor="middle">LEE · VALIDA</text>
+  <rect class="bp-box" x="420" y="120" width="150" height="84"/>
+  <text class="bp-label" x="495.0" y="158" text-anchor="middle">PGLITE</text>
+  <text class="bp-sub" x="495.0" y="180" text-anchor="middle">POSTGRES LOCAL</text>
+  <rect class="bp-box" x="615" y="120" width="150" height="84"/>
+  <text class="bp-label" x="690.0" y="158" text-anchor="middle">MOTOR DE PATRONES</text>
+  <text class="bp-sub" x="690.0" y="180" text-anchor="middle">SUGIERE UNA CUENTA</text>
+  <rect class="bp-box" x="615" y="290" width="150" height="84"/>
+  <text class="bp-label" x="690.0" y="328" text-anchor="middle">TU REVISIÓN</text>
+  <text class="bp-sub" x="690.0" y="350" text-anchor="middle">ACEPTAS O CORRIGES</text>
+  <rect class="bp-box bp-box--result" x="810" y="120" width="150" height="84"/>
+  <text class="bp-label bp-label--on-accent" x="885.0" y="158" text-anchor="middle">BORRADOR DE</text>
+  <text class="bp-label bp-label--on-accent" x="885.0" y="176" text-anchor="middle">DECLARACIÓN</text>
+</svg>

@@ -1,0 +1,82 @@
+---
+name: Fiscalio
+slug: fiscalio
+order: 1
+line: A local-first desktop app that organizes Mexican tax invoices and helps you file.
+lead: A local-first desktop app that turns your CFDI invoices into a RESICO tax return draft in minutes.
+year: "2025–2026"
+status: V1.0.7 · PRIVATE BETA
+role: Technical founder
+platform: macOS (Apple silicon and Intel) · Windows
+builtWith: [Electron, React, Next.js, PGLite]
+links:
+  - { label: fiscalio.app, href: "https://www.fiscalio.app" }
+cover: { src: cover.jpg, alt: "Fiscalio's main screen" }
+screens:   # demo data only (pnpm demo:reset). Pending: account suggestion screen with demo data.
+  - src: import.jpg
+    alt: "Fiscalio's import screen: a drop area for CFDI XML files and the result for three files, one flagged as a duplicate UUID."
+    caption: Load your XML files and read them as invoices.
+  - src: draft.png
+    alt: "Tax return draft for June 2026 with demo data: total income, taxable base and ISR to pay."
+    caption: Review the tax return draft before you file.
+diagram:
+  src: diagram.en.svg
+  alt: How Fiscalio turns XML files into a tax return draft
+  description: The XML files you load go through the parser and are stored in PGLite. The pattern engine suggests an account for each invoice. You accept or correct it, which raises or lowers the pattern's confidence. The result is the tax return draft. Everything happens on your computer.
+schema: { applicationCategory: FinanceApplication, operatingSystem: "macOS, Windows" }
+seo:
+  title: "Fiscalio: a local-first tax app for RESICO · Ezequiel Rangel"
+  description: Fiscalio, a local-first desktop app that turns CFDI invoices into a RESICO tax return draft in minutes. How I built it and what I left out on purpose.
+updated: 2026-11-26
+---
+
+## The problem
+
+If you're in RESICO and invoice on your own, you issue and receive CFDI all month. At month's end, those XML files have to become a tax return: separate what you collected from what you invoiced, match payment complements, subtract withholdings.
+
+That draft took me hours. I built Fiscalio because I'm one of those taxpayers.
+
+## The decision
+
+Local-first by default. Your XML files stay on your computer, and Fiscalio never asks for your SAT password or e.firma. Privacy isn't a setting you turn on: it's the shape of the product.
+
+<DecisionLists
+  built={[
+    { what: "Reading and validating CFDI.", why: "Everything starts with the XML; if reading fails, nothing else matters." },
+    { what: "Cash basis.", why: "RESICO taxes what you collected, not what you invoiced; a PPD invoice waits for its payment complement." },
+    { what: "Account suggestions with human review.", why: "The app does the repetitive work; you keep the final word." },
+    { what: "The tax return draft.", why: "It was the step that took me hours." },
+    { what: "A real local database.", why: "Your data stays on your computer and the app works offline." },
+  ]}
+  left={[
+    { what: "Issuing invoices.", why: "Your PAC or the SAT portal already does that; Fiscalio reads what you've issued." },
+    { what: "Downloading from the SAT.", why: "It would need your SAT password or e.firma, and Fiscalio doesn't ask for them." },
+    { what: "Bank reconciliation.", why: "It needs careful planning and probably a connection. A candidate for later." },
+  ]}
+/>
+
+## How it was built
+
+<BlueprintDiagram />
+
+Fiscalio is an Electron app for macOS and Windows. Inside, a Next.js and React app runs on your own computer, with no remote server. You load your XML files; the app parses them, validates them and shows them as invoices you can read. Everything is stored in PGLite, a Postgres database that lives in a file on your computer, with automatic daily and monthly backups.
+
+### AI in the product
+
+The suggestions come from a pattern engine, not an LLM. For each invoice you classify, it stores a snapshot of its features: RFC, SAT product codes, taxes and currency. I chose this because every suggestion can be explained and everything runs offline.
+
+When a pattern keeps landing on the same account, it gains confidence; with enough evidence, it becomes a rule. Correct a suggestion and that pattern loses confidence.
+
+### AI in my workflow
+
+I used AI agents to build parts of the app from specs and phased plans I review at each checkpoint, to write the end-to-end tests and to run the first sales campaign.
+
+## Where it stands
+
+Fiscalio is at v1.0.7, in private beta. No results to show yet: in December 2026 I'm preparing drafts with the first users, using their real CFDI. I've prepared my own returns with Fiscalio since December 2025: the draft that took me hours now takes minutes.
+
+In a local-first app, backups are the product's job. I learned it when my computer broke and I lost seven months of data; automatic backups shipped in 1.0.
+
+What I'd do differently: build a set of test XML files from real cases from day one. Payment complements, credit notes and related CFDI are where the integration breaks.
+
+Next: cancellations and substitutions, and how they adjust the taxes for a month you've already filed.

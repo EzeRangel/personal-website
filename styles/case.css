@@ -1,0 +1,194 @@
+/* Case study pages (/work/[slug]). Reads tokens.css only. */
+
+/* ---------- Header ---------- */
+.pg-case-head {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding-top: var(--space-12);
+}
+.pg-case-head > * { grid-column: 1 / -1; min-width: 0; }
+.pg-case-back {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--hit-target);
+  font: 500 13px/1.4 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+.pg-case-back:hover { color: var(--accent); }
+.pg-case-kicker { display: flex; align-items: center; gap: var(--space-3); margin: var(--space-16) 0 var(--space-6); }
+.pg-case-title { grid-column: 1 / span 10; }
+.pg-case-lead { grid-column: 1 / span 7; max-width: 46ch; margin-top: var(--space-6); color: var(--muted); }
+
+/* Facts: Role · Year · Status / Platform · Built with · Links */
+.pg-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  margin: var(--space-16) 0 0;
+}
+.pg-facts__item {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-4) 0 var(--space-6);
+  border-top: 1px solid var(--line);
+}
+.pg-facts dt { font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.pg-facts dd { margin: 0; font: 400 17px/1.5 var(--font-sans); color: var(--ink); }
+.pg-facts dd .er-chip { margin-top: 1px; }
+.pg-facts__links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); }
+.pg-facts__links a { display: inline-flex; align-items: center; min-height: var(--hit-target); margin-block: -10px; }
+
+/* ---------- Screenshots: cover and gallery ---------- */
+.pg-shot { margin: 0; }
+/* The frame follows each file's own proportion (16:10 is the default crop, not a forced box). */
+.pg-shot__frame { overflow: hidden; background: var(--surface); border: 1px solid var(--line); }
+.pg-shot__frame img { display: block; width: 100%; height: auto; }
+.pg-shot__caption { margin-top: var(--space-3); max-width: 46ch; }
+.pg-case-cover { margin-top: var(--space-12); }
+.pg-gallery {
+  list-style: none;
+  margin: var(--space-24) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-12) var(--gutter);
+}
+
+/* ---------- Body: flat MDX on a 12-column grid ---------- */
+.pg-case-body {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+.pg-case-body > * { grid-column: 4 / -1; min-width: 0; max-width: var(--measure); }
+.pg-case-body > .pg-case-rule,
+.pg-case-body > .pg-case-wide { grid-column: 1 / -1; max-width: none; }
+.pg-case-rule { height: 1px; margin-top: var(--space-32); background: var(--line); }
+.pg-case-body > .pg-case-rule:first-child { margin-top: var(--space-24); }
+.pg-case-wide + .pg-case-rule { margin-top: var(--space-24); }
+
+/* The h2 is the section label: ■ 01 THE PROBLEM, in columns 1–3, next to the first paragraph. */
+.pg-case-body > .pg-case-h2 {
+  grid-column: 1 / span 3;
+  align-self: start;
+  margin: 0;
+  padding-top: var(--space-6);
+  border-top: 0;
+}
+.pg-case-body > p { margin: var(--space-6) 0 0; font: 400 18px/1.6 var(--font-sans); }
+.pg-case-body > p + p { margin-top: var(--space-4); }
+.pg-case-body strong { font-weight: 600; }
+
+/* The bet that opens "The decision" reads as a lead. */
+.pg-case-body > .pg-case-h2[data-section="decision"] + p {
+  font: 400 clamp(1.1875rem, 1.6vw, 1.375rem)/1.5 var(--font-sans);
+  max-width: 46ch;
+}
+
+.pg-case-body > .pg-case-h3 { margin-top: var(--space-12); }
+.pg-case-body > .pg-case-h3 + p { margin-top: var(--space-3); }
+.pg-case-marker { display: inline-block; width: 1px; height: 1px; }
+
+/* ---------- Decision lists ---------- */
+.pg-case-body > .pg-decisions { max-width: none; }
+.pg-decisions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-12) var(--gutter);
+  margin-top: var(--space-12);
+}
+.pg-decision__title { margin-bottom: var(--space-4); }
+.pg-decision__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.pg-decision__item {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--line);
+}
+.pg-decision__num { font: 500 13px/1.4 var(--font-mono); letter-spacing: 0.06em; color: var(--accent); padding-top: 0.25em; font-variant-numeric: tabular-nums; }
+.pg-decision__item p { margin: 0; font: 400 17px/1.55 var(--font-sans); color: var(--muted); }
+.pg-decision__item strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- Blueprint diagram ---------- */
+.pg-case-body > .pg-blueprint { max-width: none; }
+.pg-blueprint { margin: var(--space-8) 0 var(--space-4); min-width: 0; }
+.pg-blueprint__scroll { overflow-x: auto; border: 1px solid var(--line); background: var(--bg); }
+.pg-blueprint__scroll svg { display: block; width: 100%; min-width: 760px; height: auto; }
+.pg-blueprint__description { margin-top: var(--space-3); max-width: var(--measure); }
+
+.bp-frame { fill: none; stroke: var(--line-strong); stroke-width: 1; stroke-dasharray: 4 4; }
+.bp-box { fill: var(--bg); stroke: var(--accent); stroke-width: 1.5; }
+.bp-box--result { fill: var(--accent); }
+.bp-edge { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.bp-head { fill: var(--accent); }
+.bp-label, .bp-sub, .bp-note, .bp-scope {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.bp-label { font-size: 12.5px; fill: var(--ink); }
+.bp-sub { font-size: 10.5px; fill: var(--muted); }
+.bp-note { font-size: 10.5px; fill: var(--accent); }
+.bp-scope { font-size: 11px; fill: var(--muted); }
+.bp-label--on-accent { fill: var(--on-accent); }
+
+/* ---------- Next project: the page's one colour block ---------- */
+.pg-next { margin-top: var(--space-32); background: var(--accent); color: var(--on-accent); }
+.pg-next__link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--space-2) var(--space-6);
+  padding: var(--space-12) 0;
+  color: var(--on-accent);
+  text-decoration: none;
+}
+.pg-next__label { grid-column: 1 / -1; color: var(--on-accent-muted); }
+.pg-next__name { grid-column: 1; }
+.pg-next__line { grid-column: 1; max-width: 46ch; font: 400 17px/1.5 var(--font-sans); color: var(--on-accent-muted); }
+.pg-next__arrow {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  align-self: center;
+  font: 400 clamp(2.125rem, 4vw, 3.5rem)/1 var(--font-sans);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.pg-next__link:hover .pg-next__arrow { transform: translateX(4px); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1023px) {
+  .pg-case-title, .pg-case-lead { grid-column: 1 / -1; }
+  .pg-case-body > *, .pg-case-body > .pg-case-h2 { grid-column: 1 / -1; }
+  .pg-case-body > .pg-case-h2 { padding-top: var(--space-4); }
+  .pg-case-rule { margin-top: var(--space-24); }
+  .pg-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pg-next { margin-top: var(--space-24); }
+}
+@media (max-width: 640px) {
+  .pg-case-head { padding-top: var(--space-4); }
+  .pg-case-kicker { margin-top: var(--space-8); }
+  .pg-facts { grid-template-columns: minmax(0, 1fr); margin-top: var(--space-12); }
+  .pg-facts__item { grid-template-columns: 112px minmax(0, 1fr); align-items: baseline; padding: var(--space-3) 0; }
+  .pg-case-cover { margin-top: var(--space-8); }
+  .pg-case-rule, .pg-case-wide + .pg-case-rule { margin-top: var(--space-16); }
+  .pg-case-body > .pg-case-rule:first-child { margin-top: var(--space-16); }
+  .pg-decisions, .pg-gallery { grid-template-columns: minmax(0, 1fr); }
+  .pg-gallery { margin-top: var(--space-16); gap: var(--space-8); }
+  .pg-next { margin-top: var(--space-16); }
+  .pg-next__link { padding: var(--space-8) 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pg-next__link:hover .pg-next__arrow { transform: none; }
+}
+
+/* Suspense fallback while a case streams in: holds the space, no spinner. */
+.pg-case-pending { min-height: 100vh; }

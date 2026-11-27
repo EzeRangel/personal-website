@@ -1,0 +1,110 @@
+/* Work index (/work). From the /work design draft (canvas "Work (borrador)"). Reads tokens.css only. */
+
+/* ---------- Page head: mono kicker, h1 with the block cursor, lead ---------- */
+.pg-pagehead { display: flex; flex-direction: column; gap: var(--space-6); padding-top: var(--space-24); }
+.pg-pagehead .er-lead { max-width: 46ch; }
+
+/* Section intro: h2 + lead under the section label. */
+.wk-intro { display: flex; flex-direction: column; gap: var(--space-4); margin: var(--space-6) 0 var(--space-12); }
+.wk-intro .er-lead { max-width: 46ch; }
+
+/* ---------- Products: screenshot (cols 1–7) · body (cols 8–12) ---------- */
+.wk-list { list-style: none; margin: 0; padding: 0; }
+.wk-item {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: var(--space-6);
+  align-items: start;
+  padding: var(--space-12) 0;
+  border-top: 1px solid var(--line);
+}
+.wk-shot { grid-column: 1 / span 7; display: block; min-width: 0; text-decoration: none; }
+.wk-shot__frame { display: block; }
+.wk-shot__frame img { display: block; width: 100%; height: auto; }
+.wk-shot__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  padding: var(--space-6);
+  box-sizing: border-box;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  font: 500 13px/1.4 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--muted);
+}
+
+.wk-body { grid-column: 8 / span 5; display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
+.wk-num { font: 500 13px/1.4 var(--font-mono); letter-spacing: 0.06em; color: var(--accent); }
+.wk-name { margin-top: var(--space-2); }
+.wk-name-link { color: var(--ink); text-decoration: none; transition: color var(--duration-fast) var(--ease-out); }
+.wk-name-link:hover { color: var(--accent); }
+.wk-item:has(.wk-shot:hover) .wk-name-link { color: var(--accent); }
+.wk-line { font-size: 19px; }
+
+.wk-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4) var(--gutter);
+  margin: var(--space-2) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+}
+.wk-facts dt { margin-bottom: var(--space-1); font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.wk-facts dd { margin: 0; font: 400 16px/1.5 var(--font-sans); }
+
+.wk-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-6); margin-top: var(--space-2); }
+.wk-links .er-link { display: inline-flex; align-items: center; min-height: var(--hit-target); font: 500 16px/1.4 var(--font-sans); }
+
+/* ---------- Client work: table ---------- */
+.cl-wrap { overflow-x: auto; }
+.cl-table { width: 100%; border-collapse: collapse; font: 400 17px/1.5 var(--font-sans); }
+.cl-table th,
+.cl-table td { padding: var(--space-6) var(--space-4) var(--space-6) 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: baseline; }
+.cl-table thead th {
+  padding-top: 0;
+  padding-bottom: var(--space-3);
+  border-bottom-color: var(--ink);
+  font: 500 12px/1.4 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cl-table tbody th { font: 600 18px/1.4 var(--font-sans); }
+.cl-table td:nth-child(2) { max-width: 44ch; color: var(--muted); }
+.cl-table td:nth-child(4) { white-space: nowrap; }
+.cl-table td:last-child { padding-right: 0; white-space: nowrap; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1023px) {
+  .wk-shot, .wk-body { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .pg-pagehead { padding-top: var(--space-12); }
+  .wk-item { padding: var(--space-8) 0; }
+
+  .cl-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .cl-table, .cl-table tbody, .cl-table tr, .cl-table th, .cl-table td { display: block; width: 100%; }
+  .cl-table tr { padding: var(--space-6) 0; border-bottom: 1px solid var(--line); }
+  .cl-table tbody tr:first-child { border-top: 1px solid var(--ink); }
+  .cl-table th, .cl-table td { padding: 0 0 var(--space-2); border: 0; }
+  .cl-table td::before {
+    content: attr(data-label);
+    display: block;
+    font: 500 12px/1.4 var(--font-mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cl-table td:nth-child(2)::before { display: none; }
+}
+
+/* No real screenshot: no image, the body takes the wide column. */
+.wk-item--noshot .wk-body { grid-column: 1 / span 7; }
+@media (max-width: 1023px) {
+  .wk-item--noshot .wk-body { grid-column: 1 / -1; }
+}
