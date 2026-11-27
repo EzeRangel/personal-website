@@ -363,7 +363,7 @@ Retícula de 12 columnas, mucho aire y una etiqueta mono numerada al inicio de c
 - Cada sección abre con un Section label (línea de 1 px a todo el ancho + `■ 01  NOMBRE`). La numeración reinicia en cada página.
 - El bloque de trabajo rompe el contenedor: fondo a ancho completo y contenido dentro del contenedor.
 - Objetivos táctiles de al menos `hit-target` (44 px).
-- Mobile-first. Por debajo de 720 px la navegación pasa a "Menu".
+- Mobile-first. Por debajo de 640 px la navegación pasa a "Menu". La navegación completa en español mide ~544 px.
 
 ## Elevation & Depth
 
@@ -428,14 +428,14 @@ Marcado exacto, clases y ARIA de cada uno en `@design/components.html`; estilos 
 - **Text link** (`@design/components.html#text-link`): color `primary`, subrayado de 1 px siempre visible (2 px en hover), separado 0.2 em del texto.
 - **Section label** (`@design/components.html#section-label`): cuadro de 8 px en `primary` + número + nombre en mono. Es decorativo: el título real de la sección es el `h2` que sigue.
 - **Status chip** (`@design/components.html#status-chip`): borde de 1 px en `outline-strong`, mono de 12 px, radio completo.
-- **Site header** (`@design/components.html#site-header`): logo · Work, Writing, About, Contact · EN / ES · System/Light/Dark · Menu en móvil. La página activa lleva `aria-current="page"`.
+- **Site header** (`@design/components.html#site-header`): logo · Work, Writing, About, Contact · System/Light/Dark · Menu en móvil. El selector EN / ES vive en el footer. La página activa lleva `aria-current="page"`.
 - **Hero** (`@design/components.html#hero`): nombre + descriptor mono + tagline en `display` con itálica y cursor + entradilla + un solo `button-primary`. Una vez por sitio.
 - **Work block + project row** (`@design/components.html#work-block`): campo `primary` a ancho completo y el único bloque de color de la página. Cada fila es un enlace completo: nombre (`h3`), una línea, año, chip y flecha. Hover en `primary-hover`. Todo lo de dentro usa `on-primary*`.
 - **Process steps** (`@design/components.html#process-steps`): 4 → 2 → 1 columnas, con línea superior de 1 px en `on-surface` y número mono en `primary`.
 - **Opinions** (`@design/components.html#opinions`): lista ordenada; texto en `opinion` (serif); número mono en `primary`; 2 → 1 columnas; divisor `outline`.
 - **Article row** (`@design/components.html#article-row`): fecha mono · título `title-sm` · idiomas y tiempo de lectura. Toda la fila es el enlace.
 - **Contact block** (`@design/components.html#contact-block`): cierra todas las páginas, con `id="contact"`. Correo como `mailto:` subrayado en `primary`; el botón Copy anuncia el copiado con `aria-live="polite"`.
-- **Site footer** (`@design/components.html#site-footer`): símbolo E■ · "Built in Mazatlán, Mexico." · navegación · redes · Privacy · RSS · ©.
+- **Site footer** (`@design/components.html#site-footer`): símbolo E■ · "Built in Mazatlán, Mexico." · EN / ES · navegación · redes · Privacy · RSS · ©.
 - **Card** (genérica): `surface` sobre `background`, borde de 1 px en `outline`, radio 0 y sin sombra.
 
 Estados obligatorios en todo componente interactivo: reposo, hover, foco visible (anillo `focus` de 2 px con 2 px de separación; sobre `primary`, en `on-primary`), activo y deshabilitado (opacidad 0.4, sin cambio de forma).

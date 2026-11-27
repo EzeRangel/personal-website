@@ -1,5 +1,4 @@
 import { Logo } from "@/components/ui/Logo";
-import { LanguageSwitch } from "@/components/layout/LanguageSwitch";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { NavLinks } from "@/components/layout/NavLinks";
 import { ThemeSelect } from "@/components/layout/ThemeSelect";
@@ -19,11 +18,6 @@ export function SiteHeader({ locale, messages }: { locale: Locale; messages: Mes
           <NavLinks items={items} />
         </nav>
         <div className="er-tools">
-          <LanguageSwitch
-            locale={locale}
-            groupLabel={global.language.label}
-            switchAriaLabel={global.language.switchAriaLabel}
-          />
           <ThemeSelect labels={global.theme} />
           <MobileMenu homeHref={home} navLabel={global.navLabel} labels={global.menu} items={items} />
         </div>

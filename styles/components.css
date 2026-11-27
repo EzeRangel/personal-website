@@ -157,7 +157,8 @@ body {
 .er-toggle [aria-current="true"], .er-toggle .is-active { color: var(--ink); }
 .er-toggle a { color: inherit; text-decoration: none; padding: 14px 2px; }
 .er-menu-btn { display: none; }
-@media (max-width: 720px) {
+/* The full nav needs ~544px (Spanish labels, the longest) once the language switch moved to the footer. */
+@media (max-width: 639px) {
   .er-nav { display: none; }
   .er-menu-btn { display: inline-flex; }
 }

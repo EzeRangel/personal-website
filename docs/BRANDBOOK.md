@@ -419,7 +419,7 @@ El texto corrido nunca ocupa más de 7 columnas en escritorio. Las etiquetas de 
 | Fila de artículo | Fecha (mono), título, idiomas disponibles (EN · ES), tiempo de lectura | Hover: el título se subraya |
 | Bloque de opinión | Número en mono + frase en Instrument Serif | Estático |
 | Bloque de contacto | Titular en serif, correo grande con botón de copiar, enlaces sociales | Copiar: el botón dice "Copied" / "Copiado" durante 2 s y lo anuncia con `aria-live` |
-| Selector de idioma | EN / ES en mono en el encabezado; marca el activo | Cambia a la misma página en el otro idioma |
+| Selector de idioma | EN / ES en mono en el pie de página, junto a "Hecho en Mazatlán, México."; marca el activo. Salió del encabezado el 27 de noviembre de 2026: en móvil no cabía junto al tema y el menú | Cambia a la misma página en el otro idioma |
 | Selector de tema | Sistema / Claro / Oscuro | Respeta `prefers-color-scheme` por defecto |
 | Menú móvil | Panel a pantalla completa en Papel | Atrapa el foco; se cierra con Esc |
 

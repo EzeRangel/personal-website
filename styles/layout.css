@@ -37,6 +37,11 @@
 .pg-note { color: var(--muted); max-width: 60ch; margin-top: var(--space-4); }
 .pg-foot { display: flex; flex-direction: column; gap: var(--space-8); padding: var(--space-8) 0 var(--space-6); border-top: 1px solid var(--line); }
 .pg-foot-top { display: flex; align-items: baseline; gap: var(--space-6); flex-wrap: wrap; }
+.pg-foot-lang { margin-left: auto; align-self: center; }
+@media (max-width: 640px) {
+  /* Own line on phones. The 44px hit targets center "EN"; pull it back so it lines up with the column. */
+  .pg-foot-lang { margin-left: -10px; flex-basis: 100%; }
+}
 .pg-foot-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gutter); max-width: 720px; }
 .pg-foot-col { display: flex; flex-direction: column; }
 .pg-foot-link { font: 500 13px/1.4 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }

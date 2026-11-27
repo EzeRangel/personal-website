@@ -4,6 +4,7 @@ import { site } from "@/config/site";
 import { socialLinks } from "@/lib/social";
 import { Cursor } from "@/components/ui/Cursor";
 import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
+import { LanguageSwitch } from "@/components/layout/LanguageSwitch";
 import { navItems } from "@/components/layout/nav";
 import { localePath, type Locale, type Messages } from "@/lib/i18n";
 
@@ -14,7 +15,7 @@ async function buildYear() {
 }
 
 export async function SiteFooter({ locale, messages }: { locale: Locale; messages: Messages }) {
-  const { footer, navLabel } = messages.global;
+  const { footer, navLabel, language } = messages.global;
   const year = await buildYear();
 
   return (
@@ -25,6 +26,10 @@ export async function SiteFooter({ locale, messages }: { locale: Locale; message
             E<Cursor />
           </span>
           <p className="er-small">{footer.builtIn}</p>
+          {/* Lives here, not in the header: on phones the header has room only for the logo, theme and menu. */}
+          <div className="pg-foot-lang">
+            <LanguageSwitch locale={locale} groupLabel={language.label} switchAriaLabel={language.switchAriaLabel} />
+          </div>
         </div>
         <div className="pg-foot-links">
           <nav className="pg-foot-col" aria-label={navLabel}>
