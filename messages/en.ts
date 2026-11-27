@@ -86,7 +86,7 @@ export const en = {
     },
     writing: {
       label: "Writing",
-      title: "Notes on building with AI.",
+      title: "Notes from building.",
       lead: "I write when a project teaches me something: what worked, and what didn’t.",
       readingTime: "{minutes} min read",
       onlyInEnglish: "", // not shown in English: English is the original
@@ -107,7 +107,7 @@ export const en = {
     index: {
       seoTitle: "Work: products I built end to end · Ezequiel Rangel",
       description:
-        "Fiscalio, Relay and JobSnap: products I built end to end, from the first version. Plus work I shipped for clients, with my role and a live link.",
+        "Fiscalio and Relay: products I built end to end, from the first version. Plus work I shipped for clients, with my role and a live link.",
       ogLabel: "WORK · EN",
       ogTitle: "What I’ve built.",
       kicker: "Work",
@@ -247,7 +247,7 @@ export const en = {
     title: "Privacy notice.",
     lead: "What this site collects, why, and how to change your mind. Short on purpose.",
     facts: {
-      updated: { label: "Updated", value: "[DATE]" },
+      updated: { label: "Updated", value: "Nov 27, 2026" },
       appliesTo: { label: "Applies to", value: "ezerangel.com" },
       contact: { label: "Contact" },
     },
@@ -256,7 +256,7 @@ export const en = {
       responsible: {
         title: "Who is responsible",
         text: [
-          "This site belongs to Ezequiel Rangel, product engineer in Mazatlán, Sinaloa, Mexico. Address for notices: [ADDRESS].",
+          "This site belongs to Ezequiel Rangel, product engineer in Mazatlán, Sinaloa, Mexico.",
           "For anything about your data, write to {email}.",
         ],
       },
@@ -304,7 +304,7 @@ export const en = {
     text: "This page doesn't exist. This does:",
     links: [
       { path: "/", title: "Home", text: "I build first versions." },
-      { path: "/work", title: "Work", text: "Fiscalio, Relay and JobSnap: how each one was built." },
+      { path: "/work", title: "Work", text: "Fiscalio and Relay: how each one was built." },
       { path: "/writing", title: "Writing", text: "Notes from building." },
     ],
     mail: "Looking for something specific?",

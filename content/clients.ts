@@ -45,7 +45,7 @@ export const clients: ClientWork[] = [
   {
     slug: "cuida-mi-mascota",
     name: "Cuida Mi Mascota",
-    year: "2020-2022",
+    year: "2020–2022",
     url: "https://www.cuidamimascota.com.mx/",
     role: { en: "Frontend Engineer", es: "Frontend Engineer" },
     line: {

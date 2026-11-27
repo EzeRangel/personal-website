@@ -44,7 +44,8 @@ function slugs(kind: "work" | "writing"): string[] {
   return fs
     .readdirSync(dir, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
-    .map((entry) => entry.name);
+    .map((entry) => entry.name)
+    .filter((slug) => kind !== "work" || read(kind, slug, "en")?.data.hidden !== true);
 }
 
 function read(kind: "work" | "writing", slug: string, locale: Locale) {

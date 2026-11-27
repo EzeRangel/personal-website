@@ -107,7 +107,7 @@ export const es: DeepString<Messages> = {
     index: {
       seoTitle: "Trabajo: productos de punta a punta · Ezequiel Rangel",
       description:
-        "Fiscalio, Relay y JobSnap: productos que construí de punta a punta desde su primera versión. Además, trabajo para clientes con mi rol y un enlace.",
+        "Fiscalio y Relay: productos que construí de punta a punta desde su primera versión. Además, trabajo para clientes con mi rol y un enlace.",
       ogLabel: "TRABAJO · ES",
       ogTitle: "Lo que he construido.",
       kicker: "Trabajo",
@@ -240,7 +240,7 @@ export const es: DeepString<Messages> = {
     title: "Aviso de privacidad.",
     lead: "Qué recoge este sitio, para qué y cómo cambiar de opinión. Corto a propósito.",
     facts: {
-      updated: { label: "Actualizado", value: "[FECHA]" },
+      updated: { label: "Actualizado", value: "27 nov 2026" },
       appliesTo: { label: "Aplica a", value: "ezerangel.com" },
       contact: { label: "Contacto" },
     },
@@ -249,7 +249,7 @@ export const es: DeepString<Messages> = {
       responsible: {
         title: "Quién es responsable",
         text: [
-          "Este sitio es de Ezequiel Rangel, product engineer en Mazatlán, Sinaloa, México. Domicilio para notificaciones: [DOMICILIO].",
+          "Este sitio es de Ezequiel Rangel, product engineer en Mazatlán, Sinaloa, México.",
           "Para cualquier tema sobre tus datos, escribe a {email}.",
         ],
       },
@@ -297,7 +297,7 @@ export const es: DeepString<Messages> = {
     text: "Esta página no existe. Esto sí:",
     links: [
       { path: "/", title: "Inicio", text: "Construyo primeras versiones." },
-      { path: "/work", title: "Trabajo", text: "Fiscalio, Relay y JobSnap: cómo se construyó cada uno." },
+      { path: "/work", title: "Trabajo", text: "Fiscalio y Relay: cómo se construyó cada uno." },
       { path: "/writing", title: "Escritos", text: "Notas de lo que construyo." },
     ],
     mail: "¿Buscas algo en particular?",

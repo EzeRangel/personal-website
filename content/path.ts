@@ -14,9 +14,8 @@ export type PathStop =
     };
 
 export const path: PathStop[] = [
-  { kind: "product", slug: "fiscalio", from: "2025", to: null }, // the doc says 2026; the case says 2025–2026
+  { kind: "product", slug: "fiscalio", from: "2025", to: null },
   { kind: "product", slug: "relay", from: "[YEAR]", to: null },
-  { kind: "product", slug: "jobsnap", from: "[YEAR]", to: "[YEAR]" },
   {
     kind: "job",
     company: "ADHOC TI",
