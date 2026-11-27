@@ -9,7 +9,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { ThemeScript } from "@/components/layout/ThemeScript";
 import { fontVariables } from "@/lib/fonts";
-import { getMessages, isLocale, localePath, locales } from "@/lib/i18n";
+import { getMessages, isLocale, localePath, locales, otherLocale } from "@/lib/i18n";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -36,6 +36,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   if (!isLocale(locale)) notFound();
   const messages = getMessages(locale);
   const { global } = messages;
+  const suggestion = getMessages(otherLocale(locale));
 
   return (
     <html
@@ -57,9 +58,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
         <div className="er-notices">
           <LanguageSuggestion
             locale={locale}
-            text={global.language.suggestion}
-            linkLabel={global.language.suggestionLink}
-            closeLabel={global.menu.close}
+            // Written in the language it invites to: whoever sees it prefers that language.
+            text={suggestion.global.language.suggestion}
+            linkLabel={suggestion.global.language.suggestionLink}
+            closeLabel={suggestion.global.menu.close}
           />
           <CookieBanner privacyHref={localePath(locale, "/privacy")} labels={global.cookies} />
         </div>

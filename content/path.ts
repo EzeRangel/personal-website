@@ -15,7 +15,7 @@ export type PathStop =
 
 export const path: PathStop[] = [
   { kind: "product", slug: "fiscalio", from: "2025", to: null },
-  { kind: "product", slug: "relay", from: "[YEAR]", to: null },
+  { kind: "product", slug: "relay", from: "2025", to: null },
   {
     kind: "job",
     company: "ADHOC TI",
@@ -23,8 +23,8 @@ export const path: PathStop[] = [
     to: "2025",
     role: { en: "Senior Fullstack Engineer", es: "Senior Fullstack Engineer" },
     line: {
-      en: "Products for clients like Subastas Love To Help, Citicinemas and Cuida Mi Mascota.",
-      es: "Productos para clientes como Subastas Love To Help, Citicinemas y Cuida Mi Mascota.",
+      en: "Products for clients like Subastas Love to Help, Citicinemas and Cuida Mi Mascota.",
+      es: "Productos para clientes como Subastas Love to Help, Citicinemas y Cuida Mi Mascota.",
     },
   },
 ];

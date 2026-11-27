@@ -7,7 +7,7 @@ import { HowSection } from "@/components/home/HowSection";
 import { OpinionsSection } from "@/components/home/OpinionsSection";
 import { WorkSection } from "@/components/home/WorkSection";
 import { WritingSection } from "@/components/home/WritingSection";
-import { getArticles, getProjects } from "@/lib/content";
+import { getArticles, getProjects, getPublishedCases } from "@/lib/content";
 import { getMessages, isLocale, localePath, ogLocale } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]">): Promise<Metadata> {
@@ -51,6 +51,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   if (!isLocale(locale)) notFound();
   const { home } = getMessages(locale);
   const projects = getProjects(locale);
+  const published = new Set(getPublishedCases(locale).map((c) => c.slug));
   const articles = getArticles(locale, 3);
   const contactNumber = articles.length > 0 ? 5 : 4;
 
@@ -61,7 +62,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
       />
       <Hero copy={home.hero} />
-      <WorkSection locale={locale} number={1} copy={home.work} projects={projects} />
+      <WorkSection locale={locale} number={1} copy={home.work} projects={projects} published={published} />
       <HowSection number={2} copy={home.how} />
       <OpinionsSection number={3} copy={home.opinions} />
       {articles.length > 0 && <WritingSection locale={locale} number={4} copy={home.writing} articles={articles} />}

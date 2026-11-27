@@ -32,11 +32,13 @@ updated: 2026-11-26
 
 ## El problema
 
-Si estás en RESICO y facturas por tu cuenta, emites y recibes CFDI todo el mes. Al cerrar el mes, esos XML tienen que volverse una declaración: separar lo cobrado de lo facturado, cruzar complementos de pago, restar retenciones. A mí ese borrador me tomaba horas. Construí Fiscalio porque soy uno de esos contribuyentes.
+Si estás en RESICO y facturas por tu cuenta, emites y recibes CFDI todo el mes. Al cerrar el mes, esos XML tienen que volverse una declaración: separar lo cobrado de lo facturado, cruzar complementos de pago, restar retenciones.
+
+A mí ese borrador me tomaba horas. Construí Fiscalio porque soy uno de esos contribuyentes.
 
 ## La decisión
 
-Local por defecto. Tus XML se quedan en tu computadora y Fiscalio nunca pide tu contraseña del SAT ni tu e.firma. La privacidad no es una función que se activa: es la forma del producto.
+Local-first por defecto. Tus XML se quedan en tu computadora y Fiscalio nunca pide tu contraseña del SAT (CIEC) ni tu e.firma. La privacidad no es una función que se activa: es la forma del producto.
 
 <DecisionLists
   built={[
@@ -61,7 +63,9 @@ Fiscalio es una app de Electron para macOS y Windows. Adentro corre una app de N
 
 ### IA en el producto
 
-No es un LLM ni un modelo entrenado en la nube. De cada factura que clasificas, el motor guarda una foto de sus rasgos: RFC, claves de producto del SAT, impuestos y moneda. Cuando un patrón se repite con la misma cuenta, gana confianza; con suficiente evidencia, se vuelve una regla. Si corriges una sugerencia, ese patrón pierde consistencia. Lo elegí así porque cada sugerencia se puede explicar y todo corre sin internet.
+Las sugerencias vienen de un motor de patrones, no de un LLM. De cada factura que clasificas, guarda una foto de sus rasgos: RFC, claves de producto del SAT, impuestos y moneda. Lo elegí así porque cada sugerencia se puede explicar y todo corre sin internet.
+
+Cuando un patrón se repite con la misma cuenta, gana confianza; con suficiente evidencia, se vuelve una regla. Si corriges una sugerencia, ese patrón pierde confianza.
 
 ### IA en mi proceso
 
@@ -69,7 +73,7 @@ Usé agentes de IA para construir partes de la app a partir de specs y planes po
 
 ## Dónde está hoy
 
-Fiscalio va en la v1.0.7, en beta privada. Todavía no hay resultados que mostrar: en diciembre preparo el borrador con las primeras personas, con sus CFDI reales. Yo preparo mis declaraciones con Fiscalio desde diciembre de 2025: el borrador que me tomaba horas ahora toma minutos.
+Fiscalio va en la v1.0.7, en beta privada. Todavía no hay resultados que mostrar: en diciembre de 2026 preparo el borrador con las primeras personas, con sus CFDI reales. Yo preparo mis declaraciones con Fiscalio desde diciembre de 2025: el borrador que me tomaba horas ahora toma minutos.
 
 En una app local-first, el respaldo es trabajo del producto. Lo aprendí cuando se descompuso mi computadora y perdí siete meses de datos; los respaldos automáticos llegaron en la 1.0.
 

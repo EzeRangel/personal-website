@@ -5,7 +5,7 @@ updated: 2024-07-03
 summary: "Making more sense of loops and Promises in JavaScript: an async iterator that walks a paginated API."
 ---
 
-Some time ago, I read about concepts like Iterators and Generators but never had the chance to use them in my projects until recently. So, I decided to solve a problem where I needed to consume a third-party API that returns paginated results, and I really liked the overall result of working with this approach.
+Some time ago, I read about concepts like Iterators and Generators but never had the chance to use them in my projects until recently. So, I decided to solve a problem where I needed to consume a third-party API that returns paginated results, and I liked the result.
 
 But first, I need to make a brief introduction about iterators in JavaScript. An iterator is an object that declares a sequence and can return a value on each iteration. The main difference from an Array is that an iterator doesn’t need to be allocated in its entirety to traverse it, thus allowing us to express sequences of undetermined length.
 
@@ -185,7 +185,7 @@ function fetchIterator(baseEndpoint: string) {
               }
             }
 
-            throw new Error("An unexpected error has ocurred. Cannot continue");
+            throw new Error("An unexpected error has occurred. Cannot continue");
           }
         }
       };
@@ -213,4 +213,4 @@ console.log(appendedEvents.flat());
 
 Yes, I know there are other ways to achieve this. One way could be using an array of Promises and Promise.all(), but we lose the sequential calling and it’s more difficult to handle errors.
 
-I really don’t know how optimized this approach is, but I found it interesting enough to try something different with loops and Promises.
+I haven’t measured how this approach performs, but I found it interesting enough to try something different with loops and Promises.

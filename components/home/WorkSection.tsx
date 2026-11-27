@@ -4,9 +4,9 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { format, localePath, type Locale, type Messages } from "@/lib/i18n";
 import type { Project } from "@/lib/content";
 
-type WorkSectionProps = { locale: Locale; number: number; copy: Messages["home"]["work"]; projects: Project[] };
+type WorkSectionProps = { locale: Locale; number: number; copy: Messages["home"]["work"]; projects: Project[]; published: Set<string> };
 
-export function WorkSection({ locale, number, copy, projects }: WorkSectionProps) {
+export function WorkSection({ locale, number, copy, projects, published }: WorkSectionProps) {
   return (
     <section className="er-work er-on-accent pg-work" aria-labelledby="work-title">
       <div className="pg">
@@ -20,7 +20,8 @@ export function WorkSection({ locale, number, copy, projects }: WorkSectionProps
             <ProjectRow
               key={project.slug}
               project={project}
-              href={localePath(locale, `/work/${project.slug}`)}
+              // A draft (no case body yet) has no page: its row is not a link.
+              href={published.has(project.slug) ? localePath(locale, `/work/${project.slug}`) : null}
               ariaLabel={format(copy.rowAriaLabel, { name: project.name })}
             />
           ))}

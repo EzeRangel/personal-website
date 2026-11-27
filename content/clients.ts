@@ -27,8 +27,8 @@ export const clients: ClientWork[] = [
     url: "https://subastaslovetohelp.com/",
     role: { en: "Frontend Engineer", es: "Frontend Engineer" },
     line: {
-      en: "Auctions of high-end items for social causes.",
-      es: "Subastas de artículos high-end para causas sociales.",
+      en: "The website, the admin dashboard and the online auction, where high-end items are sold for social causes.",
+      es: "El sitio, el panel de administración y la subasta en línea, donde se venden artículos de alta gama para causas sociales.",
     },
   },
   {

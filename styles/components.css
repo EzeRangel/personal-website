@@ -186,6 +186,7 @@ body {
   transition: background-color var(--duration-fast) var(--ease-out);
 }
 .er-project:hover { background: var(--accent-hover); }
+.er-project--static:hover { background: none; }
 .er-project__name { font: 600 24px/1.3 var(--font-sans); letter-spacing: -0.005em; }
 .er-project__line { font: 400 17px/1.5 var(--font-sans); color: var(--on-accent-muted); margin-top: 2px; }
 .er-project__year { font: 500 13px/1.4 var(--font-mono); letter-spacing: 0.06em; color: var(--on-accent-muted); }

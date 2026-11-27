@@ -54,7 +54,7 @@ function LiveLanguageSuggestion({ locale, text, linkLabel, closeLabel }: Languag
 
   return (
     <div className="er-lang-hint">
-      <div className="pg er-notice" role="region" aria-label={text}>
+      <div className="pg er-notice" role="region" aria-label={text} lang={target}>
         <p>
           {text}{" "}
           <Link className="er-link" href={href} lang={target} hrefLang={target} onClick={dismissLanguageHint}>

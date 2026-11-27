@@ -19,8 +19,9 @@ export const en = {
       label: "Language",
       switchTo: "ES",
       switchAriaLabel: "Read this page in Spanish",
-      suggestion: "This page is also in Spanish.",
-      suggestionLink: "Read it in Spanish →",
+      // Shown on /es to visitors whose browser prefers English: written in the language it invites to.
+      suggestion: "This page is also in English.",
+      suggestionLink: "Read it in English →",
     },
     footer: { builtIn: "Built in Mazatlán, Mexico.", privacy: "Privacy", rss: "RSS", cookieSettings: "Cookie settings" },
     cookies: {
@@ -44,7 +45,7 @@ export const en = {
     work: {
       label: "Work",
       title: "Look at what I build.",
-      lead: "Three products of my own, built end to end. They are the proof of how I work.",
+      lead: "Two products of my own, built end to end. They show how I work.",
       allWork: "All work →",
       rowAriaLabel: "See how {name} was built",
     },
@@ -74,13 +75,12 @@ export const en = {
     opinions: {
       label: "Opinions",
       title: "Opinions I build by.",
-      // EN versions are a draft pending Ezequiel's review; ES versions are approved.
       items: [
         "A prototype nobody uses is an expensive mockup.",
         "Pick the problem before the stack.",
         "A first version is validated by a real user, not by a pitch deck.",
         "Don’t rebuild what already exists. Build on top of it.",
-        "Your client doesn’t care about your stack.",
+        "Your client doesn’t care if you use TailwindCSS.",
         "AI speeds up the people who already know what to build.",
       ],
     },
@@ -107,7 +107,7 @@ export const en = {
     index: {
       seoTitle: "Work: products I built end to end · Ezequiel Rangel",
       description:
-        "Fiscalio and Relay: products I built end to end, from the first version. Plus work I shipped for clients, with my role and a live link.",
+        "Fiscalio and Relay: products I built end to end, from the first version. Plus work I shipped for clients, with my role, the year and a live link.",
       ogLabel: "WORK · EN",
       ogTitle: "What I’ve built.",
       kicker: "Work",
@@ -126,7 +126,7 @@ export const en = {
       clients: {
         label: "Client work",
         title: "Built for clients.",
-        lead: "Work I shipped as a contractor. No case studies here: what I built, my role, the year and a link to see it live.",
+        lead: "Work I shipped for clients as an engineer at ADHOC TI. No case studies here: what I built, my role, the year and a link to see it live.",
         caption: "Client work",
         columns: { client: "Client", built: "What I built", role: "Role", year: "Year", link: "Link" },
         visit: "Visit",
@@ -144,7 +144,7 @@ export const en = {
       facts: { role: "Role", year: "Year", status: "Status", platform: "Platform", builtWith: "Built with", links: "Links" },
       // Must match caseSections.en in lib/content.ts: the h2s of every en.mdx.
       sections: ["The problem", "The decision", "How it was built", "Where it stands"],
-      decision: { built: "Built first", left: "Left out" },
+      decision: { built: "What I built first", left: "What I left out" },
       ai: { product: "AI in the product", workflow: "AI in my workflow" },
       noResults: "No results to show yet.",
       next: "Next project",
@@ -156,7 +156,7 @@ export const en = {
     index: {
       seoTitle: "Writing: notes from building · Ezequiel Rangel",
       description:
-        "Technical notes from a product engineer in Mexico: the decisions behind what I build, code that worked and what did not. In English, some in Spanish.",
+        "Technical notes from a product engineer in Mexico: the decisions behind what I build, code that worked and what didn’t. In English, for now.",
       ogLabel: "WRITING · EN",
       kicker: "Writing",
       title: "Notes from building.",
@@ -188,12 +188,12 @@ export const en = {
   },
   about: {
     // About (/about). Source: "Arquitectura y copy de las páginas internas".
-    seoTitle: "About · Ezequiel Rangel, product engineer",
+    seoTitle: "About: product engineer in Mazatlán · Ezequiel Rangel",
     description:
       "I’m Ezequiel Rangel, a product engineer in Mazatlán, Mexico. More than 10 years building web and mobile products. How I work and what I’m looking for.",
     ogLabel: "ABOUT · EN",
     kicker: "About",
-    title: "I’ve been building product for more than ten years.",
+    title: "I’ve been building product for more than 10 years.",
     // Brandbook short bio. "{products}" becomes the three product names, linked when they have a case.
     bio: "I’m Ezequiel Rangel, a product engineer based in Mazatlán, Mexico. For more than a decade I’ve built web and mobile products. Now I build first versions: working prototypes people can use.",
     products: { before: "My own products include ", and: " and ", after: "." },
@@ -263,7 +263,7 @@ export const en = {
       collect: {
         title: "What I collect",
         text: [
-          "Nothing, unless you accept analytics.",
+          "Nothing about you, unless you accept analytics. Vercel, which hosts the site, sees basic technical data from every visit (see below).",
           "If you accept, Google Analytics 4 records which pages you visit, how you got here, your device and browser, and your approximate location. I use it to see which pages get read. I don’t sell this data.",
           "If you write to me, I keep your email and message only to reply.",
         ],
@@ -276,7 +276,7 @@ export const en = {
           { name: "_ga", purpose: "Tells visits apart (Google Analytics)", duration: "2 years" },
           { name: "_ga_PRVB43G65X", purpose: "Keeps the session state (Google Analytics)", duration: "2 years" },
         ],
-        outro: "Your choice, theme and language are saved in your browser and never sent to me.",
+        outro: "Your cookie choice, theme and language are saved in your browser and never sent to me.",
       },
       processors: {
         title: "Who else processes it",
@@ -301,10 +301,10 @@ export const en = {
   notFound: {
     seoTitle: "Page not found · Ezequiel Rangel",
     label: "404 · Not found",
-    text: "This page doesn't exist. This does:",
+    text: "This page doesn’t exist. This does:",
     links: [
       { path: "/", title: "Home", text: "I build first versions." },
-      { path: "/work", title: "Work", text: "Fiscalio and Relay: how each one was built." },
+      { path: "/work", title: "Work", text: "My products and client work." },
       { path: "/writing", title: "Writing", text: "Notes from building." },
     ],
     mail: "Looking for something specific?",

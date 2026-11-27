@@ -50,13 +50,13 @@ Fuera de foco: pymes buscando arreglos de sitio, clientes de mantenimiento, ofer
 
 ### Posicionamiento
 
-> Para fundadores y equipos que tienen una idea de producto digital y necesitan verla funcionando, Ezequiel Rangel es un product engineer que construye la primera versión: diseñada, programada y en manos de usuarios reales. A diferencia de un freelancer que ejecuta tickets, construye sus propios productos de punta a punta (Fiscalio, Relay, JobSnap) y usa IA como parte de su proceso, no como adorno.
+> Para fundadores y equipos que tienen una idea de producto digital y necesitan verla funcionando, Ezequiel Rangel es un product engineer que construye la primera versión: diseñada, programada y en manos de usuarios reales. A diferencia de un freelancer que ejecuta tickets, construye sus propios productos de punta a punta (hoy, Fiscalio y Relay) y usa IA como parte de su proceso, no como adorno.
 
 ### Propuesta de valor
 
 1. **Criterio de producto, no solo código.** Decido qué construir primero y qué dejar fuera.
 2. **Primera versión real.** El resultado se usa, no se presenta.
-3. **Pruebas propias.** Tres productos construidos por mí demuestran el método.
+3. **Pruebas propias.** Productos construidos por mí demuestran el método. Sin número fijo en el copy: la cifra se rompe cada vez que un producto entra o sale.
 4. **IA en el proceso.** Flujos con agentes para construir más rápido sin perder control del resultado.
 
 ## Personalidad
@@ -112,6 +112,7 @@ Fuera de foco: pymes buscando arreglos de sitio, clientes de mantenimiento, ofer
 - Los nombres de producto no se traducen (Fiscalio, Relay, JobSnap).
 - Un artículo sin traducción muestra una nota: "Este artículo solo está en inglés".
 - No se mezclan idiomas en una misma página, salvo términos técnicos sin equivalente claro (prompt, deploy, stack).
+- Excepción: el aviso de idioma va en el idioma al que invita ("Esta página también está en español." en /), igual que el botón EN / ES. Quien lo ve prefiere ese idioma.
 
 ### Glosario
 
@@ -156,8 +157,8 @@ Fuera de foco: pymes buscando arreglos de sitio, clientes de mantenimiento, ofer
 
 **Corta (perfiles, firma de correo)**
 
-- EN: I'm Ezequiel Rangel, a product engineer based in Mazatlán, Mexico. For more than a decade I've built web and mobile products. Now I build first versions: working prototypes people can use. My own products include Fiscalio, Relay and JobSnap.
-- ES: Soy Ezequiel Rangel, product engineer en Mazatlán, México. Llevo más de 10 años construyendo productos web y móviles. Hoy construyo primeras versiones: prototipos que funcionan y que la gente puede usar. Entre mis productos están Fiscalio, Relay y JobSnap.
+- EN: I'm Ezequiel Rangel, a product engineer based in Mazatlán, Mexico. For more than a decade I've built web and mobile products. Now I build first versions: working prototypes people can use. My own products include Fiscalio and Relay.
+- ES: Soy Ezequiel Rangel, product engineer en Mazatlán, México. Llevo más de 10 años construyendo productos web y móviles. Hoy construyo primeras versiones: prototipos que funcionan y que la gente puede usar. Entre mis productos están Fiscalio y Relay.
 
 **Tercera persona (charlas, prensa)**
 
@@ -168,7 +169,7 @@ Fuera de foco: pymes buscando arreglos de sitio, clientes de mantenimiento, ofer
 
 | Audiencia | Mensaje | Prueba que lo respalda |
 | --- | --- | --- |
-| Reclutadores / hiring managers | "I think like a product owner and I ship." | Tres productos propios de punta a punta |
+| Reclutadores / hiring managers | "I think like a product owner and I ship." | Productos propios de punta a punta |
 | Fundadores y equipos | "Bring the idea. I'll build the first version you can put in front of users." | Proceso de trabajo + casos de producto |
 | Developers | "This is how I use AI to build, and what didn't work." | Artículos con detalle técnico |
 
@@ -205,7 +206,7 @@ La misma estructura existe en español bajo /es. Rescue Packages desaparece con 
 ### Inicio, en orden de lectura
 
 1. **Hero.** Nombre, descriptor "Product engineer", tagline en serif grande con el cursor de bloque al final, y un CTA: "Tell me what you want to build".
-2. **Trabajo seleccionado.** Fiscalio, Relay y JobSnap en lista de filas: nombre, una línea, año, estado de versión. Bloque de color en Azul Plano a ancho completo.
+2. **Trabajo seleccionado.** Los productos visibles (hoy Fiscalio y Relay) en lista de filas: nombre, una línea, año, estado de versión. Bloque de color en Azul Plano a ancho completo.
 3. **Cómo construyo.** Cuatro pasos: Entender el problema → Construir la primera versión → Ponerla en manos reales → Decidir el siguiente paso.
 4. **Opiniones.** Las 4 a 6 opiniones de marca (sección Mensajes clave).
 5. **Escritos recientes.** Los 3 últimos artículos con fecha e idioma disponible.
@@ -220,16 +221,15 @@ La misma estructura existe en español bajo /es. Rescue Packages desaparece con 
 | La decisión | Qué se construyó primero y qué se dejó fuera, y por qué | Aquí vive el criterio de producto |
 | Cómo se construyó | Stack, arquitectura, dónde entró la IA | Diagrama antes que lista de logos |
 | Pantallas | 2 a 4 capturas reales | Capturas reales, nunca maquetas falsas |
-| Qué aprendí | Resultado real o estado actual | Si aún no hay resultado, se dice |
-| Siguiente paso | Qué sigue en el producto | Opcional |
+| Dónde está hoy | Estado actual, resultado real, qué aprendí y qué sigue | Si aún no hay resultado, se dice. Junta "Qué aprendí" y "Siguiente paso" (decidido el 27 de noviembre de 2026) |
 
 ### Proyectos y lo que sé de cada uno
 
 | Proyecto | Qué es | Pendiente de ti |
 | --- | --- | --- |
 | Fiscalio | App de escritorio local-first para personas físicas en RESICO: lee CFDI, los organiza, ayuda con declaraciones y asigna cuentas contables con ML | Estado actual, capturas, si hay enlace público |
-| Relay | Recordatorios de compromisos por WhatsApp para pequeños negocios de servicios; el plan es validar la v0.1 con una primera usuaria real | Estado de la plantilla de Meta, capturas |
-| JobSnap | Analizador con IA de compatibilidad entre CV y vacante ([demo](https://jobsnap-five.vercel.app)) | Si sigue activo, capturas |
+| Relay | Recordatorios de compromisos por WhatsApp para pequeños negocios de servicios. 2025, v0.2 pre-alpha. Stack: Next.js, Neon Postgres, WhatsApp | Estado de la plantilla de Meta, capturas, caso de estudio |
+| JobSnap | Analizador con IA de compatibilidad entre CV y vacante ([demo](https://jobsnap-five.vercel.app)) | Oculto del sitio desde el 27 de noviembre de 2026 |
 
 ### Escritos
 
@@ -496,7 +496,7 @@ Exponer con WebMCP dos o tres acciones del sitio (listar proyectos, leer un caso
 
 ### SEO
 
-- Título de inicio: "Ezequiel Rangel — Product engineer". Patrón del resto: "{Página} · Ezequiel Rangel".
+- Título de inicio: "Ezequiel Rangel — Product engineer", igual en ambos idiomas. Patrón del resto: "{Página}: {descriptor} · Ezequiel Rangel" (p. ej. "Work: products I built end to end · Ezequiel Rangel"). El descriptor es opcional; páginas utilitarias (Privacidad, 404) usan solo "{Página} · Ezequiel Rangel".
 - Meta descripción por página, por idioma, de 140 a 160 caracteres.
 - Datos estructurados JSON-LD: `Person` en inicio, `Article` en escritos, `SoftwareApplication` en cada proyecto.
 - Sitemap y RSS de escritos por idioma. Redirecciones 301 de las URLs retiradas.
@@ -546,7 +546,7 @@ Lectura de conjunto: te gustan los sitios que dicen una cosa a la vez con tipogr
 | --- | --- | --- |
 | Tagline | A: "I build first versions." / "Construyo primeras versiones." | Cerrado |
 | Opiniones de marca | Las 6 propuestas, tal cual | Cerrado |
-| Proyectos | Faltan capturas y enlaces públicos de Fiscalio, Relay y JobSnap | Pendiente |
+| Proyectos | Fiscalio publicado; faltan capturas y caso de Relay; JobSnap oculto | Pendiente |
 | Reading y Bookmarks | Se retiran, junto con la integración de Notion | Cerrado |
 | Posts para pymes y caso de ICUSA | Se elimina todo; tú los quitas del índice de Google | Cerrado |
 | Contenido de escritos | MDX en el repositorio | Cerrado |

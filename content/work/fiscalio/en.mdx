@@ -32,7 +32,9 @@ updated: 2026-11-26
 
 ## The problem
 
-If you're in RESICO and invoice on your own, you issue and receive CFDI all month. At month's end, those XML files have to become a tax return: separate what you collected from what you invoiced, match payment complements, subtract withholdings. That draft took me hours. I built Fiscalio because I'm one of those taxpayers.
+If you're in RESICO and invoice on your own, you issue and receive CFDI all month. At month's end, those XML files have to become a tax return: separate what you collected from what you invoiced, match payment complements, subtract withholdings.
+
+That draft took me hours. I built Fiscalio because I'm one of those taxpayers.
 
 ## The decision
 
@@ -61,7 +63,9 @@ Fiscalio is an Electron app for macOS and Windows. Inside, a Next.js and React a
 
 ### AI in the product
 
-It isn't an LLM or a cloud-trained model. For each invoice you classify, the engine stores a snapshot of its features: RFC, SAT product codes, taxes and currency. When a pattern keeps landing on the same account, it gains confidence; with enough evidence, it becomes a rule. Correct a suggestion and that pattern loses consistency. I chose this because every suggestion can be explained and everything runs offline.
+The suggestions come from a pattern engine, not an LLM. For each invoice you classify, it stores a snapshot of its features: RFC, SAT product codes, taxes and currency. I chose this because every suggestion can be explained and everything runs offline.
+
+When a pattern keeps landing on the same account, it gains confidence; with enough evidence, it becomes a rule. Correct a suggestion and that pattern loses confidence.
 
 ### AI in my workflow
 
@@ -69,7 +73,7 @@ I used AI agents to build parts of the app from specs and phased plans I review 
 
 ## Where it stands
 
-Fiscalio is at v1.0.7, in private beta. No results to show yet: in December I'm preparing drafts with the first users, using their real CFDI. I've prepared my own returns with Fiscalio since December 2025: the draft that took me hours now takes minutes.
+Fiscalio is at v1.0.7, in private beta. No results to show yet: in December 2026 I'm preparing drafts with the first users, using their real CFDI. I've prepared my own returns with Fiscalio since December 2025: the draft that took me hours now takes minutes.
 
 In a local-first app, backups are the product's job. I learned it when my computer broke and I lost seven months of data; automatic backups shipped in 1.0.
 
